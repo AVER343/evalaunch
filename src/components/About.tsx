@@ -149,7 +149,7 @@ const About = ({ onStartProject }: AboutProps) => {
           <div className="bg-gradient-to-r from-primary-600 to-secondary-600 rounded-3xl p-12 text-white">
             <h3 className="text-3xl font-bold mb-4">Ready to Transform Your Business?</h3>
             <p className="text-xl mb-8 opacity-90">
-              Let's discuss how we can help you achieve your goals with our technology solutions.
+              Let&apos;s discuss how we can help you achieve your goals with our technology solutions.
             </p>
             <button 
               onClick={onStartProject}

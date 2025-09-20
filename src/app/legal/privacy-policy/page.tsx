@@ -43,7 +43,7 @@ export default function PrivacyPolicy() {
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
               We care about your privacy and want to be transparent about how we handle your personal information. 
-              This policy explains what data we collect, why we need it, and how we protect it. We've written it 
+              This policy explains what data we collect, why we need it, and how we protect it. We&apos;ve written it 
               in plain language so you can easily understand our practices.
             </p>
           </div>

@@ -42,8 +42,8 @@ export default function TermsOfService() {
               Terms of Service
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Welcome to eVALaunche! These terms explain the rules for using our website and services. 
-              We've written them in simple language so you can easily understand your rights and responsibilities.
+              Welcome to eVALaunch! These terms explain the rules for using our website and services. 
+              We&apos;ve written them in simple language so you can easily understand your rights and responsibilities.
             </p>
           </div>
 
@@ -96,7 +96,7 @@ export default function TermsOfService() {
                 <h4 className="text-lg font-semibold text-gray-900 mb-3">Service Availability</h4>
                 <p className="text-gray-600">
                   We strive to provide reliable services, but we cannot guarantee 100% uptime. 
-                  We'll do our best to minimize any disruptions and keep you informed of any issues.
+                  We&apos;ll do our best to minimize any disruptions and keep you informed of any issues.
                 </p>
               </div>
             </div>
@@ -108,7 +108,7 @@ export default function TermsOfService() {
             
             <div className="grid md:grid-cols-2 gap-6">
               <div className="p-6 bg-green-50 rounded-xl">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Do's</h4>
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">Do&apos;s</h4>
                 <ul className="space-y-2 text-gray-600">
                   <li>• Provide accurate project information</li>
                   <li>• Communicate clearly about your needs</li>
@@ -119,7 +119,7 @@ export default function TermsOfService() {
               </div>
               
               <div className="p-6 bg-red-50 rounded-xl">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Don'ts</h4>
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">Don&apos;ts</h4>
                 <ul className="space-y-2 text-gray-600">
                   <li>• Share false or misleading information</li>
                   <li>• Use our services for illegal activities</li>
@@ -242,7 +242,7 @@ export default function TermsOfService() {
                   </ul>
                 </div>
                 <div>
-                  <h5 className="font-semibold text-gray-900 mb-2">We Won't:</h5>
+                  <h5 className="font-semibold text-gray-900 mb-2">We Won&apos;t:</h5>
                   <ul className="space-y-1 text-gray-600">
                     <li>• Sell or share your personal information</li>
                     <li>• Use your data for unrelated purposes</li>
@@ -266,8 +266,8 @@ export default function TermsOfService() {
                   Upon termination:
                 </p>
                 <ul className="space-y-2 text-gray-600">
-                  <li>• You'll pay for work completed up to that point</li>
-                  <li>• We'll deliver any completed work</li>
+                  <li>• You&apos;ll pay for work completed up to that point</li>
+                  <li>• We&apos;ll deliver any completed work</li>
                   <li>• Confidentiality obligations continue</li>
                   <li>• Intellectual property rights are preserved</li>
                 </ul>
@@ -286,7 +286,7 @@ export default function TermsOfService() {
                 or legal requirements. When we make significant changes:
               </p>
               <ul className="space-y-2 text-gray-600">
-                <li>• We'll notify you by email or website notice</li>
+                <li>• We&apos;ll notify you by email or website notice</li>
                 <li>• Changes will be effective 30 days after notice</li>
                 <li>• Continued use means you accept the new terms</li>
                 <li>• You can terminate if you disagree with changes</li>
@@ -314,7 +314,7 @@ export default function TermsOfService() {
             
             <div className="bg-gray-50 rounded-lg p-6">
               <p className="text-gray-600 mb-4">
-                If you have any questions about these terms of service, please don't hesitate to contact us:
+                If you have any questions about these terms of service, please don&apos;t hesitate to contact us:
               </p>
               
               <div className="grid md:grid-cols-2 gap-6">

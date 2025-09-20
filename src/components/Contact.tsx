@@ -108,11 +108,11 @@ const Contact = ({ onStartProject }: ContactProps) => {
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Let's <span className="text-primary-600">Connect</span>
+            Let&apos;s <span className="text-primary-600">Connect</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             Ready to transform your business with innovative technology solutions? 
-            Let's discuss your project and explore how we can help you achieve your goals.
+            Let&apos;s discuss your project and explore how we can help you achieve your goals.
           </p>
           
           {/* Trust Indicators */}
@@ -138,7 +138,7 @@ const Contact = ({ onStartProject }: ContactProps) => {
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Let&apos;s Start a Conversation</h3>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Ready to transform your business with cutting-edge technology? We're here to help you succeed. 
+                Ready to transform your business with cutting-edge technology? We&apos;re here to help you succeed. 
                 Whether you have a specific project in mind or just want to explore possibilities, 
                 we&apos;d love to hear from you and discuss how we can bring your vision to life.
               </p>

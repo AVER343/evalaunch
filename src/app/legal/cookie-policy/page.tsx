@@ -43,7 +43,7 @@ export default function CookiePolicy() {
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
               We use cookies to make your experience on our website better. This policy explains what cookies are, 
-              how we use them, and how you can control them. We're committed to being transparent about our 
+              how we use them, and how you can control them. We&apos;re committed to being transparent about our 
               data practices and giving you control over your privacy.
             </p>
           </div>
@@ -62,7 +62,7 @@ export default function CookiePolicy() {
                   <h4 className="font-semibold text-gray-900 mb-2">Simple Explanation</h4>
                   <p className="text-gray-700">
                     Cookies are small text files that websites store on your device (computer, phone, or tablet) 
-                    when you visit them. Think of them as digital "memory" that helps websites remember your 
+                    when you visit them. Think of them as digital &quot;memory&quot; that helps websites remember your 
                     preferences and provide a better experience.
                   </p>
                 </div>
@@ -369,7 +369,7 @@ export default function CookiePolicy() {
             <p className="text-gray-600 leading-relaxed">
               We may update this Cookie Policy from time to time to reflect changes in our practices or 
               legal requirements. We will notify you of any material changes by posting the updated policy 
-              on our website and updating the "Last Updated" date. We encourage you to review this policy 
+              on our website and updating the &quot;Last Updated&quot; date. We encourage you to review this policy 
               periodically to stay informed about our cookie practices.
             </p>
           </div>

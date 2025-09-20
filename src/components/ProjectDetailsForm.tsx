@@ -39,7 +39,7 @@ const ProjectDetailsForm = ({ isOpen, onClose }: ProjectDetailsFormProps) => {
     '$5,000 - $15,000',
     '$15,000 - $50,000',
     '$50,000+',
-    'Let\'s Discuss'
+    'Let&apos;s Discuss'
   ];
 
   const timelines = [
@@ -119,7 +119,7 @@ const ProjectDetailsForm = ({ isOpen, onClose }: ProjectDetailsFormProps) => {
           </div>
           <h3 className="text-2xl font-bold text-gray-900 mb-2">Request Sent!</h3>
           <p className="text-gray-600 mb-6">
-            Thank you for your interest! We'll contact you within 24 hours to discuss your project and provide a custom quote.
+            Thank you for your interest! We&apos;ll contact you within 24 hours to discuss your project and provide a custom quote.
           </p>
           <button
             onClick={onClose}
@@ -140,7 +140,7 @@ const ProjectDetailsForm = ({ isOpen, onClose }: ProjectDetailsFormProps) => {
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-3xl font-bold text-gray-900">Get Your Custom Quote</h2>
-              <p className="text-gray-600 mt-1">Tell us about your project and we'll send you a detailed proposal</p>
+              <p className="text-gray-600 mt-1">Tell us about your project and we&apos;ll send you a detailed proposal</p>
             </div>
             <button
               onClick={onClose}
@@ -324,7 +324,7 @@ const ProjectDetailsForm = ({ isOpen, onClose }: ProjectDetailsFormProps) => {
             </button>
             
             <p className="text-sm text-gray-500 text-center mt-4">
-              We'll respond within 24 hours with a detailed proposal and pricing
+              We&apos;ll respond within 24 hours with a detailed proposal and pricing
             </p>
           </div>
         </form>

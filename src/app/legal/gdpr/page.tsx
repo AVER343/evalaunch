@@ -221,9 +221,9 @@ export default function GDPR() {
                 <FileText className="h-8 w-8 text-primary-600 mx-auto mb-3" />
                 <h4 className="font-semibold text-gray-900 mb-2">Contact Form</h4>
                 <p className="text-sm text-gray-600 mb-3">Use our website contact form</p>
-                <a href="/#contact" className="text-primary-600 hover:underline text-sm">
+                <Link href="/#contact" className="text-primary-600 hover:underline text-sm">
                   Visit Contact Page
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -392,7 +392,7 @@ export default function GDPR() {
             <p className="text-gray-600 leading-relaxed">
               We may update this GDPR compliance statement from time to time to reflect changes in our 
               practices or legal requirements. We will notify you of any material changes by posting the 
-              updated policy on our website and updating the "Last Updated" date.
+              updated policy on our website and updating the &quot;Last Updated&quot; date.
             </p>
           </div>
 
