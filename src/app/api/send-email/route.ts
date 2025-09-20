@@ -3,7 +3,7 @@ import { Resend } from 'resend';
 
 
 export async function POST(request: NextRequest) {
-const resend = new Resend("re_5zLhjnSP_5qZv4MxKZkpUoZzecTG2y4th");
+const resend = new Resend(process.env.RESEND_API_KEY);
 try {
     const { name, email, subject, message, service, company, captchaToken } = await request.json();
 
