@@ -29,7 +29,7 @@ export default function Home() {
       <About onStartProject={openProjectForm} />
       <Portfolio onStartProject={openProjectForm} />
       <Contact onStartProject={openProjectForm} />
-      <Footer onStartProject={openProjectForm} />
+      <Footer />
       <ProjectDetailsForm isOpen={isProjectFormOpen} onClose={closeProjectForm} />
     </main>
   );
