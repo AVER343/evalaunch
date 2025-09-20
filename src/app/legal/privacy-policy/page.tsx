@@ -73,13 +73,13 @@ export default function PrivacyPolicy() {
                   </li>
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span>You're always in control</span>
+                    <span>You&apos;re always in control</span>
                   </li>
                 </ul>
               </div>
               
               <div className="p-6 bg-blue-50 rounded-xl border border-blue-200">
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">We're Transparent</h4>
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">We&apos;re Transparent</h4>
                 <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="h-4 w-4 text-blue-500" />
@@ -204,7 +204,7 @@ export default function PrivacyPolicy() {
 
           {/* Information Sharing */}
           <div className="mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">We Don't Share Your Information</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">We Don&apos;t Share Your Information</h3>
             
             <div className="bg-red-50 rounded-lg p-6 border-l-4 border-red-500 mb-6">
               <div className="flex items-start">
@@ -212,7 +212,7 @@ export default function PrivacyPolicy() {
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-2">We Never Sell Your Data</h4>
                   <p className="text-gray-700">
-                    We don't sell, trade, or rent your personal information to anyone. Your data stays with us 
+                    We don&apos;t sell, trade, or rent your personal information to anyone. Your data stays with us 
                     and trusted service providers who help us operate our business.
                   </p>
                 </div>
@@ -266,7 +266,7 @@ export default function PrivacyPolicy() {
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Your Rights and Choices</h3>
             
             <div className="bg-green-50 rounded-lg p-6">
-              <h4 className="text-lg font-semibold text-gray-900 mb-4">You're Always in Control</h4>
+              <h4 className="text-lg font-semibold text-gray-900 mb-4">You&apos;re Always in Control</h4>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h5 className="font-semibold text-gray-900 mb-3">Access and Control</h5>
@@ -296,7 +296,7 @@ export default function PrivacyPolicy() {
             
             <div className="bg-gray-50 rounded-lg p-6">
               <p className="text-gray-600 mb-4">
-                We're here to help! If you have any questions about this privacy policy or want to exercise 
+                We&apos;re here to help! If you have any questions about this privacy policy or want to exercise 
                 your rights, please contact us:
               </p>
               
@@ -328,7 +328,7 @@ export default function PrivacyPolicy() {
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Updates to This Policy</h3>
             <p className="text-gray-600 leading-relaxed">
               We may update this privacy policy from time to time to reflect changes in our practices or 
-              legal requirements. When we make significant changes, we'll notify you by email or through 
+              legal requirements. When we make significant changes, we&apos;ll notify you by email or through 
               a notice on our website. We encourage you to review this policy periodically.
             </p>
           </div>

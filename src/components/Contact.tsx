@@ -136,11 +136,11 @@ const Contact = ({ onStartProject }: ContactProps) => {
           {/* Contact Information */}
           <div className="space-y-8 animate-slide-in-left">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Let's Start a Conversation</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Let&apos;s Start a Conversation</h3>
               <p className="text-gray-600 leading-relaxed mb-6">
                 Ready to transform your business with cutting-edge technology? We're here to help you succeed. 
                 Whether you have a specific project in mind or just want to explore possibilities, 
-                we'd love to hear from you and discuss how we can bring your vision to life.
+                we&apos;d love to hear from you and discuss how we can bring your vision to life.
               </p>
               
               {/* Quick Stats */}
@@ -212,7 +212,7 @@ const Contact = ({ onStartProject }: ContactProps) => {
             <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Send us a Message</h3>
-                <p className="text-gray-600">Fill out the form below and we'll get back to you within 24 hours</p>
+                <p className="text-gray-600">Fill out the form below and we&apos;ll get back to you within 24 hours</p>
               </div>
               
               {isSubmitted ? (
@@ -221,7 +221,7 @@ const Contact = ({ onStartProject }: ContactProps) => {
                     <CheckCircle className="h-8 w-8 text-green-600" />
                   </div>
                   <h4 className="text-xl font-semibold text-gray-900 mb-2">Message Sent!</h4>
-                  <p className="text-gray-600">Thank you for your message. We'll get back to you within 24 hours.</p>
+                  <p className="text-gray-600">Thank you for your message. We&apos;ll get back to you within 24 hours.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">

@@ -192,7 +192,7 @@ export default function GDPR() {
                   <h4 className="font-semibold text-gray-900 mb-2">Easy Process</h4>
                   <p className="text-gray-700">
                     Exercising your GDPR rights is simple. Just contact us using any of the methods below, 
-                    and we'll respond within 30 days.
+                    and we&apos;ll respond within 30 days.
                   </p>
                 </div>
               </div>
@@ -307,7 +307,7 @@ export default function GDPR() {
                   </ul>
                 </div>
                 <div>
-                  <h5 className="font-semibold text-gray-900 mb-2">What We'll Tell You:</h5>
+                  <h5 className="font-semibold text-gray-900 mb-2">What We&apos;ll Tell You:</h5>
                   <ul className="text-sm text-gray-600 space-y-1">
                     <li>• Nature of the breach</li>
                     <li>• Data categories affected</li>
