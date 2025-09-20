@@ -312,7 +312,7 @@ export default function GDPR() {
                     <li>• Nature of the breach</li>
                     <li>• Data categories affected</li>
                     <li>• Likely consequences</li>
-                    <li>• Measures we're taking</li>
+                    <li>• Measures we&apos;re taking</li>
                   </ul>
                 </div>
               </div>

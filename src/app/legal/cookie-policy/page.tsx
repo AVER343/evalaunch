@@ -202,7 +202,7 @@ export default function CookiePolicy() {
               <div className="flex items-start">
                 <AlertTriangle className="h-6 w-6 text-yellow-600 mr-3 mt-1" />
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">You're in Control</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2">You&apos;re in Control</h4>
                   <p className="text-gray-700">
                     You can control and delete cookies at any time. However, disabling certain cookies may 
                     affect your experience on our website.
@@ -228,7 +228,7 @@ export default function CookiePolicy() {
               <div className="space-y-4">
                 <div className="p-4 bg-white border border-gray-200 rounded-lg">
                   <h4 className="font-semibold text-gray-900 mb-2">Our Cookie Banner</h4>
-                  <p className="text-sm text-gray-600 mb-3">When you first visit our site, you'll see a cookie banner.</p>
+                  <p className="text-sm text-gray-600 mb-3">When you first visit our site, you&apos;ll see a cookie banner.</p>
                   <ul className="text-sm text-gray-600 space-y-1">
                     <li>• Accept all cookies</li>
                     <li>• Reject non-essential cookies</li>
@@ -337,7 +337,7 @@ export default function CookiePolicy() {
             
             <div className="bg-gray-50 rounded-lg p-6">
               <p className="text-gray-600 mb-4">
-                If you have any questions about our use of cookies or this policy, please don't hesitate to contact us:
+                If you have any questions about our use of cookies or this policy, please don&apos;t hesitate to contact us:
               </p>
               
               <div className="grid md:grid-cols-2 gap-6">
