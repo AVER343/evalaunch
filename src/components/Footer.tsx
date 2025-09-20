@@ -27,10 +27,10 @@ const Footer = () => {
       { name: 'Support', href: '#contact' }
     ],
     legal: [
-      { name: 'Privacy Policy', href: '#' },
-      { name: 'Terms of Service', href: '#' },
-      { name: 'Cookie Policy', href: '#' },
-      { name: 'GDPR', href: '#' }
+      { name: 'Privacy Policy', href: '/legal/privacy-policy' },
+      { name: 'Terms of Service', href: '/legal/terms-of-service' },
+      { name: 'Cookie Policy', href: '/legal/cookie-policy' },
+      { name: 'GDPR', href: '/legal/gdpr' }
     ]
   };
 
@@ -57,7 +57,7 @@ const Footer = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-2xl font-bold text-white">
-                  eVALaunch
+                  eVALaunche
                 </span>
                 <span className="text-xs text-gray-400 font-medium -mt-1">Tech Solutions</span>
               </div>
@@ -155,7 +155,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-400 text-sm">
-              © 2024 eVALaunch. All rights reserved.
+              © 2024 eVALaunche. All rights reserved.
             </div>
             
             {/* Social Links */}

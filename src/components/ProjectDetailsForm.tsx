@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { X, Send, CheckCircle, Building, Calendar, DollarSign, Users, Target, Code, Smartphone, Globe, Database } from 'lucide-react';
+import { X, Send, CheckCircle, DollarSign, Calendar, Code } from 'lucide-react';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 interface ProjectDetailsFormProps {
@@ -11,35 +11,13 @@ interface ProjectDetailsFormProps {
 
 const ProjectDetailsForm = ({ isOpen, onClose }: ProjectDetailsFormProps) => {
   const [formData, setFormData] = useState({
-    // Basic Information
     name: '',
     email: '',
-    company: '',
     phone: '',
-    
-    // Project Details
-    projectName: '',
     projectType: '',
-    projectCategory: '',
-    description: '',
-    goals: '',
-    targetAudience: '',
-    
-    // Technical Requirements
-    platform: [],
-    features: [],
-    integrations: '',
-    thirdPartyServices: '',
-    
-    // Timeline & Budget
-    timeline: '',
     budget: '',
-    urgency: '',
-    
-    // Additional Information
-    currentChallenges: '',
-    successMetrics: '',
-    additionalNotes: ''
+    timeline: '',
+    description: ''
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -48,52 +26,28 @@ const ProjectDetailsForm = ({ isOpen, onClose }: ProjectDetailsFormProps) => {
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const projectTypes = [
-    'Web Application',
-    'Mobile App (iOS)',
-    'Mobile App (Android)',
-    'Cross-Platform App',
-    'E-commerce Platform',
+    'Website Development',
+    'Mobile App',
+    'E-commerce Store',
+    'Custom Software',
     'AI/ML Solution',
-    'Data Analytics Dashboard',
-    'API Development',
-    'System Integration',
-    'Other'
+    'Not Sure Yet'
   ];
 
-  const projectCategories = [
-    'Business Management',
-    'E-commerce',
-    'Healthcare',
-    'Education',
-    'Finance',
-    'Entertainment',
-    'Social Media',
-    'Productivity',
-    'IoT',
-    'Other'
+  const budgetRanges = [
+    'Under $5,000',
+    '$5,000 - $15,000',
+    '$15,000 - $50,000',
+    '$50,000+',
+    'Let\'s Discuss'
   ];
 
-  const platforms = [
-    { id: 'web', label: 'Web Application', icon: Globe },
-    { id: 'ios', label: 'iOS App', icon: Smartphone },
-    { id: 'android', label: 'Android App', icon: Smartphone },
-    { id: 'desktop', label: 'Desktop Application', icon: Code },
-    { id: 'api', label: 'API/Backend', icon: Database }
-  ];
-
-  const commonFeatures = [
-    'User Authentication',
-    'Payment Integration',
-    'Real-time Chat',
-    'Push Notifications',
-    'File Upload/Download',
-    'Search Functionality',
-    'Admin Dashboard',
-    'Analytics & Reporting',
-    'Multi-language Support',
-    'Offline Capability',
-    'Social Media Integration',
-    'Email Notifications'
+  const timelines = [
+    'ASAP (Rush)',
+    '1-2 months',
+    '3-6 months',
+    '6+ months',
+    'Flexible'
   ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -104,24 +58,6 @@ const ProjectDetailsForm = ({ isOpen, onClose }: ProjectDetailsFormProps) => {
     }));
   };
 
-  const handlePlatformChange = (platformId: string) => {
-    setFormData(prev => ({
-      ...prev,
-      platform: prev.platform.includes(platformId)
-        ? prev.platform.filter(p => p !== platformId)
-        : [...prev.platform, platformId]
-    }));
-  };
-
-  const handleFeatureChange = (feature: string) => {
-    setFormData(prev => ({
-      ...prev,
-      features: prev.features.includes(feature)
-        ? prev.features.filter(f => f !== feature)
-        : [...prev.features, feature]
-    }));
-  };
-
   const handleCaptchaChange = (value: string | null) => {
     setCaptchaValue(value);
   };
@@ -129,7 +65,6 @@ const ProjectDetailsForm = ({ isOpen, onClose }: ProjectDetailsFormProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Validate CAPTCHA
     if (!captchaValue) {
       alert('Please complete the CAPTCHA verification');
       return;
@@ -151,41 +86,23 @@ const ProjectDetailsForm = ({ isOpen, onClose }: ProjectDetailsFormProps) => {
 
       if (response.ok) {
         setIsSubmitted(true);
-        // Reset form after 3 seconds
-        setTimeout(() => {
-          setIsSubmitted(false);
-          setFormData({
-            name: '',
-            email: '',
-            company: '',
-            phone: '',
-            projectName: '',
-            projectType: '',
-            projectCategory: '',
-            description: '',
-            goals: '',
-            targetAudience: '',
-            platform: [],
-            features: [],
-            integrations: '',
-            thirdPartyServices: '',
-            timeline: '',
-            budget: '',
-            urgency: '',
-            currentChallenges: '',
-            successMetrics: '',
-            additionalNotes: ''
-          });
-          setCaptchaValue(null);
-          recaptchaRef.current?.reset();
-          onClose();
-        }, 3000);
+        recaptchaRef.current?.reset();
+        setCaptchaValue(null);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          projectType: '',
+          budget: '',
+          timeline: '',
+          description: ''
+        });
       } else {
-        throw new Error('Failed to send project details');
+        throw new Error('Failed to send message');
       }
     } catch (error) {
-      console.error('Error sending project details:', error);
-      alert('Failed to send project details. Please try again or contact us directly.');
+      console.error('Error sending message:', error);
+      alert('Failed to send message. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -193,397 +110,224 @@ const ProjectDetailsForm = ({ isOpen, onClose }: ProjectDetailsFormProps) => {
 
   if (!isOpen) return null;
 
+  if (isSubmitted) {
+    return (
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+        <div className="bg-white rounded-2xl p-8 max-w-md w-full text-center">
+          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <CheckCircle className="h-8 w-8 text-green-600" />
+          </div>
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">Request Sent!</h3>
+          <p className="text-gray-600 mb-6">
+            Thank you for your interest! We'll contact you within 24 hours to discuss your project and provide a custom quote.
+          </p>
+          <button
+            onClick={onClose}
+            className="w-full bg-primary-600 text-white py-3 px-6 rounded-lg hover:bg-primary-700 transition-colors duration-200 font-semibold"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
         {/* Header */}
-        <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 rounded-t-2xl">
+        <div className="sticky top-0 bg-white border-b border-gray-200 px-8 py-6 rounded-t-2xl">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900">Project Details Form</h2>
-              <p className="text-gray-600">Tell us about your project and we'll get back to you with a detailed proposal</p>
+              <h2 className="text-3xl font-bold text-gray-900">Get Your Custom Quote</h2>
+              <p className="text-gray-600 mt-1">Tell us about your project and we'll send you a detailed proposal</p>
             </div>
             <button
               onClick={onClose}
-              className="p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200"
+              className="text-gray-400 hover:text-gray-600 transition-colors duration-200"
             >
-              <X className="h-6 w-6 text-gray-500" />
+              <X className="h-6 w-6" />
             </button>
           </div>
         </div>
 
-        {/* Form Content */}
-        <div className="p-6">
-          {isSubmitted ? (
-            <div className="text-center py-12">
-              <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="h-8 w-8 text-green-600" />
-              </div>
-              <h4 className="text-xl font-semibold text-gray-900 mb-2">Project Details Sent!</h4>
-              <p className="text-gray-600">Thank you for your detailed project information. We'll review it and get back to you within 24 hours with a comprehensive proposal.</p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-8">
-              {/* Basic Information */}
-              <div className="bg-gray-50 p-6 rounded-xl">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                  <Users className="h-5 w-5 mr-2 text-primary-600" />
-                  Basic Information
-                </h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      placeholder="Your full name"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Company</label>
-                    <input
-                      type="text"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      placeholder="Your company name"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      placeholder="+1 (555) 123-4567"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Project Overview */}
-              <div className="bg-gray-50 p-6 rounded-xl">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                  <Target className="h-5 w-5 mr-2 text-primary-600" />
-                  Project Overview
-                </h3>
-                <div className="space-y-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Project Name *</label>
-                    <input
-                      type="text"
-                      name="projectName"
-                      value={formData.projectName}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      placeholder="What would you like to call your project?"
-                    />
-                  </div>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Project Type *</label>
-                      <select
-                        name="projectType"
-                        value={formData.projectType}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      >
-                        <option value="">Select project type</option>
-                        {projectTypes.map((type) => (
-                          <option key={type} value={type}>{type}</option>
-                        ))}
-                      </select>
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Project Category</label>
-                      <select
-                        name="projectCategory"
-                        value={formData.projectCategory}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      >
-                        <option value="">Select category</option>
-                        {projectCategories.map((category) => (
-                          <option key={category} value={category}>{category}</option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Project Description *</label>
-                    <textarea
-                      name="description"
-                      value={formData.description}
-                      onChange={handleInputChange}
-                      required
-                      rows={4}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
-                      placeholder="Describe your project in detail..."
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Project Goals *</label>
-                    <textarea
-                      name="goals"
-                      value={formData.goals}
-                      onChange={handleInputChange}
-                      required
-                      rows={3}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
-                      placeholder="What do you want to achieve with this project?"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Target Audience</label>
-                    <textarea
-                      name="targetAudience"
-                      value={formData.targetAudience}
-                      onChange={handleInputChange}
-                      rows={2}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
-                      placeholder="Who will use your application?"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Technical Requirements */}
-              <div className="bg-gray-50 p-6 rounded-xl">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                  <Code className="h-5 w-5 mr-2 text-primary-600" />
-                  Technical Requirements
-                </h3>
-                <div className="space-y-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-3">Platform(s) *</label>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                      {platforms.map((platform) => (
-                        <label key={platform.id} className="flex items-center space-x-2 p-3 border border-gray-300 rounded-lg hover:bg-gray-50 cursor-pointer">
-                          <input
-                            type="checkbox"
-                            checked={formData.platform.includes(platform.id)}
-                            onChange={() => handlePlatformChange(platform.id)}
-                            className="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
-                          />
-                          <platform.icon className="h-4 w-4 text-gray-600" />
-                          <span className="text-sm text-gray-700">{platform.label}</span>
-                        </label>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-3">Required Features</label>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                      {commonFeatures.map((feature) => (
-                        <label key={feature} className="flex items-center space-x-2 p-2 border border-gray-300 rounded-lg hover:bg-gray-50 cursor-pointer">
-                          <input
-                            type="checkbox"
-                            checked={formData.features.includes(feature)}
-                            onChange={() => handleFeatureChange(feature)}
-                            className="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
-                          />
-                          <span className="text-sm text-gray-700">{feature}</span>
-                        </label>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Third-party Integrations</label>
-                    <textarea
-                      name="integrations"
-                      value={formData.integrations}
-                      onChange={handleInputChange}
-                      rows={2}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
-                      placeholder="e.g., Payment gateways, APIs, services you need to integrate with..."
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Other Services Needed</label>
-                    <textarea
-                      name="thirdPartyServices"
-                      value={formData.thirdPartyServices}
-                      onChange={handleInputChange}
-                      rows={2}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
-                      placeholder="e.g., Hosting, domain, SSL certificates, etc."
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Timeline & Budget */}
-              <div className="bg-gray-50 p-6 rounded-xl">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                  <Calendar className="h-5 w-5 mr-2 text-primary-600" />
-                  Timeline & Budget
-                </h3>
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Timeline *</label>
-                    <select
-                      name="timeline"
-                      value={formData.timeline}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                    >
-                      <option value="">Select timeline</option>
-                      <option value="1-2 months">1-2 months</option>
-                      <option value="3-4 months">3-4 months</option>
-                      <option value="5-6 months">5-6 months</option>
-                      <option value="6+ months">6+ months</option>
-                      <option value="Flexible">Flexible</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Budget Range</label>
-                    <select
-                      name="budget"
-                      value={formData.budget}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                    >
-                      <option value="">Select budget range</option>
-                      <option value="Under $10k">Under $10,000</option>
-                      <option value="$10k - $25k">$10,000 - $25,000</option>
-                      <option value="$25k - $50k">$25,000 - $50,000</option>
-                      <option value="$50k - $100k">$50,000 - $100,000</option>
-                      <option value="$100k+">$100,000+</option>
-                      <option value="To be discussed">To be discussed</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Urgency</label>
-                    <select
-                      name="urgency"
-                      value={formData.urgency}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                    >
-                      <option value="">Select urgency</option>
-                      <option value="ASAP">ASAP (Rush job)</option>
-                      <option value="High">High priority</option>
-                      <option value="Medium">Medium priority</option>
-                      <option value="Low">Low priority</option>
-                      <option value="Flexible">Flexible</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              {/* Additional Information */}
-              <div className="bg-gray-50 p-6 rounded-xl">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                  <Building className="h-5 w-5 mr-2 text-primary-600" />
-                  Additional Information
-                </h3>
-                <div className="space-y-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Current Challenges</label>
-                    <textarea
-                      name="currentChallenges"
-                      value={formData.currentChallenges}
-                      onChange={handleInputChange}
-                      rows={3}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
-                      placeholder="What challenges are you currently facing that this project should solve?"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Success Metrics</label>
-                    <textarea
-                      name="successMetrics"
-                      value={formData.successMetrics}
-                      onChange={handleInputChange}
-                      rows={2}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
-                      placeholder="How will you measure the success of this project?"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Additional Notes</label>
-                    <textarea
-                      name="additionalNotes"
-                      value={formData.additionalNotes}
-                      onChange={handleInputChange}
-                      rows={3}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
-                      placeholder="Any other information you'd like to share about your project..."
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* CAPTCHA */}
-              <div className="flex justify-center">
-                <ReCAPTCHA
-                  ref={recaptchaRef}
-                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'}
-                  onChange={handleCaptchaChange}
-                  theme="light"
+        {/* Form */}
+        <form onSubmit={handleSubmit} className="p-8 space-y-6">
+          {/* Contact Information */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-gray-900 flex items-center">
+              <Code className="h-5 w-5 text-primary-600 mr-2" />
+              Contact Information
+            </h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
+                  placeholder="Your full name"
                 />
-                {(!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY === 'your_site_key_here') && (
-                  <p className="text-xs text-gray-500 mt-2 text-center">
-                    ⚠️ Using test reCAPTCHA. Configure NEXT_PUBLIC_RECAPTCHA_SITE_KEY for production.
-                  </p>
-                )}
               </div>
+              
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
+                  placeholder="your@email.com"
+                />
+              </div>
+            </div>
+            
+            <div>
+              <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
+                placeholder="+1 (555) 123-4567"
+              />
+            </div>
+          </div>
 
-              {/* Submit Button */}
-              <div className="flex justify-end space-x-4 pt-6 border-t border-gray-200">
-                <button
-                  type="button"
-                  onClick={onClose}
-                  className="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200 font-medium"
+          {/* Project Details */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-gray-900 flex items-center">
+              <DollarSign className="h-5 w-5 text-primary-600 mr-2" />
+              Project Details
+            </h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="projectType" className="block text-sm font-medium text-gray-700 mb-2">
+                  What do you need? *
+                </label>
+                <select
+                  id="projectType"
+                  name="projectType"
+                  required
+                  value={formData.projectType}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
                 >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="px-8 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors duration-200 font-medium flex items-center space-x-2"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      <span>Submitting...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Send className="h-4 w-4" />
-                      <span>Submit Project Details</span>
-                    </>
-                  )}
-                </button>
+                  <option value="">Select project type</option>
+                  {projectTypes.map((type) => (
+                    <option key={type} value={type}>{type}</option>
+                  ))}
+                </select>
               </div>
-            </form>
-          )}
-        </div>
+              
+              <div>
+                <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-2">
+                  Budget Range *
+                </label>
+                <select
+                  id="budget"
+                  name="budget"
+                  required
+                  value={formData.budget}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
+                >
+                  <option value="">Select budget range</option>
+                  {budgetRanges.map((range) => (
+                    <option key={range} value={range}>{range}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+            
+            <div>
+              <label htmlFor="timeline" className="block text-sm font-medium text-gray-700 mb-2">
+                When do you need it? *
+              </label>
+              <select
+                id="timeline"
+                name="timeline"
+                required
+                value={formData.timeline}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
+              >
+                <option value="">Select timeline</option>
+                {timelines.map((timeline) => (
+                  <option key={timeline} value={timeline}>{timeline}</option>
+                ))}
+              </select>
+            </div>
+            
+            <div>
+              <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-2">
+                Tell us about your project *
+              </label>
+              <textarea
+                id="description"
+                name="description"
+                required
+                rows={4}
+                value={formData.description}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200 resize-none"
+                placeholder="Describe your project goals, key features, and any specific requirements..."
+              />
+            </div>
+          </div>
+
+          {/* CAPTCHA */}
+          <div className="flex justify-center">
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'}
+              onChange={handleCaptchaChange}
+              theme="light"
+            />
+          </div>
+
+          {/* Submit Button */}
+          <div className="pt-6">
+            <button
+              type="submit"
+              disabled={isSubmitting || !captchaValue}
+              className="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-4 px-6 rounded-lg hover:from-primary-700 hover:to-primary-800 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-300 font-semibold text-lg flex items-center justify-center space-x-2 group shadow-lg hover:shadow-xl"
+            >
+              {isSubmitting ? (
+                <>
+                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                  <span>Sending Request...</span>
+                </>
+              ) : (
+                <>
+                  <Send className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  <span>Get My Custom Quote</span>
+                </>
+              )}
+            </button>
+            
+            <p className="text-sm text-gray-500 text-center mt-4">
+              We'll respond within 24 hours with a detailed proposal and pricing
+            </p>
+          </div>
+        </form>
       </div>
     </div>
   );

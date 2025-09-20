@@ -1,4 +1,4 @@
-# eVALaunch Deployment Guide
+# eVALaunche Deployment Guide
 
 ## 🚀 Deploy to Vercel (Recommended)
 

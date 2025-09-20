@@ -1,4 +1,4 @@
-# reCAPTCHA Setup Guide for eVALaunch Contact Form
+# reCAPTCHA Setup Guide for eVALaunche Contact Form
 
 ## Overview
 The contact form is protected with Google reCAPTCHA v2 to prevent spam and bot submissions. This guide will help you set up production-ready reCAPTCHA keys.
@@ -11,11 +11,11 @@ The contact form is protected with Google reCAPTCHA v2 to prevent spam and bot s
 3. Click "Create" to add a new site
 
 ### Step 2: Configure Your Site
-1. **Label**: Enter a descriptive name (e.g., "eVALaunch Contact Form")
+1. **Label**: Enter a descriptive name (e.g., "eVALaunche Contact Form")
 2. **reCAPTCHA type**: Select **"reCAPTCHA v2"** → **"I'm not a robot" Checkbox**
 3. **Domains**: Add your domains:
    - For development: `localhost`
-   - For production: `your-domain.com` (e.g., `evalaunch.vercel.app`)
+   - For production: `your-domain.com` (e.g., `eVALaunche.vercel.app`)
 4. **Accept Terms**: Check the terms of service
 5. Click **"Submit"**
 

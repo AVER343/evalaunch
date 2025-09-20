@@ -1,4 +1,4 @@
-# Email Setup Guide for eVALaunch Contact Form
+# Email Setup Guide for eVALaunche Contact Form
 
 ## Overview
 The contact form is configured to send emails to **ashish.amrev@gmail.com** when someone submits the form. This setup uses **Resend.com** - a modern, reliable email API that's perfect for production use.

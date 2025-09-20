@@ -1,6 +1,7 @@
 'use client';
 
 import { Code, Brain, Megaphone, Search, BarChart3, Users, Shield, Zap, Globe, Cloud, Palette, TestTube, Rocket, LifeBuoy } from 'lucide-react';
+import Link from 'next/link';
 
 const Services = () => {
   const services = [
@@ -99,13 +100,16 @@ const Services = () => {
                 ))}
               </ul>
 
-              <button className={`mt-6 w-full text-white py-3 px-6 rounded-lg transition-colors duration-300 font-semibold ${
-                service.color === 'primary' ? 'bg-primary-600 hover:bg-primary-700' :
-                service.color === 'secondary' ? 'bg-secondary-600 hover:bg-secondary-700' :
-                'bg-accent-600 hover:bg-accent-700'
-              }`}>
+              <Link 
+                href="/services"
+                className={`mt-6 w-full text-white py-3 px-6 rounded-lg transition-colors duration-300 font-semibold block text-center ${
+                  service.color === 'primary' ? 'bg-primary-600 hover:bg-primary-700' :
+                  service.color === 'secondary' ? 'bg-secondary-600 hover:bg-secondary-700' :
+                  'bg-accent-600 hover:bg-accent-700'
+                }`}
+              >
                 Learn More
-              </button>
+              </Link>
             </div>
           ))}
         </div>

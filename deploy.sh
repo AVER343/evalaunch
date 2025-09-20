@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# eVALaunch Deployment Script
-echo "🚀 Starting eVALaunch deployment process..."
+# eVALaunche Deployment Script
+echo "🚀 Starting eVALaunche deployment process..."
 
 # Check if git is initialized
 if [ ! -d ".git" ]; then
     echo "📦 Initializing Git repository..."
     git init
     git add .
-    git commit -m "Initial commit - eVALaunch website"
+    git commit -m "Initial commit - eVALaunche website"
 fi
 
 # Check if remote origin exists

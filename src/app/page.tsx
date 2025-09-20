@@ -25,7 +25,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Header onStartProject={openProjectForm} />
       <Hero onStartProject={openProjectForm} />
-      <Services onStartProject={openProjectForm} />
+      <Services />
       <About onStartProject={openProjectForm} />
       <Portfolio onStartProject={openProjectForm} />
       <Contact onStartProject={openProjectForm} />

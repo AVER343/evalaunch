@@ -91,7 +91,7 @@ const Portfolio = ({ onStartProject }: PortfolioProps) => {
   const testimonials = [
     {
       name: 'John Smith',
-      content: 'eVALaunch transformed our business with their innovative AI solutions. The results exceeded our expectations.',
+      content: 'eVALaunche transformed our business with their innovative AI solutions. The results exceeded our expectations.',
       rating: 5,
       project: 'Healthcare AI System'
     },

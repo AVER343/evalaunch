@@ -82,7 +82,7 @@ try {
         <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9;">
           <div style="background: linear-gradient(135deg, #FFD700, #FFA500); padding: 20px; border-radius: 10px 10px 0 0; text-align: center;">
             <h1 style="color: white; margin: 0; font-size: 24px;">New Contact Form Submission</h1>
-            <p style="color: white; margin: 10px 0 0 0; font-size: 16px;">eVALaunch Website</p>
+            <p style="color: white; margin: 10px 0 0 0; font-size: 16px;">eVALaunche Website</p>
           </div>
           
           <div style="background: white; padding: 30px; border-radius: 0 0 10px 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
@@ -119,7 +119,7 @@ try {
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: 'eVALaunch Contact Form <onboarding@resend.dev>',
+      from: 'eVALaunche Contact Form <onboarding@resend.dev>',
       to: ['ashish.amrev@gmail.com'],
       subject: `New Contact Form Submission from ${name}`,
       html: htmlContent,

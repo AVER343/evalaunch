@@ -48,7 +48,7 @@ const Header = ({ onStartProject }: HeaderProps) => {
             </div>
             <div className="flex flex-col">
               <span className="text-2xl font-bold text-gray-900 font-['Poppins']">
-                eVALaunch
+                eVALaunche
               </span>
               <span className="text-xs text-gray-500 font-medium -mt-1">Tech Solutions</span>
             </div>

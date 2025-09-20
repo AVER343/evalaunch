@@ -157,7 +157,7 @@ const Contact = ({ onStartProject }: ContactProps) => {
 
               {/* Call to Action */}
               <div className="bg-gradient-to-r from-accent-50 to-accent-100 p-6 rounded-xl border border-accent-200">
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">Why Choose <span className="text-primary-600">eVALaunch</span>?</h4>
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">Why Choose <span className="text-primary-600">eVALaunche</span>?</h4>
                 <ul className="space-y-2 text-sm text-gray-700">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
