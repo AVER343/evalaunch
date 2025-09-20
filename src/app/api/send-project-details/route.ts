@@ -1,9 +1,24 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: NextRequest) {
+  // Validate environment variables
+  if (!process.env.RESEND_API_KEY) {
+    return NextResponse.json(
+      { error: 'Email service not configured' },
+      { status: 500 }
+    );
+  }
+
+  if (!process.env.CONTACT_EMAIL) {
+    return NextResponse.json(
+      { error: 'Contact email not configured' },
+      { status: 500 }
+    );
+  }
+
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
   try {
     const {
       name,
@@ -61,7 +76,7 @@ export async function POST(request: NextRequest) {
     // Send email with project details
     const { data, error } = await resend.emails.send({
       from: 'eVALaunche <noreply@eVALaunche.com>',
-      to: ['ashish.amrev@gmail.com'],
+      to: [process.env.CONTACT_EMAIL],
       subject: `New Project Quote Request - ${projectType}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9fafb;">

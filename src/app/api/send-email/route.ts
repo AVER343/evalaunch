@@ -3,8 +3,24 @@ import { Resend } from 'resend';
 
 
 export async function POST(request: NextRequest) {
-const resend = new Resend(process.env.RESEND_API_KEY);
-try {
+  // Validate environment variables
+  if (!process.env.RESEND_API_KEY) {
+    return NextResponse.json(
+      { error: 'Email service not configured' },
+      { status: 500 }
+    );
+  }
+
+  if (!process.env.CONTACT_EMAIL) {
+    return NextResponse.json(
+      { error: 'Contact email not configured' },
+      { status: 500 }
+    );
+  }
+
+  const resend = new Resend(process.env.RESEND_API_KEY);
+  
+  try {
     const { name, email, subject, message, service, company, captchaToken } = await request.json();
 
     // Validate required fields
@@ -120,7 +136,7 @@ try {
     // Send email using Resend
     const { data, error } = await resend.emails.send({
       from: 'eVALaunche Contact Form <onboarding@resend.dev>',
-      to: ['ashish.amrev@gmail.com'],
+      to: [process.env.CONTACT_EMAIL],
       subject: `New Contact Form Submission from ${name}`,
       html: htmlContent,
       replyTo: email,

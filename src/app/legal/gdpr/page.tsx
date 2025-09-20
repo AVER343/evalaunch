@@ -198,33 +198,13 @@ export default function GDPR() {
               </div>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center p-6 bg-white border border-gray-200 rounded-xl">
-                <Mail className="h-8 w-8 text-primary-600 mx-auto mb-3" />
-                <h4 className="font-semibold text-gray-900 mb-2">Email Us</h4>
-                <p className="text-sm text-gray-600 mb-3">Send your request to our data protection team</p>
-                <a href="mailto:ashish.amrev@gmail.com" className="text-primary-600 hover:underline text-sm">
-                  ashish.amrev@gmail.com
-                </a>
-              </div>
-              
-              <div className="text-center p-6 bg-white border border-gray-200 rounded-xl">
-                <Phone className="h-8 w-8 text-primary-600 mx-auto mb-3" />
-                <h4 className="font-semibold text-gray-900 mb-2">Call Us</h4>
-                <p className="text-sm text-gray-600 mb-3">Speak directly with our team</p>
-                <a href="tel:+918219973883" className="text-primary-600 hover:underline text-sm">
-                  +91-821-9973883
-                </a>
-              </div>
-              
-              <div className="text-center p-6 bg-white border border-gray-200 rounded-xl">
-                <FileText className="h-8 w-8 text-primary-600 mx-auto mb-3" />
-                <h4 className="font-semibold text-gray-900 mb-2">Contact Form</h4>
-                <p className="text-sm text-gray-600 mb-3">Use our website contact form</p>
-                <Link href="/#contact" className="text-primary-600 hover:underline text-sm">
-                  Visit Contact Page
-                </Link>
-              </div>
+            <div className="text-center p-6 bg-white border border-gray-200 rounded-xl max-w-md mx-auto">
+              <FileText className="h-8 w-8 text-primary-600 mx-auto mb-3" />
+              <h4 className="font-semibold text-gray-900 mb-2">Contact Form</h4>
+              <p className="text-sm text-gray-600 mb-3">Use our website contact form to get in touch with us</p>
+              <Link href="/#contact" className="text-primary-600 hover:underline text-sm">
+                Visit Contact Page
+              </Link>
             </div>
           </div>
 
@@ -362,27 +342,9 @@ export default function GDPR() {
                 data protection team:
               </p>
               
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <Mail className="h-5 w-5 text-primary-600" />
-                    <span className="text-gray-700">ashish.amrev@gmail.com</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Phone className="h-5 w-5 text-primary-600" />
-                    <span className="text-gray-700">+91-821-9973883</span>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-3">
-                  <MapPin className="h-5 w-5 text-primary-600 mt-1" />
-                  <div>
-                    <p className="text-gray-700">eVALaunche Tech Solutions</p>
-                    <p className="text-gray-600 text-sm">Data Protection Officer</p>
-                    <p className="text-gray-600 text-sm">India</p>
-                  </div>
-                </div>
-              </div>
+              <p className="text-gray-600">
+                Please use our contact form on the main website to get in touch with our Data Protection Officer.
+              </p>
             </div>
           </div>
 

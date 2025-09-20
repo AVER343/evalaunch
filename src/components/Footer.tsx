@@ -1,6 +1,6 @@
 'use client';
 
-import { Code, Brain, Megaphone, Mail, Phone, MapPin, ArrowUp, Github, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Code, Brain, Megaphone, ArrowUp, Github, Twitter, Linkedin, Instagram } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -66,20 +66,6 @@ const Footer = () => {
               Transforming businesses through innovative technology solutions. 
               We deliver excellence in software development, AI/ML, and digital marketing.
             </p>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-primary-400" />
-                <span className="text-gray-400">ashish.amrev@gmail.com</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-primary-400" />
-                <span className="text-gray-400">+91-821-9973883</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="h-5 w-5 text-primary-400" />
-                <span className="text-gray-400">India</span>
-              </div>
-            </div>
           </div>
 
           {/* Services */}
