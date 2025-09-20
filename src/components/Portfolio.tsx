@@ -127,7 +127,7 @@ const Portfolio = ({ onStartProject }: PortfolioProps) => {
             Our <span className="text-primary-600">Portfolio</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore our successful projects and see how we've helped businesses 
+            Explore our successful projects and see how we&apos;ve helped businesses 
             achieve their goals through innovative technology solutions.
           </p>
         </div>
@@ -215,7 +215,7 @@ const Portfolio = ({ onStartProject }: PortfolioProps) => {
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">What Our Clients Say</h3>
             <p className="text-lg text-gray-600">
-              Don't just take our word for it - hear from our satisfied clients
+              Don&apos;t just take our word for it - hear from our satisfied clients
             </p>
           </div>
 
@@ -231,7 +231,7 @@ const Portfolio = ({ onStartProject }: PortfolioProps) => {
                     <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-700 mb-4 leading-relaxed">"{testimonial.content}"</p>
+                <p className="text-gray-700 mb-4 leading-relaxed">&quot;{testimonial.content}&quot;</p>
                 <div className="border-t pt-4">
                   <div className="font-semibold text-gray-900">{testimonial.name}</div>
                   <div className="text-xs text-primary-600 mt-1">{testimonial.project}</div>
