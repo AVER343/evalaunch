@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { Mail, Send, MessageCircle, CheckCircle } from 'lucide-react';
+import { Send, MessageCircle, CheckCircle } from 'lucide-react';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 interface ContactProps {
@@ -78,21 +78,12 @@ const Contact = ({ onStartProject }: ContactProps) => {
       }
     } catch (error) {
       console.error('Error sending email:', error);
-      alert('Failed to send email. Please try again or contact us directly at ashish.amrev@gmail.com');
+      alert('Failed to send email. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: 'Email',
-      details: ['ashish.amrev@gmail.com'],
-      description: 'Send us an email anytime',
-      color: 'primary'
-    }
-  ];
 
   const services = [
     'Software Development',
@@ -174,37 +165,6 @@ const Contact = ({ onStartProject }: ContactProps) => {
                 </ul>
               </div>
             </div>
-
-            {/* Contact Cards */}
-            <div className="max-w-md">
-              {contactInfo.map((info, index) => (
-                <div
-                  key={index}
-                  className="p-6 bg-gray-50 rounded-2xl hover-lift border border-gray-100 animate-slide-up"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className={`inline-flex p-3 rounded-xl mb-4 ${
-                    info.color === 'primary' ? 'bg-primary-100' :
-                    info.color === 'secondary' ? 'bg-secondary-100' :
-                    'bg-accent-100'
-                  }`}>
-                    <info.icon className={`h-6 w-6 ${
-                      info.color === 'primary' ? 'text-primary-600' :
-                      info.color === 'secondary' ? 'text-secondary-600' :
-                      'text-accent-600'
-                    }`} />
-                  </div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">{info.title}</h4>
-                  <p className="text-gray-500 text-sm mb-3">{info.description}</p>
-                  {info.details.map((detail, detailIndex) => (
-                    <p key={detailIndex} className="text-gray-600 text-sm font-medium">
-                      {detail}
-                    </p>
-                  ))}
-                </div>
-              ))}
-            </div>
-
           </div>
 
           {/* Contact Form */}
