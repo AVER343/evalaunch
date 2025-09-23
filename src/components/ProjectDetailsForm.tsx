@@ -1,8 +1,7 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { X, Send, CheckCircle, DollarSign, Calendar, Code } from 'lucide-react';
-import ReCAPTCHA from 'react-google-recaptcha';
 
 interface ProjectDetailsFormProps {
   isOpen: boolean;
@@ -22,8 +21,6 @@ const ProjectDetailsForm = ({ isOpen, onClose }: ProjectDetailsFormProps) => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [captchaValue, setCaptchaValue] = useState<string | null>(null);
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const projectTypes = [
     'Website Development',
@@ -58,17 +55,10 @@ const ProjectDetailsForm = ({ isOpen, onClose }: ProjectDetailsFormProps) => {
     }));
   };
 
-  const handleCaptchaChange = (value: string | null) => {
-    setCaptchaValue(value);
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!captchaValue) {
-      alert('Please complete the CAPTCHA verification');
-      return;
-    }
     
     setIsSubmitting(true);
     
@@ -78,16 +68,11 @@ const ProjectDetailsForm = ({ isOpen, onClose }: ProjectDetailsFormProps) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          ...formData,
-          captchaToken: captchaValue
-        }),
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
         setIsSubmitted(true);
-        recaptchaRef.current?.reset();
-        setCaptchaValue(null);
         setFormData({
           name: '',
           email: '',
@@ -293,21 +278,12 @@ const ProjectDetailsForm = ({ isOpen, onClose }: ProjectDetailsFormProps) => {
             </div>
           </div>
 
-          {/* CAPTCHA */}
-          <div className="flex justify-center">
-            <ReCAPTCHA
-              ref={recaptchaRef}
-              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'}
-              onChange={handleCaptchaChange}
-              theme="light"
-            />
-          </div>
 
           {/* Submit Button */}
           <div className="pt-6">
             <button
               type="submit"
-              disabled={isSubmitting || !captchaValue}
+              disabled={isSubmitting}
               className="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-4 px-6 rounded-lg hover:from-primary-700 hover:to-primary-800 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-300 font-semibold text-lg flex items-center justify-center space-x-2 group shadow-lg hover:shadow-xl"
             >
               {isSubmitting ? (

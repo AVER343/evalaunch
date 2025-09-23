@@ -10,7 +10,7 @@ const About = ({ onStartProject }: AboutProps) => {
   const stats = [
     { number: '100+', label: 'Projects Completed', icon: Target },
     { number: '50+', label: 'Happy Clients', icon: Users },
-    { number: '5+', label: 'Years Experience', icon: Award },
+    { number: '10+', label: 'Years Experience', icon: Award },
     { number: '99%', label: 'Client Satisfaction', icon: TrendingUp }
   ];
 

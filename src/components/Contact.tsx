@@ -1,8 +1,7 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Send, MessageCircle, CheckCircle } from 'lucide-react';
-import ReCAPTCHA from 'react-google-recaptcha';
 
 interface ContactProps {
   onStartProject: () => void;
@@ -19,8 +18,6 @@ const Contact = ({ onStartProject }: ContactProps) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [captchaValue, setCaptchaValue] = useState<string | null>(null);
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -30,18 +27,10 @@ const Contact = ({ onStartProject }: ContactProps) => {
     }));
   };
 
-  const handleCaptchaChange = (value: string | null) => {
-    setCaptchaValue(value);
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Validate CAPTCHA
-    if (!captchaValue) {
-      alert('Please complete the CAPTCHA verification');
-      return;
-    }
     
     setIsSubmitting(true);
     
@@ -51,10 +40,7 @@ const Contact = ({ onStartProject }: ContactProps) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          ...formData,
-          captchaToken: captchaValue
-        }),
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
@@ -70,8 +56,6 @@ const Contact = ({ onStartProject }: ContactProps) => {
             service: '',
             message: ''
           });
-          setCaptchaValue(null);
-          recaptchaRef.current?.reset();
         }, 3000);
       } else {
         throw new Error('Failed to send email');
@@ -285,19 +269,6 @@ const Contact = ({ onStartProject }: ContactProps) => {
                     />
                   </div>
 
-                  <div className="flex justify-center">
-                    <ReCAPTCHA
-                      ref={recaptchaRef}
-                      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'}
-                      onChange={handleCaptchaChange}
-                      theme="light"
-                    />
-                    {(!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY === 'your_site_key_here') && (
-                      <p className="text-xs text-gray-500 mt-2 text-center">
-                        ⚠️ Using test reCAPTCHA. Configure NEXT_PUBLIC_RECAPTCHA_SITE_KEY for production.
-                      </p>
-                    )}
-                  </div>
 
                   <button
                     type="submit"
@@ -322,33 +293,6 @@ const Contact = ({ onStartProject }: ContactProps) => {
           </div>
         </div>
 
-        {/* Additional Info */}
-        <div className="mt-20 text-center">
-          <div className="bg-gradient-to-r from-primary-50 via-secondary-50 to-accent-50 rounded-3xl p-12 border border-gray-100">
-            <div className="flex items-center justify-center space-x-2 mb-6">
-              <MessageCircle className="h-8 w-8 text-primary-600" />
-              <h3 className="text-2xl font-bold text-gray-900">Ready to Explore Your Project?</h3>
-            </div>
-            <p className="text-gray-600 mb-8 text-lg max-w-2xl mx-auto">
-              Ready to explore your project ideas? Start with our AI chat assistant to get instant insights, 
-              then connect with our team for personalized consultation and detailed project planning.
-            </p>
-            
-            {/* CTA Option */}
-            <div className="flex justify-center">
-              <div className="bg-white p-8 rounded-xl shadow-lg hover-lift max-w-md w-full">
-                <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <MessageCircle className="h-8 w-8 text-primary-600" />
-                </div>
-                <h4 className="font-semibold text-gray-900 mb-3 text-center text-xl">AI Chat Assistant</h4>
-                <p className="text-gray-600 text-center mb-6">Discuss your project ideas with our AI assistant. Get instant insights and guidance, then connect with our team for detailed consultation.</p>
-                <button className="w-full bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors duration-300 font-medium text-lg">
-                  Start AI Chat
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

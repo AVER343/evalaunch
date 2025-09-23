@@ -132,7 +132,7 @@ const Hero = ({ onStartProject }: HeroProps) => {
               <div className="text-gray-600 font-medium">Happy Clients</div>
             </div>
             <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 hover-lift">
-              <div className="text-4xl font-bold text-gray-900 mb-2">5+</div>
+              <div className="text-4xl font-bold text-gray-900 mb-2">10+</div>
               <div className="text-gray-600 font-medium">Years Experience</div>
             </div>
             <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 hover-lift">

@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY);
   
   try {
-    const { name, email, subject, message, service, company, captchaToken } = await request.json();
+    const { name, email, subject, message, service, company } = await request.json();
 
     // Validate required fields
     if (!name || !email || !message) {
@@ -31,39 +31,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validate CAPTCHA
-    if (!captchaToken) {
-      return NextResponse.json(
-        { error: 'CAPTCHA verification is required' },
-        { status: 400 }
-      );
-    }
-
-    // Verify CAPTCHA with Google
-    const secretKey = process.env.RECAPTCHA_SECRET_KEY || '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe';
-    
-    // Log warning if using test key
-    if (!process.env.RECAPTCHA_SECRET_KEY || process.env.RECAPTCHA_SECRET_KEY === 'your_secret_key_here') {
-      console.warn('⚠️ Using test reCAPTCHA secret key. Configure RECAPTCHA_SECRET_KEY for production.');
-    }
-    
-    const captchaResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: `secret=${secretKey}&response=${captchaToken}`,
-    });
-
-    const captchaResult = await captchaResponse.json();
-    
-    if (!captchaResult.success) {
-      console.error('CAPTCHA verification failed:', captchaResult);
-      return NextResponse.json(
-        { error: 'CAPTCHA verification failed. Please try again.' },
-        { status: 400 }
-      );
-    }
 
     // Check if Resend API key is configured
     // if (!process.env.RESEND_API_KEY) {

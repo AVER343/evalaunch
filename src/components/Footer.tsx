@@ -21,10 +21,10 @@ const Footer = () => {
       { name: 'Contact', href: '#contact' }
     ],
     resources: [
-      { name: 'Blog', href: '#' },
-      { name: 'Case Studies', href: '#portfolio' },
-      { name: 'Documentation', href: '#' },
-      { name: 'Support', href: '#contact' }
+      { name: 'Blog', href: '/blog' },
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Documentation', href: '/documentation' },
+      { name: 'Support', href: '/support' }
     ],
     legal: [
       { name: 'Privacy Policy', href: '/legal/privacy-policy' },
