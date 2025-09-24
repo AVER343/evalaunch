@@ -1,11 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { ArrowLeft, Code, Brain, Megaphone, CheckCircle, Star, Users, Clock, DollarSign, Shield, Zap, Globe, Cloud, Palette, TestTube, Rocket, LifeBuoy, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
-export default function ServicesPage() {
+function ServicesContent() {
   const [activeService, setActiveService] = useState(0);
   const searchParams = useSearchParams();
 
@@ -433,5 +433,40 @@ export default function ServicesPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+// Loading component for Suspense fallback
+function ServicesLoading() {
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <div className="bg-white shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex items-center justify-between">
+            <Link href="/" className="flex items-center space-x-2 text-gray-600 hover:text-primary-600 transition-colors duration-200">
+              <ArrowLeft className="h-5 w-5" />
+              <span>Back to Home</span>
+            </Link>
+            <h1 className="text-2xl font-bold text-gray-900">Our Services</h1>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading services...</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Main export with Suspense wrapper
+export default function ServicesPage() {
+  return (
+    <Suspense fallback={<ServicesLoading />}>
+      <ServicesContent />
+    </Suspense>
   );
 }
