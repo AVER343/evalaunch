@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Menu, X, Code, Brain, Megaphone } from 'lucide-react';
+import { Menu, X, Code, Brain, Megaphone, ChevronDown } from 'lucide-react';
 
 interface HeaderProps {
   onStartProject: () => void;
@@ -10,6 +10,7 @@ interface HeaderProps {
 const Header = ({ onStartProject }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,12 +21,47 @@ const Header = ({ onStartProject }: HeaderProps) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (isServicesOpen) {
+        const target = event.target as Element;
+        if (!target.closest('[data-services-dropdown]')) {
+          setIsServicesOpen(false);
+        }
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isServicesOpen]);
+
   const navigation = [
     { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
     { name: 'About', href: '#about' },
     { name: 'Portfolio', href: '#portfolio' },
     { name: 'Contact', href: '#contact' },
+  ];
+
+  const services = [
+    {
+      name: 'Software Development',
+      href: '#software-development',
+      icon: Code,
+      description: 'Custom web and mobile applications'
+    },
+    {
+      name: 'AI/ML Solutions',
+      href: '#ai-ml-solutions',
+      icon: Brain,
+      description: 'Intelligent automation and machine learning'
+    },
+    {
+      name: 'Digital Marketing',
+      href: '#digital-marketing',
+      icon: Megaphone,
+      description: 'Data-driven marketing strategies'
+    }
   ];
 
   return (
@@ -66,6 +102,62 @@ const Header = ({ onStartProject }: HeaderProps) => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
               </a>
             ))}
+            
+            {/* Services Dropdown */}
+            <div className="relative" data-services-dropdown>
+              <button
+                onClick={() => setIsServicesOpen(!isServicesOpen)}
+                className="text-gray-700 hover:text-yellow-600 transition-all duration-300 font-semibold relative group flex items-center space-x-1"
+              >
+                <span>Services</span>
+                <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
+              </button>
+              
+              {/* Dropdown Menu */}
+              {isServicesOpen && (
+                <div className="absolute top-full left-0 mt-2 w-80 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 py-4 z-50">
+                  <div className="px-4 py-2">
+                    <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Our Services</h3>
+                    <div className="space-y-2">
+                      {services.map((service) => {
+                        const IconComponent = service.icon;
+                        return (
+                          <a
+                            key={service.name}
+                            href={service.href}
+                            className="flex items-start space-x-3 p-3 rounded-xl hover:bg-yellow-50 transition-all duration-300 group"
+                            onClick={() => setIsServicesOpen(false)}
+                          >
+                            <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                              <IconComponent className="h-5 w-5 text-white" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h4 className="text-sm font-semibold text-gray-900 group-hover:text-yellow-600 transition-colors duration-300">
+                                {service.name}
+                              </h4>
+                              <p className="text-xs text-gray-500 mt-1">
+                                {service.description}
+                              </p>
+                            </div>
+                          </a>
+                        );
+                      })}
+                    </div>
+                    <div className="mt-4 pt-4 border-t border-gray-200">
+                      <a
+                        href="#services"
+                        className="block text-center text-sm font-semibold text-yellow-600 hover:text-yellow-700 transition-colors duration-300"
+                        onClick={() => setIsServicesOpen(false)}
+                      >
+                        View All Services →
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+            
             <button 
               onClick={onStartProject}
               className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-8 py-3 rounded-xl hover:from-yellow-600 hover:to-orange-600 transition-all duration-300 font-bold shadow-lg hover:shadow-xl hover:scale-105"
@@ -103,6 +195,59 @@ const Header = ({ onStartProject }: HeaderProps) => {
                   {item.name}
                 </a>
               ))}
+              
+              {/* Mobile Services Dropdown */}
+              <div className="px-4 py-2">
+                <button
+                  onClick={() => setIsServicesOpen(!isServicesOpen)}
+                  className="text-gray-700 hover:text-yellow-600 flex items-center justify-between w-full px-4 py-3 rounded-xl text-base font-semibold transition-all duration-300 hover:bg-yellow-50"
+                >
+                  <span>Services</span>
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {isServicesOpen && (
+                  <div className="mt-2 ml-4 space-y-2">
+                    {services.map((service) => {
+                      const IconComponent = service.icon;
+                      return (
+                        <a
+                          key={service.name}
+                          href={service.href}
+                          className="flex items-center space-x-3 px-4 py-2 rounded-lg hover:bg-yellow-50 transition-all duration-300 group"
+                          onClick={() => {
+                            setIsMenuOpen(false);
+                            setIsServicesOpen(false);
+                          }}
+                        >
+                          <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <IconComponent className="h-4 w-4 text-white" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="text-sm font-semibold text-gray-900 group-hover:text-yellow-600 transition-colors duration-300">
+                              {service.name}
+                            </h4>
+                            <p className="text-xs text-gray-500">
+                              {service.description}
+                            </p>
+                          </div>
+                        </a>
+                      );
+                    })}
+                    <a
+                      href="#services"
+                      className="block text-center text-sm font-semibold text-yellow-600 hover:text-yellow-700 transition-colors duration-300 mt-3 pt-2 border-t border-gray-200"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsServicesOpen(false);
+                      }}
+                    >
+                      View All Services →
+                    </a>
+                  </div>
+                )}
+              </div>
+              
               <button 
                 onClick={onStartProject}
                 className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-6 py-3 rounded-xl hover:from-yellow-600 hover:to-orange-600 transition-all duration-300 font-bold mt-4 shadow-lg"

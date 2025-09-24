@@ -69,12 +69,15 @@ const Services = () => {
 
         {/* Services Grid */}
         <div className="grid lg:grid-cols-3 gap-8 mb-20">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl p-8 shadow-lg hover-lift border border-gray-100 animate-slide-up"
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
+          {services.map((service, index) => {
+            const serviceId = service.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+            return (
+              <div
+                key={index}
+                id={serviceId}
+                className="bg-white rounded-2xl p-8 shadow-lg hover-lift border border-gray-100 animate-slide-up scroll-mt-20"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
               <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${service.gradient} mb-6`}>
                 <service.icon className="h-8 w-8 text-white" />
               </div>
@@ -110,8 +113,9 @@ const Services = () => {
               >
                 Learn More
               </Link>
-            </div>
-          ))}
+              </div>
+            );
+          })}
         </div>
 
 
