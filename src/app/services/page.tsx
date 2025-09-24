@@ -1,11 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { ArrowLeft, Code, Brain, Megaphone, CheckCircle, Star, Users, Clock, DollarSign, Shield, Zap, Globe, Cloud, Palette, TestTube, Rocket, LifeBuoy, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ServicesPage() {
   const [activeService, setActiveService] = useState(0);
+  const searchParams = useSearchParams();
 
   const services = [
     {
@@ -201,6 +203,17 @@ export default function ServicesPage() {
       ]
     }
   ];
+
+  // Handle URL query parameters to set active service
+  useEffect(() => {
+    const serviceParam = searchParams.get('service');
+    if (serviceParam) {
+      const serviceIndex = services.findIndex(service => service.id === serviceParam);
+      if (serviceIndex !== -1) {
+        setActiveService(serviceIndex);
+      }
+    }
+  }, [searchParams]);
 
   const additionalServices = [
     {

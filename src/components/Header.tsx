@@ -46,19 +46,19 @@ const Header = ({ onStartProject }: HeaderProps) => {
   const services = [
     {
       name: 'Software Development',
-      href: '#software-development',
+      href: '/services?service=software-development',
       icon: Code,
       description: 'Custom web and mobile applications'
     },
     {
       name: 'AI/ML Solutions',
-      href: '#ai-ml-solutions',
+      href: '/services?service=ai-ml-solutions',
       icon: Brain,
       description: 'Intelligent automation and machine learning'
     },
     {
       name: 'Digital Marketing',
-      href: '#digital-marketing',
+      href: '/services?service=digital-marketing',
       icon: Megaphone,
       description: 'Data-driven marketing strategies'
     }
