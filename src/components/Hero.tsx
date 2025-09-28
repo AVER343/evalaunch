@@ -69,9 +69,9 @@ const Hero = ({ onStartProject }: HeroProps) => {
               </h1>
               
               <p className="text-2xl lg:text-3xl text-gray-600 leading-relaxed max-w-4xl mx-auto font-light">
-                We deliver cutting-edge technology solutions that drive growth, 
-                innovation, and success for businesses of all sizes. From custom 
-                software development to AI-powered insights and digital marketing excellence.
+                Expert software development company delivering cutting-edge technology solutions that drive business growth, 
+                innovation, and success. From custom web applications and mobile apps to AI-powered machine learning solutions 
+                and data-driven digital marketing strategies. Trusted by 50+ businesses worldwide.
               </p>
             </div>
 

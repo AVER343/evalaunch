@@ -4,6 +4,12 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, Calendar, User, Tag, Search, Filter, Clock, Eye, ThumbsUp } from 'lucide-react';
 
+export const metadata = {
+  title: "Software Development Blog | AI/ML Insights & Digital Marketing Tips",
+  description: "Expert insights on software development, AI/ML solutions, digital marketing strategies, and technology trends. Learn from industry professionals at eVALaunche.",
+  keywords: "software development blog, AI ML insights, digital marketing tips, web development tutorials, technology trends, programming guides",
+};
+
 export default function BlogPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');

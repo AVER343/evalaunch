@@ -59,11 +59,11 @@ const Services = () => {
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Our <span className="text-primary-600">Services</span>
+            Our <span className="text-primary-600">Software Development Services</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We provide comprehensive technology solutions that transform businesses 
-            and drive sustainable growth through innovation and expertise.
+            Expert software development company providing comprehensive technology solutions including custom web applications, 
+            mobile app development, AI/ML solutions, and digital marketing strategies that transform businesses and drive sustainable growth.
           </p>
         </div>
 
