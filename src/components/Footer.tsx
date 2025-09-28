@@ -62,10 +62,21 @@ const Footer = () => {
                 <span className="text-xs text-gray-400 font-medium -mt-1">Tech Solutions</span>
               </div>
             </div>
-            <p className="text-gray-400 mb-6 leading-relaxed">
+            <p className="text-gray-400 mb-4 leading-relaxed">
               Transforming businesses through innovative technology solutions. 
               We deliver excellence in software development, AI/ML, and digital marketing.
             </p>
+            <div className="text-gray-400">
+              <p className="text-sm">
+                <span className="font-medium">Email:</span>{' '}
+                <a 
+                  href="mailto:support@evalaunche.com" 
+                  className="text-primary-400 hover:text-primary-300 transition-colors duration-200"
+                >
+                  support@evalaunche.com
+                </a>
+              </p>
+            </div>
           </div>
 
           {/* Services */}

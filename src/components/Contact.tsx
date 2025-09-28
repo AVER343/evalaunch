@@ -1,81 +1,12 @@
 'use client';
 
-import { useState } from 'react';
-import { Send, MessageCircle, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 
 interface ContactProps {
   onStartProject: () => void;
 }
 
 const Contact = ({ onStartProject }: ContactProps) => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    subject: '',
-    service: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    
-    setIsSubmitting(true);
-    
-    try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setIsSubmitted(true);
-        // Reset form after 3 seconds
-        setTimeout(() => {
-          setIsSubmitted(false);
-          setFormData({
-            name: '',
-            email: '',
-            company: '',
-            subject: '',
-            service: '',
-            message: ''
-          });
-        }, 3000);
-      } else {
-        throw new Error('Failed to send email');
-      }
-    } catch (error) {
-      console.error('Error sending email:', error);
-      alert('Failed to send email. Please try again.');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-
-  const services = [
-    'Software Development',
-    'AI/ML Solutions',
-    'Digital Marketing',
-    'Consulting',
-    'Other'
-  ];
 
   return (
     <section id="contact" className="py-20 bg-white">
@@ -107,188 +38,71 @@ const Contact = ({ onStartProject }: ContactProps) => {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="max-w-4xl mx-auto">
           {/* Contact Information */}
-          <div className="space-y-8 animate-slide-in-left">
+          <div className="text-center space-y-8 animate-fade-in">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Let&apos;s Start a Conversation</h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Get in Touch</h3>
+              <p className="text-gray-600 leading-relaxed mb-8">
                 Ready to transform your business with cutting-edge technology? We&apos;re here to help you succeed. 
                 Whether you have a specific project in mind or just want to explore possibilities, 
                 we&apos;d love to hear from you and discuss how we can bring your vision to life.
               </p>
               
+              {/* Contact Details */}
+              <div className="bg-gradient-to-r from-primary-50 to-primary-100 rounded-2xl p-8 border border-primary-200">
+                <div className="flex flex-col items-center space-y-6">
+                  <div className="bg-primary-600 w-16 h-16 rounded-full flex items-center justify-center">
+                    <Mail className="h-8 w-8 text-white" />
+                  </div>
+                  
+                  <div className="text-center">
+                    <h4 className="text-2xl font-bold text-gray-900 mb-2">Email Us</h4>
+                    <a 
+                      href="mailto:support@evalaunche.com" 
+                      className="text-primary-600 text-xl font-semibold hover:text-primary-700 transition-colors duration-300"
+                    >
+                      support@evalaunche.com
+                    </a>
+                    <p className="text-gray-600 mt-2">We&apos;ll get back to you within 24 hours</p>
+                  </div>
+                </div>
+              </div>
+
               {/* Quick Stats */}
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="bg-gradient-to-r from-primary-50 to-primary-100 p-4 rounded-lg">
-                  <div className="text-2xl font-bold text-primary-600">24h</div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                <div className="bg-gradient-to-r from-secondary-50 to-secondary-100 p-6 rounded-lg">
+                  <div className="text-3xl font-bold text-secondary-600 mb-2">24h</div>
                   <div className="text-sm text-gray-600">Response Time</div>
                 </div>
-                <div className="bg-gradient-to-r from-secondary-50 to-secondary-100 p-4 rounded-lg">
-                  <div className="text-2xl font-bold text-secondary-600">100%</div>
+                <div className="bg-gradient-to-r from-accent-50 to-accent-100 p-6 rounded-lg">
+                  <div className="text-3xl font-bold text-accent-600 mb-2">100%</div>
                   <div className="text-sm text-gray-600">Client Satisfaction</div>
+                </div>
+                <div className="bg-gradient-to-r from-primary-50 to-primary-100 p-6 rounded-lg">
+                  <div className="text-3xl font-bold text-primary-600 mb-2">10+</div>
+                  <div className="text-sm text-gray-600">Years Experience</div>
                 </div>
               </div>
 
               {/* Call to Action */}
-              <div className="bg-gradient-to-r from-accent-50 to-accent-100 p-6 rounded-xl border border-accent-200">
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">Why Choose <span className="text-primary-600">eVALaunche</span>?</h4>
-                <ul className="space-y-2 text-sm text-gray-700">
-                  <li className="flex items-center space-x-2">
+              <div className="bg-gradient-to-r from-accent-50 to-accent-100 p-8 rounded-xl border border-accent-200 mt-8">
+                <h4 className="text-xl font-semibold text-gray-900 mb-4">Why Choose <span className="text-primary-600">eVALaunche</span>?</h4>
+                <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-700">
+                  <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
                     <span>Free consultation and project assessment</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
+                  </div>
+                  <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
                     <span>Transparent pricing with no hidden costs</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
+                  </div>
+                  <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
                     <span>24/7 support and maintenance</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="animate-slide-in-right">
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Send us a Message</h3>
-                <p className="text-gray-600">Fill out the form below and we&apos;ll get back to you within 24 hours</p>
-              </div>
-              
-              {isSubmitted ? (
-                <div className="text-center py-12">
-                  <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="h-8 w-8 text-green-600" />
                   </div>
-                  <h4 className="text-xl font-semibold text-gray-900 mb-2">Message Sent!</h4>
-                  <p className="text-gray-600">Thank you for your message. We&apos;ll get back to you within 24 hours.</p>
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
-                        placeholder="Your full name"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
-                        placeholder="your@email.com"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                        Company
-                      </label>
-                      <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
-                        placeholder="Your company name"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-                        Service Interest
-                      </label>
-                      <select
-                        id="service"
-                        name="service"
-                        value={formData.service}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
-                      >
-                        <option value="">Select a service</option>
-                        {services.map((service, index) => (
-                          <option key={index} value={service}>
-                            {service}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                      Subject
-                    </label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
-                      placeholder="Brief subject of your inquiry"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                      Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      required
-                      rows={6}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200 resize-none"
-                      placeholder="Tell us about your project and how we can help..."
-                    />
-                  </div>
-
-
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-primary-600 text-white py-4 px-6 rounded-lg hover:bg-primary-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors duration-300 font-semibold text-lg flex items-center justify-center space-x-2 group"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                        <span>Sending...</span>
-                      </>
-                    ) : (
-                      <>
-                        <Send className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                        <span>Send Message</span>
-                      </>
-                    )}
-                  </button>
-                </form>
-              )}
+              </div>
             </div>
           </div>
         </div>
