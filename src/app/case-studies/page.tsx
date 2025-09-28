@@ -392,13 +392,13 @@ export default function CaseStudiesPage() {
           <p className="text-xl mb-8 opacity-90">
             Let&apos;s discuss how we can help you achieve similar results for your business.
           </p>
-          <Link
-            href="/#contact"
+          <a
+            href="mailto:support@evalaunche.com?subject=Project Inquiry&body=Hello, I would like to discuss a project with eVALaunche. Please provide more information about your services."
             className="inline-flex items-center space-x-2 bg-white text-primary-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-300 font-semibold text-lg"
           >
             <span>Get Started Today</span>
             <ArrowLeft className="h-5 w-5 rotate-180" />
-          </Link>
+          </a>
         </div>
       </div>
     </div>

@@ -423,13 +423,13 @@ function ServicesContent() {
               <p className="text-sm opacity-90">Agile development with regular milestones</p>
             </div>
           </div>
-          <Link 
-            href="/#contact"
+          <a 
+            href="mailto:support@evalaunche.com?subject=Project Inquiry&body=Hello, I would like to discuss a project with eVALaunche. Please provide more information about your services."
             className="inline-flex items-center space-x-2 bg-white text-primary-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-300 font-semibold text-lg"
           >
             <span>Get Started Today</span>
             <ArrowRight className="h-5 w-5" />
-          </Link>
+          </a>
         </div>
       </div>
     </div>

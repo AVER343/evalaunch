@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
@@ -8,29 +7,21 @@ import About from '@/components/About';
 import Portfolio from '@/components/Portfolio';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import ProjectDetailsForm from '@/components/ProjectDetailsForm';
 
 export default function Home() {
-  const [isProjectFormOpen, setIsProjectFormOpen] = useState(false);
-
-  const openProjectForm = () => {
-    setIsProjectFormOpen(true);
-  };
-
-  const closeProjectForm = () => {
-    setIsProjectFormOpen(false);
+  const openEmailClient = () => {
+    window.location.href = 'mailto:support@evalaunche.com?subject=Project Inquiry&body=Hello, I would like to discuss a project with eVALaunche. Please provide more information about your services.';
   };
 
   return (
     <main className="min-h-screen">
-      <Header onStartProject={openProjectForm} />
-      <Hero onStartProject={openProjectForm} />
+      <Header onStartProject={openEmailClient} />
+      <Hero onStartProject={openEmailClient} />
       <Services />
-      <About onStartProject={openProjectForm} />
-      <Portfolio onStartProject={openProjectForm} />
-      <Contact onStartProject={openProjectForm} />
+      <About onStartProject={openEmailClient} />
+      <Portfolio onStartProject={openEmailClient} />
+      <Contact onStartProject={openEmailClient} />
       <Footer />
-      <ProjectDetailsForm isOpen={isProjectFormOpen} onClose={closeProjectForm} />
     </main>
   );
 }
