@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { ArrowRight, Play, Code, Brain, Megaphone, CheckCircle } from 'lucide-react';
+import { ArrowRight, Play, Code, Brain, Megaphone, CheckCircle, MessageCircle } from 'lucide-react';
+import { useChatbot } from './ChatbotProvider';
 
 interface HeroProps {
   onStartProject: () => void;
@@ -9,6 +10,7 @@ interface HeroProps {
 
 const Hero = ({ onStartProject }: HeroProps) => {
   const [currentText, setCurrentText] = useState(0);
+  const { openChatbot } = useChatbot();
   
   const texts = [
     'Software Development',
@@ -103,10 +105,13 @@ const Hero = ({ onStartProject }: HeroProps) => {
                 <ArrowRight className="h-7 w-7 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
               </button>
               
-              <button className="group relative bg-white/90 backdrop-blur-sm border-2 border-blue-500 text-blue-600 px-12 py-6 rounded-3xl hover:bg-blue-600 hover:text-white transition-all duration-300 font-bold text-xl flex items-center justify-center space-x-4 shadow-xl hover-lift">
+              <button 
+                onClick={openChatbot}
+                className="group relative bg-white/90 backdrop-blur-sm border-2 border-blue-500 text-blue-600 px-12 py-6 rounded-3xl hover:bg-blue-600 hover:text-white transition-all duration-300 font-bold text-xl flex items-center justify-center space-x-4 shadow-xl hover-lift"
+              >
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-3xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-                <Play className="h-7 w-7 group-hover:scale-110 transition-transform duration-300 relative z-10" />
-                <span className="relative z-10">Watch Demo</span>
+                <MessageCircle className="h-7 w-7 group-hover:scale-110 transition-transform duration-300 relative z-10" />
+                <span className="relative z-10">Chat with AI</span>
               </button>
             </div>
           </div>
