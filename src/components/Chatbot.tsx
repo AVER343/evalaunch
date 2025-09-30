@@ -29,7 +29,6 @@ const Chatbot = ({ isOpen, onClose, onOpen }: ChatbotProps) => {
   const [inputText, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [conversationCount, setConversationCount] = useState(0);
-  const [faqs, setFaqs] = useState<Array<{question: string, answer: string}>>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -37,33 +36,9 @@ const Chatbot = ({ isOpen, onClose, onOpen }: ChatbotProps) => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const saveFAQ = (question: string, answer: string) => {
-    const newFAQ = { question, answer };
-    setFaqs(prev => [...prev, newFAQ]);
-    
-    // Save to localStorage
-    const savedFAQs = JSON.parse(localStorage.getItem('chatbot-faqs') || '[]');
-    savedFAQs.push(newFAQ);
-    localStorage.setItem('chatbot-faqs', JSON.stringify(savedFAQs));
-  };
-
-  const loadFAQs = () => {
-    const savedFAQs = JSON.parse(localStorage.getItem('chatbot-faqs') || '[]');
-    setFaqs(savedFAQs);
-  };
-
-  const clearFAQs = () => {
-    setFaqs([]);
-    localStorage.removeItem('chatbot-faqs');
-  };
-
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
-
-  useEffect(() => {
-    loadFAQs();
-  }, []);
 
   useEffect(() => {
     if (isOpen && inputRef.current) {
@@ -109,10 +84,6 @@ const Chatbot = ({ isOpen, onClose, onOpen }: ChatbotProps) => {
       setMessages(prev => [...prev, botMessage]);
       setConversationCount(data.conversationCount || conversationCount + 1);
 
-      // Auto-save FAQ if it's a good Q&A pair
-      if (data.response && data.response.length > 20 && !data.conversationLimit) {
-        saveFAQ(inputText.trim(), data.response);
-      }
 
       // Check if conversation limit reached
       if (data.conversationLimit) {
@@ -123,7 +94,7 @@ const Chatbot = ({ isOpen, onClose, onOpen }: ChatbotProps) => {
       console.error('Error sending message:', error);
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: "I apologize, but I'm experiencing technical difficulties. Please email us directly at support@evalaunche.com for immediate assistance.",
+        text: "I'm experiencing technical difficulties. Please email support@evalaunche.com to discuss your project.",
         sender: 'bot',
         timestamp: new Date(),
       };
@@ -152,7 +123,7 @@ const Chatbot = ({ isOpen, onClose, onOpen }: ChatbotProps) => {
     <>
       {/* Chatbot Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-20 w-96 h-[600px] bg-white rounded-2xl shadow-2xl border border-gray-200 z-50 flex flex-col overflow-hidden hover:overflow-y-auto">
+        <div className="fixed top-4 right-20 w-[calc(100vw-32px)] max-w-96 h-[calc(100vh-32px)] bg-white rounded-2xl shadow-2xl border border-gray-200 z-50 flex flex-col overflow-hidden hover:overflow-y-auto">
           {/* Header */}
           <div className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white p-4 flex items-center justify-between">
             <div className="flex items-center space-x-3">
@@ -227,31 +198,6 @@ const Chatbot = ({ isOpen, onClose, onOpen }: ChatbotProps) => {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* FAQ Section */}
-          {faqs.length > 0 && (
-            <div className="px-4 pb-2">
-              <div className="flex justify-between items-center mb-2">
-                <p className="text-xs text-gray-500">Saved FAQs ({faqs.length}):</p>
-                <button
-                  onClick={clearFAQs}
-                  className="text-xs text-red-500 hover:text-red-700 transition-colors duration-200"
-                >
-                  Clear All
-                </button>
-              </div>
-              <div className="max-h-32 overflow-y-auto space-y-2">
-                {faqs.slice(-3).map((faq, index) => (
-                  <div key={index} className="bg-gray-50 rounded-lg p-2">
-                    <p className="text-xs font-medium text-gray-700 mb-1">Q: {faq.question}</p>
-                    <p className="text-xs text-gray-600 line-clamp-2">A: {faq.answer}</p>
-                  </div>
-                ))}
-                {faqs.length > 3 && (
-                  <p className="text-xs text-gray-400 text-center">+{faqs.length - 3} more...</p>
-                )}
-              </div>
-            </div>
-          )}
 
           {/* Quick Actions */}
           {messages.length === 1 && (
