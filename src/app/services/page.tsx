@@ -323,7 +323,7 @@ export default function ServicesPage() {
                     <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-700 mb-6 italic">"{testimonial.content}"</p>
+                <p className="text-gray-700 mb-6 italic">&ldquo;{testimonial.content}&rdquo;</p>
                 <div className="border-t border-gray-200 pt-4">
                   <div className="font-semibold text-gray-900">{testimonial.name}</div>
                   <div className="text-sm text-gray-600">{testimonial.role}, {testimonial.company}</div>
