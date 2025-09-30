@@ -72,7 +72,7 @@ export default function AboutPage() {
       name: 'David Wilson',
       company: 'TechCorp Solutions',
       role: 'CEO',
-      content: 'eVALaunche has been instrumental in our digital transformation. Their team\'s expertise and dedication are unmatched.',
+      content: 'eVALaunche has been instrumental in our digital transformation. Their team&apos;s expertise and dedication are unmatched.',
       rating: 5
     },
     {
@@ -235,7 +235,7 @@ export default function AboutPage() {
               What Our <span className="text-yellow-600">Clients</span> Say
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Don't just take our word for it. Here's what our satisfied clients have to say about working with us.
+              Don&apos;t just take our word for it. Here&apos;s what our satisfied clients have to say about working with us.
             </p>
           </div>
 
@@ -265,7 +265,7 @@ export default function AboutPage() {
             Ready to Work With Us?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-            Let's discuss your project and see how we can help you achieve your business goals with our expert team.
+            Let&apos;s discuss your project and see how we can help you achieve your business goals with our expert team.
           </p>
           <button 
             onClick={openEmailClient}

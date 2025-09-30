@@ -258,7 +258,7 @@ export default function ServicesPage() {
                     Ready to Get Started?
                   </h3>
                   <p className="text-gray-600 mb-6">
-                    Let's discuss your project and create something amazing together.
+                    Let&apos;s discuss your project and create something amazing together.
                   </p>
                   <button 
                     onClick={openEmailClient}
@@ -311,7 +311,7 @@ export default function ServicesPage() {
               What Our <span className="text-yellow-600">Clients</span> Say
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Don't just take our word for it. Here's what our satisfied clients have to say about our services.
+              Don&apos;t just take our word for it. Here&apos;s what our satisfied clients have to say about our services.
             </p>
           </div>
 
@@ -381,7 +381,7 @@ export default function ServicesPage() {
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-            Let's discuss your project and see how we can help you achieve your goals with our expert services.
+            Let&apos;s discuss your project and see how we can help you achieve your goals with our expert services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
