@@ -57,9 +57,15 @@ const Hero = ({ onStartProject }: HeroProps) => {
           {/* Main Content */}
           <div className="space-y-8 animate-fade-in max-w-5xl">
             <div className="space-y-6">
-              <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-yellow-100 to-blue-100 rounded-full text-sm font-medium text-gray-700 mb-6 border border-yellow-200/50 shadow-lg">
-                <span className="w-3 h-3 bg-green-500 rounded-full mr-3 animate-pulse"></span>
-                Available for new projects
+              <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl text-base font-semibold text-gray-800 mb-8 border-2 border-green-200 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group">
+                <div className="relative mr-4">
+                  <div className="w-4 h-4 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full animate-pulse"></div>
+                  <div className="absolute inset-0 w-4 h-4 bg-green-400 rounded-full animate-ping opacity-75"></div>
+                </div>
+                <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                  Available for new projects
+                </span>
+                <div className="ml-3 w-2 h-2 bg-green-500 rounded-full animate-bounce"></div>
               </div>
               
               <h1 className="text-5xl lg:text-8xl font-bold text-gray-900 leading-tight font-['Poppins']">

@@ -33,11 +33,13 @@ export default function ChatbotProvider({ children }: ChatbotProviderProps) {
   return (
     <ChatbotContext.Provider value={{ isOpen, openChatbot, closeChatbot }}>
       {children}
-      <Chatbot isOpen={isOpen} onClose={closeChatbot} onOpen={openChatbot} />
+      <div className="hidden">
+        <Chatbot isOpen={isOpen} onClose={closeChatbot} onOpen={openChatbot} />
+      </div>
       {!isOpen && (
         <button
           onClick={openChatbot}
-          className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full shadow-lg transition-all duration-300 hover:scale-105 group backdrop-blur-sm border-2 bg-white/90 border-primary-500 hover:bg-primary-50 hover:border-primary-600"
+          className="hidden fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full shadow-lg transition-all duration-300 hover:scale-105 group backdrop-blur-sm border-2 bg-white/90 border-primary-500 hover:bg-primary-50 hover:border-primary-600"
           aria-label="Open Chatbot"
         >
           <div className="flex items-center justify-center w-full h-full">

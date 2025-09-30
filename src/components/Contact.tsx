@@ -70,13 +70,13 @@ const Contact = ({ onStartProject }: ContactProps) => {
                     
                     {/* AI Chatbot CTA */}
                     <div className="mt-6">
-                      <button
+                      {/* <button
                         onClick={openChatbot}
                         className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl"
                       >
                         <MessageCircle className="h-5 w-5" />
                         <span>Chat with our AI Assistant</span>
-                      </button>
+                      </button> */}
                       <p className="text-sm text-gray-500 mt-2">Get instant answers about our services</p>
                     </div>
                   </div>
@@ -100,19 +100,19 @@ const Contact = ({ onStartProject }: ContactProps) => {
               </div>
 
               {/* Call to Action */}
-              <div className="bg-gradient-to-r from-accent-50 to-accent-100 p-8 rounded-xl border border-accent-200 mt-8">
-                <h4 className="text-xl font-semibold text-gray-900 mb-4">Why Choose <span className="text-primary-600">eVALaunche</span>?</h4>
-                <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-700">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
+              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-8 rounded-xl border border-yellow-200 mt-8">
+                <h4 className="text-xl font-semibold text-gray-900 mb-6">Why Choose <span className="text-yellow-600">eVALaunche</span>?</h4>
+                <div className="grid md:grid-cols-3 gap-6 text-sm text-gray-700">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
                     <span>Free consultation and project assessment</span>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
                     <span>Transparent pricing with no hidden costs</span>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
                     <span>24/7 support and maintenance</span>
                   </div>
                 </div>

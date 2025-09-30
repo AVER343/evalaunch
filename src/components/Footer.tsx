@@ -9,21 +9,16 @@ const Footer = () => {
 
   const footerLinks = {
     services: [
-      { name: 'Software Development', href: '#services' },
-      { name: 'AI/ML Solutions', href: '#services' },
-      { name: 'Digital Marketing', href: '#services' },
-      { name: 'Consulting', href: '#services' }
+      { name: 'Software Development', href: '/services?service=software-development' },
+      { name: 'AI/ML Solutions', href: '/services?service=ai-ml-solutions' },
+      { name: 'Digital Marketing', href: '/services?service=digital-marketing' }
     ],
     company: [
-      { name: 'About Us', href: '#about' },
-      { name: 'Our Team', href: '#about' },
-      { name: 'Portfolio', href: '#portfolio' },
-      { name: 'Contact', href: '#contact' }
+      { name: 'About Us', href: '/about' },
+      { name: 'Portfolio', href: '/portfolio' },
+      { name: 'Case Studies', href: '/case-studies' }
     ],
     resources: [
-      { name: 'Blog', href: '/blog' },
-      { name: 'Case Studies', href: '/case-studies' },
-      { name: 'Documentation', href: '/documentation' },
       { name: 'Support', href: '/support' }
     ],
     legal: [
@@ -45,11 +40,11 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
-          {/* Company Info */}
-          <div className="lg:col-span-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+          {/* Company Info - Takes 2 columns on large screens */}
+          <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="flex items-center justify-center w-12 h-12 bg-primary-600 rounded-lg shadow-md">
+              <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg shadow-md">
                 <div className="flex items-center space-x-1">
                   <Code className="h-6 w-6 text-white" />
                   <Brain className="h-4 w-4 text-white" />
@@ -62,32 +57,31 @@ const Footer = () => {
                 <span className="text-xs text-gray-400 font-medium -mt-1">Tech Solutions</span>
               </div>
             </div>
-            <p className="text-gray-400 mb-4 leading-relaxed">
-              Transforming businesses through innovative technology solutions. 
-              We deliver excellence in software development, AI/ML, and digital marketing.
-            </p>
             <div className="text-gray-400">
-              <p className="text-sm">
+              <p className="text-sm mb-2">
                 <span className="font-medium">Email:</span>{' '}
                 <a 
                   href="mailto:support@evalaunche.com" 
-                  className="text-primary-400 hover:text-primary-300 transition-colors duration-200"
+                  className="text-yellow-400 hover:text-yellow-300 transition-colors duration-200"
                 >
                   support@evalaunche.com
                 </a>
+              </p>
+              <p className="text-sm">
+                <span className="font-medium">Available for new projects</span>
               </p>
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Services</h3>
+            <h3 className="text-lg font-semibold mb-6 text-white">Services</h3>
             <ul className="space-y-3">
               {footerLinks.services.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-200"
+                    className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 text-sm"
                   >
                     {link.name}
                   </a>
@@ -98,13 +92,13 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Company</h3>
+            <h3 className="text-lg font-semibold mb-6 text-white">Company</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-200"
+                    className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 text-sm"
                   >
                     {link.name}
                   </a>
@@ -115,13 +109,13 @@ const Footer = () => {
 
           {/* Resources & Legal */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Resources</h3>
+            <h3 className="text-lg font-semibold mb-6 text-white">Resources</h3>
             <ul className="space-y-3 mb-6">
               {footerLinks.resources.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-200"
+                    className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 text-sm"
                   >
                     {link.name}
                   </a>
@@ -129,13 +123,13 @@ const Footer = () => {
               ))}
             </ul>
             
-            <h3 className="text-lg font-semibold mb-6">Legal</h3>
+            <h3 className="text-lg font-semibold mb-6 text-white">Legal</h3>
             <ul className="space-y-3">
               {footerLinks.legal.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-200"
+                    className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 text-sm"
                   >
                     {link.name}
                   </a>
@@ -144,39 +138,42 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-
       </div>
 
       {/* Bottom Footer */}
       <div className="border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-gray-400 text-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
+            {/* Copyright */}
+            <div className="text-gray-400 text-sm text-center lg:text-left">
               © 2024 eVALaunche. All rights reserved.
             </div>
             
-            {/* Social Links */}
-            <div className="flex space-x-4">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
-                  aria-label={social.label}
-                >
-                  <social.icon className="h-5 w-5" />
-                </a>
-              ))}
-            </div>
+            {/* Social Links and Back to Top */}
+            <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+              {/* Social Links */}
+              <div className="flex space-x-6">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-800"
+                    aria-label={social.label}
+                  >
+                    <social.icon className="h-5 w-5" />
+                  </a>
+                ))}
+              </div>
 
-            {/* Back to Top Button */}
-            <button
-              onClick={scrollToTop}
-              className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-200"
-            >
-              <span className="text-sm">Back to top</span>
-              <ArrowUp className="h-4 w-4" />
-            </button>
+              {/* Back to Top Button */}
+              <button
+                onClick={scrollToTop}
+                className="flex items-center space-x-2 text-gray-400 hover:text-yellow-400 transition-colors duration-200 px-4 py-2 rounded-lg hover:bg-gray-800"
+              >
+                <span className="text-sm">Back to top</span>
+                <ArrowUp className="h-4 w-4" />
+              </button>
+            </div>
           </div>
         </div>
       </div>

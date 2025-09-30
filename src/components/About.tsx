@@ -101,24 +101,20 @@ const About = ({ onStartProject }: AboutProps) => {
               our innovation, quality, and commitment to client success. We envision a future 
               where technology seamlessly integrates with business strategy.
             </p>
-            <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-6 rounded-2xl">
-              <h4 className="text-xl font-semibold text-gray-900 mb-3">Why Choose Us?</h4>
-              <ul className="space-y-2">
-                <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                  <span className="text-gray-700">Proven track record of success</span>
+            <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-2xl border border-yellow-200">
+              <h4 className="text-xl font-semibold text-gray-900 mb-4">Why Choose <span className="text-yellow-600">eVALaunche</span>?</h4>
+              <ul className="space-y-3">
+                <li className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-700">Free consultation and project assessment</span>
                 </li>
-                <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                  <span className="text-gray-700">Cutting-edge technology expertise</span>
+                <li className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-700">Transparent pricing with no hidden costs</span>
                 </li>
-                <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                  <span className="text-gray-700">Dedicated support and maintenance</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                  <span className="text-gray-700">Competitive pricing and flexible terms</span>
+                <li className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-700">24/7 support and maintenance</span>
                 </li>
               </ul>
             </div>

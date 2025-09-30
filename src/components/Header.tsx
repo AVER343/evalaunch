@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Menu, X, Code, Brain, Megaphone, ChevronDown } from 'lucide-react';
+import { Menu, X, Code, Brain, Megaphone, ChevronDown, Home, Zap, HelpCircle, Users, Building2, Briefcase, FileText } from 'lucide-react';
 
 interface HeaderProps {
   onStartProject: () => void;
@@ -11,6 +11,8 @@ const Header = ({ onStartProject }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isCompanyOpen, setIsCompanyOpen] = useState(false);
+  const [isResourcesOpen, setIsResourcesOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,23 +26,55 @@ const Header = ({ onStartProject }: HeaderProps) => {
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (isServicesOpen) {
-        const target = event.target as Element;
-        if (!target.closest('[data-services-dropdown]')) {
-          setIsServicesOpen(false);
-        }
+      const target = event.target as Element;
+      
+      if (isServicesOpen && !target.closest('[data-services-dropdown]')) {
+        setIsServicesOpen(false);
+      }
+      if (isCompanyOpen && !target.closest('[data-company-dropdown]')) {
+        setIsCompanyOpen(false);
+      }
+      if (isResourcesOpen && !target.closest('[data-resources-dropdown]')) {
+        setIsResourcesOpen(false);
       }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isServicesOpen]);
+  }, [isServicesOpen, isCompanyOpen, isResourcesOpen]);
 
   const navigation = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/', icon: Home },
+  ];
+
+  const companyItems = [
+    {
+      name: 'About Us',
+      href: '/about',
+      icon: Building2,
+      description: 'Learn about our mission and team'
+    },
+    {
+      name: 'Portfolio',
+      href: '/portfolio',
+      icon: Briefcase,
+      description: 'View our latest projects'
+    },
+    {
+      name: 'Case Studies',
+      href: '/case-studies',
+      icon: FileText,
+      description: 'Detailed project success stories'
+    }
+  ];
+
+  const resourcesItems = [
+    {
+      name: 'Support',
+      href: '/support',
+      icon: HelpCircle,
+      description: 'Get help and contact us'
+    }
   ];
 
   const services = [
@@ -75,33 +109,93 @@ const Header = ({ onStartProject }: HeaderProps) => {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <div className="flex items-center space-x-1">
-                <Code className="h-6 w-6 text-white" />
-                <Brain className="h-4 w-4 text-white" />
+          <a 
+            href="/" 
+            className="flex items-center space-x-3 group cursor-pointer transition-all duration-300 hover:scale-105"
+          >
+            <div className="relative flex items-center justify-center w-14 h-14 bg-gradient-to-br from-yellow-500 via-orange-500 to-red-500 rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:rotate-3">
+              {/* Main icon container */}
+              <div className="flex items-center justify-center w-10 h-10 bg-white/20 rounded-xl backdrop-blur-sm">
+                <div className="relative">
+                  <Zap className="h-6 w-6 text-white drop-shadow-lg" />
+                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-white/30 rounded-full flex items-center justify-center">
+                    <Brain className="h-2 w-2 text-white" />
+                  </div>
+                </div>
               </div>
+              {/* Animated glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-sm"></div>
             </div>
             <div className="flex flex-col">
-              <span className="text-2xl font-bold text-gray-900 font-['Poppins']">
+              <span className="text-2xl font-bold text-gray-900 font-['Poppins'] group-hover:text-yellow-600 transition-colors duration-300">
                 eVALaunche
               </span>
-              <span className="text-xs text-gray-500 font-medium -mt-1">Tech Solutions</span>
+              <span className="text-xs text-gray-500 font-medium -mt-1 group-hover:text-yellow-500 transition-colors duration-300">Tech Solutions</span>
             </div>
-          </div>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-gray-700 hover:text-yellow-600 transition-all duration-300 font-semibold relative group"
+            {navigation.map((item) => {
+              const IconComponent = item.icon;
+              return (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-gray-700 hover:text-yellow-600 transition-all duration-300 font-semibold relative group flex items-center space-x-2"
+                >
+                  {IconComponent && <IconComponent className="h-4 w-4" />}
+                  <span>{item.name}</span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
+                </a>
+              );
+            })}
+            
+            {/* Company Dropdown */}
+            <div className="relative" data-company-dropdown>
+              <button
+                onClick={() => setIsCompanyOpen(!isCompanyOpen)}
+                className="text-gray-700 hover:text-yellow-600 transition-all duration-300 font-semibold relative group flex items-center space-x-1"
               >
-                {item.name}
+                <span>Company</span>
+                <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isCompanyOpen ? 'rotate-180' : ''}`} />
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
-              </a>
-            ))}
+              </button>
+              
+              {/* Company Dropdown Menu */}
+              {isCompanyOpen && (
+                <div className="absolute top-full left-0 mt-2 w-80 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 py-4 z-50">
+                  <div className="px-4 py-2">
+                    <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Our Company</h3>
+                    <div className="space-y-2">
+                      {companyItems.map((item) => {
+                        const IconComponent = item.icon;
+                        return (
+                          <a
+                            key={item.name}
+                            href={item.href}
+                            className="flex items-start space-x-3 p-3 rounded-xl hover:bg-yellow-50 transition-all duration-300 group"
+                            onClick={() => setIsCompanyOpen(false)}
+                          >
+                            <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                              <IconComponent className="h-5 w-5 text-white" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h4 className="text-sm font-semibold text-gray-900 group-hover:text-yellow-600 transition-colors duration-300">
+                                {item.name}
+                              </h4>
+                              <p className="text-xs text-gray-500 mt-1">
+                                {item.description}
+                              </p>
+                            </div>
+                          </a>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
             
             {/* Services Dropdown */}
             <div className="relative" data-services-dropdown>
@@ -146,12 +240,58 @@ const Header = ({ onStartProject }: HeaderProps) => {
                     </div>
                     <div className="mt-4 pt-4 border-t border-gray-200">
                       <a
-                        href="#services"
+                        href="/services"
                         className="block text-center text-sm font-semibold text-yellow-600 hover:text-yellow-700 transition-colors duration-300"
                         onClick={() => setIsServicesOpen(false)}
                       >
                         View All Services →
                       </a>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+            
+            {/* Resources Dropdown */}
+            <div className="relative" data-resources-dropdown>
+              <button
+                onClick={() => setIsResourcesOpen(!isResourcesOpen)}
+                className="text-gray-700 hover:text-yellow-600 transition-all duration-300 font-semibold relative group flex items-center space-x-1"
+              >
+                <span>Resources</span>
+                <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isResourcesOpen ? 'rotate-180' : ''}`} />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
+              </button>
+              
+              {/* Resources Dropdown Menu */}
+              {isResourcesOpen && (
+                <div className="absolute top-full left-0 mt-2 w-80 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 py-4 z-50">
+                  <div className="px-4 py-2">
+                    <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Resources</h3>
+                    <div className="space-y-2">
+                      {resourcesItems.map((item) => {
+                        const IconComponent = item.icon;
+                        return (
+                          <a
+                            key={item.name}
+                            href={item.href}
+                            className="flex items-start space-x-3 p-3 rounded-xl hover:bg-yellow-50 transition-all duration-300 group"
+                            onClick={() => setIsResourcesOpen(false)}
+                          >
+                            <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                              <IconComponent className="h-5 w-5 text-white" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h4 className="text-sm font-semibold text-gray-900 group-hover:text-yellow-600 transition-colors duration-300">
+                                {item.name}
+                              </h4>
+                              <p className="text-xs text-gray-500 mt-1">
+                                {item.description}
+                              </p>
+                            </div>
+                          </a>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
@@ -185,16 +325,20 @@ const Header = ({ onStartProject }: HeaderProps) => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 backdrop-blur-xl rounded-2xl mt-2 shadow-2xl border border-white/20">
-              {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-700 hover:text-yellow-600 block px-4 py-3 rounded-xl text-base font-semibold transition-all duration-300 hover:bg-yellow-50"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
-              ))}
+              {navigation.map((item) => {
+                const IconComponent = item.icon;
+                return (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-gray-700 hover:text-yellow-600 flex items-center space-x-3 px-4 py-3 rounded-xl text-base font-semibold transition-all duration-300 hover:bg-yellow-50"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {IconComponent && <IconComponent className="h-5 w-5" />}
+                    <span>{item.name}</span>
+                  </a>
+                );
+              })}
               
               {/* Mobile Services Dropdown */}
               <div className="px-4 py-2">
@@ -235,7 +379,7 @@ const Header = ({ onStartProject }: HeaderProps) => {
                       );
                     })}
                     <a
-                      href="#services"
+                      href="/services"
                       className="block text-center text-sm font-semibold text-yellow-600 hover:text-yellow-700 transition-colors duration-300 mt-3 pt-2 border-t border-gray-200"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -244,6 +388,48 @@ const Header = ({ onStartProject }: HeaderProps) => {
                     >
                       View All Services →
                     </a>
+                  </div>
+                )}
+              </div>
+              
+              {/* Mobile Resources Dropdown */}
+              <div className="px-4 py-2">
+                <button
+                  onClick={() => setIsResourcesOpen(!isResourcesOpen)}
+                  className="text-gray-700 hover:text-yellow-600 flex items-center justify-between w-full px-4 py-3 rounded-xl text-base font-semibold transition-all duration-300 hover:bg-yellow-50"
+                >
+                  <span>Resources</span>
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isResourcesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {isResourcesOpen && (
+                  <div className="mt-2 ml-4 space-y-2">
+                    {resourcesItems.map((item) => {
+                      const IconComponent = item.icon;
+                      return (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          className="flex items-center space-x-3 px-4 py-2 rounded-lg hover:bg-yellow-50 transition-all duration-300 group"
+                          onClick={() => {
+                            setIsMenuOpen(false);
+                            setIsResourcesOpen(false);
+                          }}
+                        >
+                          <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <IconComponent className="h-4 w-4 text-white" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="text-sm font-semibold text-gray-900 group-hover:text-yellow-600 transition-colors duration-300">
+                              {item.name}
+                            </h4>
+                            <p className="text-xs text-gray-500">
+                              {item.description}
+                            </p>
+                          </div>
+                        </a>
+                      );
+                    })}
                   </div>
                 )}
               </div>
