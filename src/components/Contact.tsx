@@ -1,6 +1,6 @@
 'use client';
 
-import { Mail, Phone, MapPin, Clock, MessageCircle } from 'lucide-react';
+import { Mail} from 'lucide-react';
 import { useChatbot } from './ChatbotProvider';
 
 interface ContactProps {
