@@ -66,7 +66,7 @@ export async function POST(request: NextRequest) {
     // Check conversation limit
     if (conversationCount >= 10) {
       return NextResponse.json({
-        response: "Thanks for chatting! You've reached the limit. Please email support@evalaunche.com for detailed assistance. We'd love to help you succeed!",
+        response: "Please email support@evalaunche.com to discuss your project.",
         conversationLimit: true
       });
     }
@@ -75,7 +75,7 @@ export async function POST(request: NextRequest) {
       console.error('GEMINI_API_KEY is not configured');
       return NextResponse.json(
         { 
-          response: "I apologize, but I'm currently experiencing technical difficulties. Please email our team directly at support@evalaunche.com for immediate assistance. We'd love to help you with your project!" 
+          response: "I'm experiencing technical difficulties. Please email support@evalaunche.com to discuss your project." 
         },
         { status: 200 }
       );
@@ -93,7 +93,7 @@ export async function POST(request: NextRequest) {
 
     if (isIrrelevant) {
       return NextResponse.json({
-        response: "I'm here to help with eVALaunche's software development, AI/ML, and digital marketing services. Please email support@evalaunche.com for other inquiries!",
+        response: "I'm here to help with eVALaunche's software development, AI/ML, and digital marketing services. How can I assist you with your project?",
         conversationCount: conversationCount + 1
       });
     }
@@ -118,7 +118,7 @@ export async function POST(request: NextRequest) {
     console.error('Chatbot API error:', error);
     return NextResponse.json(
       { 
-        response: "I'm experiencing some technical difficulties, but don't worry! Our expert team at eVALaunche is ready to help you succeed. Please email support@evalaunche.com and mention our conversation - they'll be thrilled to assist you with your project!" 
+        response: "I'm experiencing some technical difficulties. Please email support@evalaunche.com to discuss your project." 
       },
       { status: 200 }
     );
