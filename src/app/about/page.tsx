@@ -15,7 +15,7 @@ export default function AboutPage() {
     { icon: Users, label: 'Happy Clients', value: '15+', color: 'text-blue-600' },
     { icon: Code, label: 'Projects Delivered', value: '25+', color: 'text-green-600' },
     { icon: Award, label: 'Success Rate', value: '95%', color: 'text-yellow-600' },
-    { icon: Clock, label: 'Years Experience', value: '3+', color: 'text-purple-600' }
+    { icon: Clock, label: 'Years Experience', value: '8+', color: 'text-purple-600' }
   ];
 
   const values = [
