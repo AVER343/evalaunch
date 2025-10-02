@@ -10,7 +10,6 @@ const Header = ({}: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isCompanyOpen, setIsCompanyOpen] = useState(false);
-  const [isResourcesOpen, setIsResourcesOpen] = useState(false);
 
   const openEmailClient = () => {
     window.location.href = 'mailto:support@evalaunche.com?subject=Project Inquiry&body=Hello, I would like to discuss a project with eVALaunche. Please provide more information about your services.';
@@ -36,14 +35,11 @@ const Header = ({}: HeaderProps) => {
       if (isCompanyOpen && !target.closest('[data-company-dropdown]')) {
         setIsCompanyOpen(false);
       }
-      if (isResourcesOpen && !target.closest('[data-resources-dropdown]')) {
-        setIsResourcesOpen(false);
-      }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isServicesOpen, isCompanyOpen, isResourcesOpen]);
+  }, [isServicesOpen, isCompanyOpen]);
 
   const navigation = [
     { name: 'Home', href: '/', icon: Home },
@@ -64,14 +60,6 @@ const Header = ({}: HeaderProps) => {
     }
   ];
 
-  const resourcesItems = [
-    {
-      name: 'Support',
-      href: '/support',
-      icon: HelpCircle,
-      description: 'Get help and contact us'
-    }
-  ];
 
   const services = [
     {
@@ -248,51 +236,6 @@ const Header = ({}: HeaderProps) => {
               )}
             </div>
             
-            {/* Resources Dropdown */}
-            <div className="relative" data-resources-dropdown>
-              <button
-                onClick={() => setIsResourcesOpen(!isResourcesOpen)}
-                className="text-gray-700 hover:text-yellow-600 transition-all duration-300 font-semibold relative group flex items-center space-x-1"
-              >
-                <span>Resources</span>
-                <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isResourcesOpen ? 'rotate-180' : ''}`} />
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-500 to-orange-500 group-hover:w-full transition-all duration-300"></span>
-              </button>
-              
-              {/* Resources Dropdown Menu */}
-              {isResourcesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-80 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 py-4 z-50">
-                  <div className="px-4 py-2">
-                    <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Resources</h3>
-                    <div className="space-y-2">
-                      {resourcesItems.map((item) => {
-                        const IconComponent = item.icon;
-                        return (
-                          <a
-                            key={item.name}
-                            href={item.href}
-                            className="flex items-start space-x-3 p-3 rounded-xl hover:bg-yellow-50 transition-all duration-300 group"
-                            onClick={() => setIsResourcesOpen(false)}
-                          >
-                            <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                              <IconComponent className="h-5 w-5 text-white" />
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <h4 className="text-sm font-semibold text-gray-900 group-hover:text-yellow-600 transition-colors duration-300">
-                                {item.name}
-                              </h4>
-                              <p className="text-xs text-gray-500 mt-1">
-                                {item.description}
-                              </p>
-                            </div>
-                          </a>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
             
             <button 
               onClick={openEmailClient}
@@ -388,47 +331,6 @@ const Header = ({}: HeaderProps) => {
                 )}
               </div>
               
-              {/* Mobile Resources Dropdown */}
-              <div className="px-4 py-2">
-                <button
-                  onClick={() => setIsResourcesOpen(!isResourcesOpen)}
-                  className="text-gray-700 hover:text-yellow-600 flex items-center justify-between w-full px-4 py-3 rounded-xl text-base font-semibold transition-all duration-300 hover:bg-yellow-50"
-                >
-                  <span>Resources</span>
-                  <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isResourcesOpen ? 'rotate-180' : ''}`} />
-                </button>
-                
-                {isResourcesOpen && (
-                  <div className="mt-2 ml-4 space-y-2">
-                    {resourcesItems.map((item) => {
-                      const IconComponent = item.icon;
-                      return (
-                        <a
-                          key={item.name}
-                          href={item.href}
-                          className="flex items-center space-x-3 px-4 py-2 rounded-lg hover:bg-yellow-50 transition-all duration-300 group"
-                          onClick={() => {
-                            setIsMenuOpen(false);
-                            setIsResourcesOpen(false);
-                          }}
-                        >
-                          <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <IconComponent className="h-4 w-4 text-white" />
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <h4 className="text-sm font-semibold text-gray-900 group-hover:text-yellow-600 transition-colors duration-300">
-                              {item.name}
-                            </h4>
-                            <p className="text-xs text-gray-500">
-                              {item.description}
-                            </p>
-                          </div>
-                        </a>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
               
               <button 
                 onClick={openEmailClient}
