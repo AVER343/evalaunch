@@ -5,6 +5,24 @@ import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink, Calendar, Clock, Users, TrendingUp, Award, ArrowRight, CheckCircle } from 'lucide-react';
 
+interface CaseStudy {
+  id: number;
+  title: string;
+  industry: string;
+  service: string;
+  duration: string;
+  team: string;
+  year: string;
+  challenge: string;
+  solution: string;
+  results: string[];
+  technologies: string[];
+  testimonial: {
+    text: string;
+    author: string;
+  };
+}
+
 // Case studies data (same as in the main page)
 const caseStudies = [
   {
@@ -97,7 +115,7 @@ const services = [
 export default function CaseStudyDetailPage() {
   const params = useParams();
   const router = useRouter();
-  const [caseStudy, setCaseStudy] = useState(null);
+  const [caseStudy, setCaseStudy] = useState<CaseStudy | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -127,7 +145,7 @@ export default function CaseStudyDetailPage() {
         <div className="text-center">
           <div className="text-6xl mb-4">❌</div>
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Case Study Not Found</h1>
-          <p className="text-gray-600 mb-8">The case study you're looking for doesn't exist.</p>
+          <p className="text-gray-600 mb-8">The case study you&apos;re looking for doesn&apos;t exist.</p>
           <Link
             href="/case-studies"
             className="inline-flex items-center space-x-2 bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors duration-300"

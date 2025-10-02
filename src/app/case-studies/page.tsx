@@ -149,7 +149,7 @@ export default function CaseStudiesPage() {
             Case Studies
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed max-w-3xl">
-            Discover how we've helped businesses transform their operations with innovative technology solutions. 
+            Discover how we&apos;ve helped businesses transform their operations with innovative technology solutions. 
             Each case study showcases real challenges, solutions, and measurable results.
           </p>
         </div>
@@ -333,7 +333,7 @@ export default function CaseStudiesPage() {
         <div className="mt-16 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 text-center border border-blue-100">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Start Your Success Story?</h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Let's discuss how we can help you achieve similar results for your business. 
+            Let&apos;s discuss how we can help you achieve similar results for your business. 
             Our team is ready to transform your ideas into reality.
           </p>
           <a
