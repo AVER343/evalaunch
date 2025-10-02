@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Code, Brain, Megaphone, CheckCircle, ArrowRight, Users, Award, Target, Lightbulb, Shield, Zap, Globe, Star, Building2, Briefcase, Clock } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -11,10 +12,10 @@ export default function AboutPage() {
   };
 
   const stats = [
-    { icon: Users, label: 'Happy Clients', value: '150+', color: 'text-blue-600' },
-    { icon: Code, label: 'Projects Delivered', value: '500+', color: 'text-green-600' },
-    { icon: Award, label: 'Success Rate', value: '98%', color: 'text-yellow-600' },
-    { icon: Clock, label: 'Years Experience', value: '8+', color: 'text-purple-600' }
+    { icon: Users, label: 'Happy Clients', value: '15+', color: 'text-blue-600' },
+    { icon: Code, label: 'Projects Delivered', value: '25+', color: 'text-green-600' },
+    { icon: Award, label: 'Success Rate', value: '95%', color: 'text-yellow-600' },
+    { icon: Clock, label: 'Years Experience', value: '3+', color: 'text-purple-600' }
   ];
 
   const values = [
@@ -40,36 +41,27 @@ export default function AboutPage() {
     }
   ];
 
-  const team = [
-    {
-      name: 'Our Team',
-      role: 'Full-Stack Developers',
-      expertise: 'Software Development, AI/ML, Digital Marketing',
-      description: 'A dedicated team of experienced professionals passionate about delivering innovative technology solutions.'
-    }
-  ];
-
   const testimonials = [
     {
-      name: 'Client A',
-      company: 'Technology Company',
+      name: 'Sarah Johnson',
       role: 'CEO',
       content: 'eVALaunche has been instrumental in our digital transformation. Their expertise and dedication are unmatched.',
-      rating: 5
+      rating: 5,
+      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face'
     },
     {
-      name: 'Client B',
-      company: 'Innovation Lab',
+      name: 'Michael Chen',
       role: 'CTO',
       content: 'Working with eVALaunche was a game-changer. They delivered exactly what we needed, on time and within budget.',
-      rating: 5
+      rating: 5,
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face'
     },
     {
-      name: 'Client C',
-      company: 'Startup Company',
+      name: 'Emily Rodriguez',
       role: 'Founder',
       content: 'The solution they built for us increased our efficiency significantly. Highly recommend their services.',
-      rating: 4
+      rating: 4,
+      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face'
     }
   ];
 
@@ -181,33 +173,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Meet Our <span className="text-yellow-600">Team</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The talented individuals behind our success, dedicated to delivering exceptional results.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-2xl text-center hover:shadow-lg transition-shadow duration-300">
-                <div className="w-20 h-20 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="h-10 w-10 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
-                <p className="text-yellow-600 font-medium mb-2">{member.role}</p>
-                <p className="text-sm text-gray-600 mb-3">{member.expertise}</p>
-                <p className="text-gray-700 text-sm leading-relaxed">{member.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Testimonials */}
       <section className="py-16 bg-gray-50">
@@ -230,9 +195,18 @@ export default function AboutPage() {
                   ))}
                 </div>
                 <p className="text-gray-700 mb-6 italic">&ldquo;{testimonial.content}&rdquo;</p>
-                <div className="border-t border-gray-200 pt-4">
-                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                  <div className="text-sm text-gray-600">{testimonial.role}, {testimonial.company}</div>
+                <div className="border-t border-gray-200 pt-4 flex items-center space-x-4">
+                  <Image 
+                    src={testimonial.image} 
+                    alt={testimonial.name}
+                    width={48}
+                    height={48}
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
+                  <div>
+                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                    <div className="text-sm text-gray-600">{testimonial.role}</div>
+                  </div>
                 </div>
               </div>
             ))}
