@@ -31,23 +31,26 @@ const Hero = ({ onStartProject }: HeroProps) => {
   ];
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-yellow-50 via-white to-blue-50">
-      {/* Background Gradient */}
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-neutral-50 via-white to-primary-50">
+      {/* Modern Background Gradient */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 via-white to-blue-50"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-yellow-100/20 via-transparent to-blue-100/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-neutral-50 via-white to-primary-50"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary-100/30 via-transparent to-secondary-100/20"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-accent-100/20 via-transparent to-primary-100/30"></div>
       </div>
       
-      {/* Animated Background Elements */}
+      {/* Modern Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-yellow-300 to-yellow-400 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-pulse-slow"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-blue-300 to-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-pulse-slow"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-purple-300 to-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-pulse-slow"></div>
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-primary-300 to-primary-400 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-float"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-secondary-300 to-secondary-400 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-float-delay"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-accent-300 to-accent-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float-reverse"></div>
         
-        {/* Floating particles */}
-        <div className="absolute top-20 left-20 w-2 h-2 bg-yellow-400 rounded-full animate-bounce opacity-60"></div>
-        <div className="absolute top-40 right-32 w-3 h-3 bg-blue-400 rounded-full animate-bounce opacity-60" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-32 left-32 w-2 h-2 bg-purple-400 rounded-full animate-bounce opacity-60" style={{ animationDelay: '2s' }}></div>
+        {/* Modern floating particles */}
+        <div className="absolute top-20 left-20 w-2 h-2 bg-primary-400 rounded-full animate-bounce opacity-60"></div>
+        <div className="absolute top-40 right-32 w-3 h-3 bg-secondary-400 rounded-full animate-bounce opacity-60" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-32 left-32 w-2 h-2 bg-accent-400 rounded-full animate-bounce opacity-60" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-60 right-20 w-2 h-2 bg-primary-500 rounded-full animate-bounce opacity-60" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute bottom-20 right-40 w-3 h-3 bg-secondary-500 rounded-full animate-bounce opacity-60" style={{ animationDelay: '1.5s' }}></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -55,20 +58,20 @@ const Hero = ({ onStartProject }: HeroProps) => {
           {/* Main Content */}
           <div className="space-y-8 animate-fade-in max-w-5xl">
             <div className="space-y-6">
-              <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl text-base font-semibold text-gray-800 mb-8 border-2 border-green-200 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group">
+              <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-accent-50 to-accent-100 rounded-2xl text-base font-semibold text-neutral-800 mb-8 border-2 border-accent-200 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group">
                 <div className="relative mr-4">
-                  <div className="w-4 h-4 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full animate-pulse"></div>
-                  <div className="absolute inset-0 w-4 h-4 bg-green-400 rounded-full animate-ping opacity-75"></div>
+                  <div className="w-4 h-4 bg-gradient-to-r from-accent-500 to-accent-600 rounded-full animate-pulse"></div>
+                  <div className="absolute inset-0 w-4 h-4 bg-accent-400 rounded-full animate-ping opacity-75"></div>
                 </div>
-                <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-accent-600 to-accent-700 bg-clip-text text-transparent">
                   Available for new projects
                 </span>
-                <div className="ml-3 w-2 h-2 bg-green-500 rounded-full animate-bounce"></div>
+                <div className="ml-3 w-2 h-2 bg-accent-500 rounded-full animate-bounce"></div>
               </div>
               
-              <h1 className="text-5xl lg:text-8xl font-bold text-gray-900 leading-tight font-['Poppins']">
+              <h1 className="text-5xl lg:text-8xl font-bold text-neutral-900 leading-tight font-display">
                 <span className="block">Transform Your</span>
-                <span className="block bg-gradient-to-r from-yellow-500 via-yellow-600 to-orange-500 bg-clip-text text-transparent animate-pulse">
+                <span className="block text-gradient-hero animate-pulse">
                   {texts[currentText]}
                 </span>
                 <span className="block">Business</span>
@@ -81,18 +84,18 @@ const Hero = ({ onStartProject }: HeroProps) => {
               </p>
             </div>
 
-            {/* Enhanced Features Grid */}
+            {/* Modern Features Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
               {features.map((feature, index) => (
                 <div key={index} className="group relative">
-                  <div className="flex flex-col items-center space-y-4 p-8 bg-white/70 backdrop-blur-md rounded-2xl border border-white/30 hover-lift animate-slide-up shadow-xl hover:shadow-2xl transition-all duration-500" style={{ animationDelay: `${index * 0.2}s` }}>
+                  <div className="flex flex-col items-center space-y-4 p-8 card-gradient hover-lift animate-slide-up shadow-modern-lg hover:shadow-modern-2xl transition-all duration-500" style={{ animationDelay: `${index * 0.2}s` }}>
                     <div className="relative">
-                      <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-green-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                         <CheckCircle className="h-8 w-8 text-white" />
                       </div>
-                      <div className="absolute -inset-1 bg-gradient-to-r from-green-400 to-green-500 rounded-2xl blur opacity-30 group-hover:opacity-60 transition-opacity duration-300"></div>
+                      <div className="absolute -inset-1 bg-gradient-to-r from-primary-400 to-primary-500 rounded-2xl blur opacity-30 group-hover:opacity-60 transition-opacity duration-300"></div>
                     </div>
-                    <span className="text-gray-800 font-bold text-lg text-center group-hover:text-green-600 transition-colors duration-300">{feature}</span>
+                    <span className="text-neutral-800 font-bold text-lg text-center group-hover:text-primary-600 transition-colors duration-300">{feature}</span>
                   </div>
                 </div>
               ))}
@@ -102,9 +105,9 @@ const Hero = ({ onStartProject }: HeroProps) => {
             <div className="flex flex-col sm:flex-row gap-8 pt-12 justify-center items-center">
               <button 
                 onClick={onStartProject}
-                className="group relative bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-12 py-6 rounded-3xl hover:from-yellow-600 hover:to-orange-600 transition-all duration-300 font-bold text-xl hover-lift flex items-center justify-center space-x-4 shadow-2xl shadow-yellow-500/25 glow-animation"
+                className="group relative btn-primary text-white px-12 py-6 rounded-3xl transition-all duration-300 font-bold text-xl hover-lift flex items-center justify-center space-x-4 shadow-modern-2xl glow-primary"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-3xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-primary-600 rounded-3xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
                 <span className="relative z-10">Start Your Project</span>
                 <ArrowRight className="h-7 w-7 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
               </button>
@@ -112,33 +115,33 @@ const Hero = ({ onStartProject }: HeroProps) => {
             </div>
           </div>
 
-          {/* Floating Service Icons */}
+          {/* Modern Floating Service Icons */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full opacity-20 animate-float"></div>
-            <div className="absolute top-40 right-20 w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
-            <div className="absolute bottom-40 left-20 w-12 h-12 bg-gradient-to-r from-pink-400 to-red-500 rounded-full opacity-20 animate-float" style={{ animationDelay: '4s' }}></div>
-            <div className="absolute bottom-20 right-10 w-24 h-24 bg-gradient-to-r from-green-400 to-blue-500 rounded-full opacity-20 animate-float" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute top-1/2 left-10 w-14 h-14 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full opacity-20 animate-float" style={{ animationDelay: '3s' }}></div>
-            <div className="absolute top-1/3 right-10 w-18 h-18 bg-gradient-to-r from-orange-400 to-yellow-500 rounded-full opacity-20 animate-float" style={{ animationDelay: '5s' }}></div>
+            <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-r from-primary-400 to-primary-500 rounded-full opacity-20 animate-float"></div>
+            <div className="absolute top-40 right-20 w-16 h-16 bg-gradient-to-r from-secondary-400 to-secondary-500 rounded-full opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
+            <div className="absolute bottom-40 left-20 w-12 h-12 bg-gradient-to-r from-accent-400 to-accent-500 rounded-full opacity-20 animate-float" style={{ animationDelay: '4s' }}></div>
+            <div className="absolute bottom-20 right-10 w-24 h-24 bg-gradient-to-r from-primary-400 to-secondary-500 rounded-full opacity-20 animate-float" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-1/2 left-10 w-14 h-14 bg-gradient-to-r from-secondary-400 to-accent-500 rounded-full opacity-20 animate-float" style={{ animationDelay: '3s' }}></div>
+            <div className="absolute top-1/3 right-10 w-18 h-18 bg-gradient-to-r from-accent-400 to-primary-500 rounded-full opacity-20 animate-float" style={{ animationDelay: '5s' }}></div>
           </div>
 
-          {/* Stats Section */}
+          {/* Modern Stats Section */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 w-full max-w-4xl">
-            <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 hover-lift">
-              <div className="text-4xl font-bold text-gray-900 mb-2">25+</div>
-              <div className="text-gray-600 font-medium">Projects Completed</div>
+            <div className="text-center p-6 card-glass hover-lift">
+              <div className="text-4xl font-bold text-neutral-900 mb-2">25+</div>
+              <div className="text-neutral-600 font-medium">Projects Completed</div>
             </div>
-            <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 hover-lift">
-              <div className="text-4xl font-bold text-gray-900 mb-2">15+</div>
-              <div className="text-gray-600 font-medium">Happy Clients</div>
+            <div className="text-center p-6 card-glass hover-lift">
+              <div className="text-4xl font-bold text-neutral-900 mb-2">15+</div>
+              <div className="text-neutral-600 font-medium">Happy Clients</div>
             </div>
-            <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 hover-lift">
-              <div className="text-4xl font-bold text-gray-900 mb-2">3+</div>
-              <div className="text-gray-600 font-medium">Years Experience</div>
+            <div className="text-center p-6 card-glass hover-lift">
+              <div className="text-4xl font-bold text-neutral-900 mb-2">8+</div>
+              <div className="text-neutral-600 font-medium">Years Experience</div>
             </div>
-            <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 hover-lift">
-              <div className="text-4xl font-bold text-gray-900 mb-2">95%</div>
-              <div className="text-gray-600 font-medium">Client Satisfaction</div>
+            <div className="text-center p-6 card-glass hover-lift">
+              <div className="text-4xl font-bold text-neutral-900 mb-2">95%</div>
+              <div className="text-neutral-600 font-medium">Client Satisfaction</div>
             </div>
           </div>
         </div>
