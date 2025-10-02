@@ -391,9 +391,6 @@ export default function ServicesPage() {
               <span>Start Your Project</span>
               <ArrowRight className="h-5 w-5" />
             </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-yellow-600 transition-all duration-300 font-bold">
-              View Our Portfolio
-            </button>
           </div>
         </div>
       </section>

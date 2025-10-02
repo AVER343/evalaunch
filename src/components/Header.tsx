@@ -57,12 +57,6 @@ const Header = ({}: HeaderProps) => {
       description: 'Learn about our mission and team'
     },
     {
-      name: 'Portfolio',
-      href: '/portfolio',
-      icon: Briefcase,
-      description: 'View our latest projects'
-    },
-    {
       name: 'Case Studies',
       href: '/case-studies',
       icon: FileText,
