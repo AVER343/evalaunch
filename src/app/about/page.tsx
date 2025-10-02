@@ -42,58 +42,40 @@ export default function AboutPage() {
 
   const team = [
     {
-      name: 'Alex Johnson',
-      role: 'CEO & Founder',
-      expertise: 'Strategic Leadership, Business Development',
-      description: 'Visionary leader with 10+ years in tech industry, passionate about transforming businesses through technology.'
-    },
-    {
-      name: 'Sarah Chen',
-      role: 'CTO',
-      expertise: 'Software Architecture, AI/ML',
-      description: 'Technical expert specializing in scalable systems and machine learning solutions for enterprise clients.'
-    },
-    {
-      name: 'Mike Rodriguez',
-      role: 'Lead Developer',
-      expertise: 'Full-Stack Development, Cloud Solutions',
-      description: 'Experienced developer with expertise in modern web technologies and cloud infrastructure.'
-    },
-    {
-      name: 'Emily Davis',
-      role: 'Marketing Director',
-      expertise: 'Digital Marketing, Growth Strategy',
-      description: 'Marketing strategist focused on data-driven campaigns and sustainable business growth.'
+      name: 'Our Team',
+      role: 'Full-Stack Developers',
+      expertise: 'Software Development, AI/ML, Digital Marketing',
+      description: 'A dedicated team of experienced professionals passionate about delivering innovative technology solutions.'
     }
   ];
 
   const testimonials = [
     {
-      name: 'David Wilson',
-      company: 'TechCorp Solutions',
+      name: 'Client A',
+      company: 'Technology Company',
       role: 'CEO',
-      content: 'eVALaunche has been instrumental in our digital transformation. Their team&apos;s expertise and dedication are unmatched.',
+      content: 'eVALaunche has been instrumental in our digital transformation. Their expertise and dedication are unmatched.',
       rating: 5
     },
     {
-      name: 'Lisa Thompson',
-      company: 'InnovateLab',
+      name: 'Client B',
+      company: 'Innovation Lab',
       role: 'CTO',
       content: 'Working with eVALaunche was a game-changer. They delivered exactly what we needed, on time and within budget.',
       rating: 5
     },
     {
-      name: 'Robert Kim',
-      company: 'StartupHub',
+      name: 'Client C',
+      company: 'Startup Company',
       role: 'Founder',
-      content: 'The AI solution they built for us increased our efficiency by 60%. Highly recommend their services.',
-      rating: 5
+      content: 'The solution they built for us increased our efficiency significantly. Highly recommend their services.',
+      rating: 4
     }
   ];
 
   return (
     <main className="min-h-screen">
-      <Header onStartProject={openEmailClient} />
+      <Header />
       
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-gray-50 to-white">

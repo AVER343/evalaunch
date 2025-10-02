@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from '@vercel/analytics/react';
 import { GoogleAnalytics } from '@next/third-parties/google';
-import ChatbotProvider from '@/components/ChatbotProvider';
+import Header from '@/components/Header';
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: "%s | eVALaunche - Leading Software Development & AI Solutions",
     default: "eVALaunche - Software Development, AI/ML Solutions & Digital Marketing | Transform Your Business"
   },
-  description: "Transform your business with cutting-edge software development, AI/ML solutions, and digital marketing strategies. Expert developers delivering custom web applications, mobile apps, machine learning solutions, and data-driven marketing campaigns. 10+ years experience, 100+ projects completed.",
+  description: "Transform your business with cutting-edge software development, AI/ML solutions, and digital marketing strategies. Expert developers delivering custom web applications, mobile apps, machine learning solutions, and data-driven marketing campaigns. 3+ years experience, 25+ projects completed.",
   keywords: [
     "software development company",
     "AI ML solutions",
@@ -94,9 +94,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ChatbotProvider>
-          {children}
-        </ChatbotProvider>
+        <Header />
+        {children}
         <Analytics />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />
       </body>

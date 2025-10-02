@@ -1,14 +1,12 @@
 'use client';
 
 import { Mail} from 'lucide-react';
-import { useChatbot } from './ChatbotProvider';
 
 interface ContactProps {
   onStartProject: () => void;
 }
 
 const Contact = ({ onStartProject }: ContactProps) => {
-  const { openChatbot } = useChatbot();
 
   return (
     <section id="contact" className="py-20 bg-white">
@@ -68,17 +66,6 @@ const Contact = ({ onStartProject }: ContactProps) => {
                     </a>
                     <p className="text-gray-600 mt-2">We&apos;ll get back to you within 24 hours</p>
                     
-                    {/* AI Chatbot CTA */}
-                    <div className="mt-6">
-                      {/* <button
-                        onClick={openChatbot}
-                        className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl"
-                      >
-                        <MessageCircle className="h-5 w-5" />
-                        <span>Chat with our AI Assistant</span>
-                      </button> */}
-                      <p className="text-sm text-gray-500 mt-2">Get instant answers about our services</p>
-                    </div>
                   </div>
                 </div>
               </div>

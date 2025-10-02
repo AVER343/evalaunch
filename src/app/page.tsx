@@ -1,7 +1,6 @@
 'use client';
 
 import Head from 'next/head';
-import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import About from '@/components/About';
@@ -11,7 +10,7 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   const openEmailClient = () => {
-    window.location.href = 'mailto:support@evalaunche.com?subject=Project Inquiry&body=Hello, I would like to discuss a project with eVALaunche. Please provide more information about your services.';
+    window.location.href = 'mailto:hello@evalaunche.com?subject=Project Inquiry&body=Hello, I would like to discuss a project with eVALaunche. Please provide more information about your services.';
   };
 
   // JSON-LD Structured Data for SEO
@@ -29,19 +28,12 @@ export default function Home() {
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+1-555-0123",
       "contactType": "customer service",
-      "email": "support@evalaunche.com",
+      "email": "hello@evalaunche.com",
       "availableLanguage": "English"
     },
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "US",
-      "addressLocality": "San Francisco",
-      "addressRegion": "CA"
-    },
-    "foundingDate": "2014",
-    "numberOfEmployees": "10-50",
+    "foundingDate": "2021",
+    "numberOfEmployees": "2-10",
     "knowsAbout": [
       "Software Development",
       "Web Development", 
@@ -85,15 +77,10 @@ export default function Home() {
         }
       }
     ],
-    "sameAs": [
-      "https://www.linkedin.com/company/evalaunche",
-      "https://twitter.com/evalaunche",
-      "https://github.com/evalaunche"
-    ],
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "50",
+      "ratingValue": "4.7",
+      "reviewCount": "15",
       "bestRating": "5",
       "worstRating": "1"
     }
@@ -108,7 +95,6 @@ export default function Home() {
         />
       </Head>
       <main className="min-h-screen">
-        <Header onStartProject={openEmailClient} />
         <Hero onStartProject={openEmailClient} />
         <Services />
         <About onStartProject={openEmailClient} />

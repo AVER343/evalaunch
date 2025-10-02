@@ -3,16 +3,18 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Code, Brain, Megaphone, ChevronDown, Home, Zap, HelpCircle, Users, Building2, Briefcase, FileText } from 'lucide-react';
 
-interface HeaderProps {
-  onStartProject: () => void;
-}
+interface HeaderProps {}
 
-const Header = ({ onStartProject }: HeaderProps) => {
+const Header = ({}: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isCompanyOpen, setIsCompanyOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
+
+  const openEmailClient = () => {
+    window.location.href = 'mailto:support@evalaunche.com?subject=Project Inquiry&body=Hello, I would like to discuss a project with eVALaunche. Please provide more information about your services.';
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -299,7 +301,7 @@ const Header = ({ onStartProject }: HeaderProps) => {
             </div>
             
             <button 
-              onClick={onStartProject}
+              onClick={openEmailClient}
               className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-8 py-3 rounded-xl hover:from-yellow-600 hover:to-orange-600 transition-all duration-300 font-bold shadow-lg hover:shadow-xl hover:scale-105"
             >
               Get Started
@@ -435,7 +437,7 @@ const Header = ({ onStartProject }: HeaderProps) => {
               </div>
               
               <button 
-                onClick={onStartProject}
+                onClick={openEmailClient}
                 className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-6 py-3 rounded-xl hover:from-yellow-600 hover:to-orange-600 transition-all duration-300 font-bold mt-4 shadow-lg"
               >
                 Get Started

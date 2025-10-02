@@ -8,10 +8,10 @@ interface AboutProps {
 
 const About = ({ onStartProject }: AboutProps) => {
   const stats = [
-    { number: '100+', label: 'Projects Completed', icon: Target },
-    { number: '50+', label: 'Happy Clients', icon: Users },
-    { number: '10+', label: 'Years Experience', icon: Award },
-    { number: '99%', label: 'Client Satisfaction', icon: TrendingUp }
+    { number: '25+', label: 'Projects Completed', icon: Target },
+    { number: '15+', label: 'Happy Clients', icon: Users },
+    { number: '3+', label: 'Years Experience', icon: Award },
+    { number: '95%', label: 'Client Satisfaction', icon: TrendingUp }
   ];
 
   const values = [

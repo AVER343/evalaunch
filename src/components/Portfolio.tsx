@@ -90,22 +90,22 @@ const Portfolio = ({ onStartProject }: PortfolioProps) => {
 
   const testimonials = [
     {
-      name: 'John Smith',
-      content: 'eVALaunche transformed our business with their innovative AI solutions. The results exceeded our expectations.',
+      name: 'Client A',
+      content: 'eVALaunche delivered exactly what we needed. Professional, responsive, and great results.',
       rating: 5,
-      project: 'Healthcare AI System'
+      project: 'Web Application'
     },
     {
-      name: 'Sarah Johnson',
-      content: 'Outstanding work on our e-commerce platform. The team was professional, responsive, and delivered on time.',
+      name: 'Client B',
+      content: 'The team was excellent to work with. They understood our requirements and delivered on time.',
       rating: 5,
-      project: 'E-Commerce Platform'
+      project: 'Mobile App'
     },
     {
-      name: 'Michael Chen',
-      content: 'The mobile app they built for us has revolutionized how our customers interact with our services.',
-      rating: 5,
-      project: 'FinTech Mobile App'
+      name: 'Client C',
+      content: 'Great communication throughout the project. We are very satisfied with the final result.',
+      rating: 4,
+      project: 'AI Solution'
     }
   ];
 
@@ -244,10 +244,10 @@ const Portfolio = ({ onStartProject }: PortfolioProps) => {
         {/* Stats Section */}
         <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-8">
           {[
-            { icon: Users, number: '100+', label: 'Happy Clients' },
-            { icon: TrendingUp, number: '150+', label: 'Projects Completed' },
-            { icon: Star, number: '4.9', label: 'Average Rating' },
-            { icon: ArrowRight, number: '99%', label: 'Success Rate' }
+            { icon: Users, number: '15+', label: 'Happy Clients' },
+            { icon: TrendingUp, number: '25+', label: 'Projects Completed' },
+            { icon: Star, number: '4.7', label: 'Average Rating' },
+            { icon: ArrowRight, number: '95%', label: 'Success Rate' }
           ].map((stat, index) => (
             <div
               key={index}

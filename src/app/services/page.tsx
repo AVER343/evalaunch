@@ -24,9 +24,9 @@ export default function ServicesPage() {
         'DevOps & Deployment - Docker, Kubernetes, CI/CD'
       ],
       timeline: '4-12 weeks',
-      projects: '150+',
-      clients: '50+',
-      satisfaction: '98%',
+      projects: '25+',
+      clients: '15+',
+      satisfaction: '95%',
       technologies: ['React', 'Node.js', 'Python', 'AWS', 'Docker', 'Kubernetes'],
       process: [
         { step: 'Discovery & Planning', description: 'Requirements analysis and technical architecture' },
@@ -49,9 +49,9 @@ export default function ServicesPage() {
         'Predictive Analytics - Time Series, Forecasting Models'
       ],
       timeline: '6-16 weeks',
-      projects: '75+',
-      clients: '30+',
-      satisfaction: '96%',
+      projects: '12+',
+      clients: '8+',
+      satisfaction: '92%',
       technologies: ['TensorFlow', 'PyTorch', 'OpenAI', 'Python', 'AWS ML', 'Azure AI'],
       process: [
         { step: 'Data Analysis', description: 'Data collection, cleaning, and exploratory analysis' },
@@ -74,9 +74,9 @@ export default function ServicesPage() {
         'Analytics & Reporting - Google Analytics, Facebook Insights, Custom Dashboards'
       ],
       timeline: '2-8 weeks',
-      projects: '200+',
-      clients: '80+',
-      satisfaction: '94%',
+      projects: '18+',
+      clients: '12+',
+      satisfaction: '90%',
       technologies: ['Google Ads', 'Facebook Ads', 'HubSpot', 'Mailchimp', 'Google Analytics', 'SEMrush'],
       process: [
         { step: 'Strategy Development', description: 'Market research and campaign strategy' },
@@ -89,45 +89,45 @@ export default function ServicesPage() {
 
   const testimonials = [
     {
-      name: 'Sarah Johnson',
-      company: 'TechStart Inc.',
+      name: 'Client A',
+      company: 'Technology Company',
       role: 'CEO',
-      content: 'eVALaunche transformed our business with their AI solutions. Our efficiency increased by 40% and customer satisfaction reached 95%.',
+      content: 'eVALaunche transformed our business with their AI solutions. Our efficiency increased significantly and customer satisfaction improved.',
       rating: 5,
       service: 'AI/ML Solutions'
     },
     {
-      name: 'Michael Chen',
-      company: 'E-commerce Plus',
+      name: 'Client B',
+      company: 'E-commerce Company',
       role: 'CTO',
       content: 'The mobile app they developed exceeded our expectations. Clean code, excellent performance, and outstanding support.',
       rating: 5,
       service: 'Software Development'
     },
     {
-      name: 'Emily Rodriguez',
-      company: 'Growth Marketing Co.',
+      name: 'Client C',
+      company: 'Marketing Agency',
       role: 'Marketing Director',
-      content: 'Their digital marketing strategies increased our ROI by 300%. Professional, data-driven, and results-focused approach.',
-      rating: 5,
+      content: 'Their digital marketing strategies increased our ROI significantly. Professional, data-driven, and results-focused approach.',
+      rating: 4,
       service: 'Digital Marketing'
     }
   ];
 
   const stats = [
-    { icon: Users, label: 'Happy Clients', value: '150+', color: 'text-blue-600' },
-    { icon: Code, label: 'Projects Delivered', value: '500+', color: 'text-green-600' },
-    { icon: Award, label: 'Success Rate', value: '98%', color: 'text-yellow-600' },
-    { icon: Clock, label: 'Years Experience', value: '8+', color: 'text-purple-600' }
+    { icon: Users, label: 'Happy Clients', value: '15+', color: 'text-blue-600' },
+    { icon: Code, label: 'Projects Delivered', value: '25+', color: 'text-green-600' },
+    { icon: Award, label: 'Success Rate', value: '95%', color: 'text-yellow-600' },
+    { icon: Clock, label: 'Years Experience', value: '3+', color: 'text-purple-600' }
   ];
 
   const openEmailClient = () => {
-    window.location.href = 'mailto:support@evalaunche.com?subject=Project Inquiry&body=Hello, I would like to discuss a project with eVALaunche. Please provide more information about your services.';
+    window.location.href = 'mailto:hello@evalaunche.com?subject=Project Inquiry&body=Hello, I would like to discuss a project with eVALaunche. Please provide more information about your services.';
   };
 
   return (
     <main className="min-h-screen">
-      <Header onStartProject={openEmailClient} />
+      <Header />
       
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-gray-50 to-white">
