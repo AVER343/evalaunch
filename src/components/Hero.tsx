@@ -109,7 +109,7 @@ const Hero = ({ onStartProject }: HeroProps) => {
               </div>
             </div>
 
-            {/* Enhanced Features Grid */}
+            {/* Modern Features Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
               {features.map((feature, index) => (
                 <div key={index} className="group relative">
@@ -143,7 +143,7 @@ const Hero = ({ onStartProject }: HeroProps) => {
             <div className="absolute bottom-20 right-10 w-24 h-24 bg-primary-300 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
           </div>
 
-          {/* Stats Section */}
+          {/* Modern Stats Section */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 w-full max-w-4xl">
             <div className="text-center p-6 bg-white rounded-2xl border border-gray-100 hover:border-primary-200 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5">
               <div className="text-4xl font-bold text-primary-600 mb-2">{stats.projectsCompleted}</div>

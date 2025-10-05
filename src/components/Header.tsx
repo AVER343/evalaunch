@@ -10,7 +10,6 @@ const Header = ({}: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isCompanyOpen, setIsCompanyOpen] = useState(false);
-  const [isResourcesOpen, setIsResourcesOpen] = useState(false);
 
   const openEmailClient = () => {
     window.location.href = 'mailto:support@evalaunche.com?subject=Project Inquiry&body=Hello, I would like to discuss a project with eVALaunche. Please provide more information about your services.';
@@ -36,14 +35,11 @@ const Header = ({}: HeaderProps) => {
       if (isCompanyOpen && !target.closest('[data-company-dropdown]')) {
         setIsCompanyOpen(false);
       }
-      if (isResourcesOpen && !target.closest('[data-resources-dropdown]')) {
-        setIsResourcesOpen(false);
-      }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isServicesOpen, isCompanyOpen, isResourcesOpen]);
+  }, [isServicesOpen, isCompanyOpen]);
 
   const navigation = [
     { name: 'Home', href: '/', icon: Home },
@@ -57,12 +53,6 @@ const Header = ({}: HeaderProps) => {
       description: 'Learn about our mission and team'
     },
     {
-      name: 'Portfolio',
-      href: '/portfolio',
-      icon: Briefcase,
-      description: 'View our latest projects'
-    },
-    {
       name: 'Case Studies',
       href: '/case-studies',
       icon: FileText,
@@ -70,14 +60,6 @@ const Header = ({}: HeaderProps) => {
     }
   ];
 
-  const resourcesItems = [
-    {
-      name: 'Support',
-      href: '/support',
-      icon: HelpCircle,
-      description: 'Get help and contact us'
-    }
-  ];
 
   const services = [
     {

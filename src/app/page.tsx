@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import About from '@/components/About';
-import Portfolio from '@/components/Portfolio';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Script from 'next/script';
@@ -96,7 +95,6 @@ export default function Home() {
         <Hero onStartProject={openEmailClient} />
         <Services />
         <About onStartProject={openEmailClient} />
-        <Portfolio onStartProject={openEmailClient} />
         <Contact onStartProject={openEmailClient} />
         <Footer />
       </main>

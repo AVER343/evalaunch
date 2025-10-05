@@ -5,6 +5,24 @@ import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink, Calendar, Clock, Users, TrendingUp, Award, ArrowRight, CheckCircle } from 'lucide-react';
 
+interface CaseStudy {
+  id: number;
+  title: string;
+  industry: string;
+  service: string;
+  duration: string;
+  team: string;
+  year: string;
+  challenge: string;
+  solution: string;
+  results: string[];
+  technologies: string[];
+  testimonial: {
+    text: string;
+    author: string;
+  };
+}
+
 // Case studies data (same as in the main page)
 const caseStudies = [
   {

@@ -13,6 +13,13 @@ export const metadata: Metadata = {
     default: "eVALaunche - Software Development, AI/ML Solutions & Digital Marketing | Transform Your Business"
   },
   description: "Transform your business with cutting-edge software development, AI/ML solutions, and digital marketing strategies. Expert developers delivering custom web applications, mobile apps, machine learning solutions, and data-driven marketing campaigns. 3+ years experience, 25+ projects completed.",
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: 'any' }
+    ],
+    apple: '/icon.svg',
+  },
   keywords: [
     "software development company",
     "AI ML solutions",

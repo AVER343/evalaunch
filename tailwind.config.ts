@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Poppins', 'system-ui', 'sans-serif'],
+        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
       },
       colors: {
         // Taazaa Green Theme - Flat, Modern, Enterprise
@@ -70,9 +70,13 @@ const config: Config = {
         'slide-in-right': 'slideInRight 0.5s ease-out',
         'bounce-slow': 'bounce 2s infinite',
         'pulse-slow': 'pulse 3s infinite',
-        'glow': 'glow 2s ease-in-out infinite',
+        'glow-primary': 'glowPrimary 2s ease-in-out infinite',
+        'glow-secondary': 'glowSecondary 2s ease-in-out infinite',
+        'glow-accent': 'glowAccent 2s ease-in-out infinite',
         'shimmer': 'shimmer 2s infinite',
         'float': 'float 3s ease-in-out infinite',
+        'float-delay': 'float 3s ease-in-out infinite 1s',
+        'float-reverse': 'floatReverse 3s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -102,6 +106,10 @@ const config: Config = {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' },
+        },
+        floatReverse: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(10px)' },
         },
       },
       backdropBlur: {
