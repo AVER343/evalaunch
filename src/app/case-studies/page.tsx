@@ -1,121 +1,50 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink, Calendar, Clock, Users, TrendingUp, Award, Filter, Search, Tag, ChevronRight, Bookmark, Share2, Heart, Eye } from 'lucide-react';
+import { getAllCaseStudies, type CaseStudy } from '@/lib/data';
 
 export default function CaseStudiesPage() {
+  const [caseStudies, setCaseStudies] = useState<CaseStudy[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedIndustry, setSelectedIndustry] = useState('all');
   const [selectedService, setSelectedService] = useState('all');
 
+  useEffect(() => {
+    const loadData = async () => {
+      const data = await getAllCaseStudies();
+      setCaseStudies(data);
+    };
+    loadData();
+  }, []);
+
+  // Extract unique industries and services from case studies
   const industries = [
     { id: 'all', name: 'All Industries' },
-    { id: 'healthcare', name: 'Healthcare' },
-    { id: 'finance', name: 'Finance' },
-    { id: 'ecommerce', name: 'E-commerce' },
-    { id: 'education', name: 'Education' },
-    { id: 'manufacturing', name: 'Manufacturing' },
-    { id: 'technology', name: 'Technology' }
+    ...Array.from(new Set(caseStudies.map(cs => cs.industry))).map(industry => ({
+      id: industry.toLowerCase(),
+      name: industry
+    }))
   ];
 
   const services = [
     { id: 'all', name: 'All Services' },
-    { id: 'software', name: 'Software Development' },
-    { id: 'ai-ml', name: 'AI/ML Solutions' },
-    { id: 'marketing', name: 'Digital Marketing' },
-    { id: 'mobile', name: 'Mobile Apps' },
-    { id: 'web', name: 'Web Development' }
-  ];
-
-  const caseStudies = [
-    {
-      id: 1,
-      title: "Healthcare AI Platform: Reducing Diagnosis Time by 60%",
-      industry: "healthcare",
-      service: "ai-ml",
-      duration: "6 months",
-      team: "8 members",
-      year: "2024",
-      excerpt: "We developed an AI-powered platform to analyze medical images and assist doctors in making faster, more accurate diagnoses. The existing manual process was time-consuming and prone to human error.",
-      challenge: "We developed an AI-powered platform to analyze medical images and assist doctors in making faster, more accurate diagnoses. The existing manual process was time-consuming and prone to human error.",
-      solution: "We developed a comprehensive AI platform using machine learning algorithms and computer vision technology. The system can analyze X-rays, MRIs, and CT scans in real-time, providing instant preliminary diagnoses with confidence scores.",
-      results: [
-        "60% reduction in diagnosis time",
-        "95% accuracy rate in preliminary diagnoses",
-        "40% increase in patient throughput",
-        "30% reduction in misdiagnosis cases"
-      ],
-      technologies: ["Python", "TensorFlow", "OpenCV", "AWS", "Docker", "React"],
-      testimonial: {
-        text: "The AI platform has revolutionized our diagnostic process. We can now serve more patients with higher accuracy and confidence.",
-        author: "Chief Medical Officer"
-      },
-      readTime: "8 min read",
-      likes: 42,
-      views: 1280
-    },
-    {
-      id: 2,
-      title: "E-commerce Platform: Scaling to 1M+ Users",
-      industry: "ecommerce",
-      service: "software",
-      duration: "8 months",
-      team: "12 members",
-      year: "2024",
-      excerpt: "We scaled an e-commerce platform to handle over 1 million concurrent users during peak shopping seasons while maintaining fast load times and seamless user experience.",
-      challenge: "We scaled an e-commerce platform to handle over 1 million concurrent users during peak shopping seasons while maintaining fast load times and seamless user experience.",
-      solution: "We redesigned the entire platform architecture using microservices, implemented advanced caching strategies, and optimized database performance. The new system uses cloud-native technologies for auto-scaling and load balancing.",
-      results: [
-        "99.9% uptime during peak traffic",
-        "2x faster page load times",
-        "300% increase in concurrent user capacity",
-        "50% reduction in server costs"
-      ],
-      technologies: ["Node.js", "React", "MongoDB", "Redis", "AWS", "Kubernetes"],
-      testimonial: {
-        text: "The platform handled Black Friday traffic flawlessly. Our sales increased by 200% without any technical issues.",
-        author: "Chief Technology Officer"
-      },
-      readTime: "12 min read",
-      likes: 38,
-      views: 1560
-    },
-    {
-      id: 3,
-      title: "Financial Analytics Dashboard: Real-time Risk Assessment",
-      industry: "finance",
-      service: "software",
-      duration: "4 months",
-      team: "6 members",
-      year: "2023",
-      excerpt: "We built a real-time analytics dashboard to monitor financial transactions, detect fraud, and assess risk across global operations.",
-      challenge: "We built a real-time analytics dashboard to monitor financial transactions, detect fraud, and assess risk across global operations.",
-      solution: "We built a comprehensive analytics platform with real-time data processing, advanced visualization tools, and machine learning algorithms for fraud detection and risk assessment.",
-      results: [
-        "Real-time transaction monitoring",
-        "85% reduction in false fraud alerts",
-        "40% faster risk assessment",
-        "99.5% fraud detection accuracy"
-      ],
-      technologies: ["Python", "React", "PostgreSQL", "Apache Kafka", "D3.js", "AWS"],
-      testimonial: {
-        text: "The dashboard gives us complete visibility into our operations. We can now make data-driven decisions in real-time.",
-        author: "Head of Risk Management"
-      },
-      readTime: "10 min read",
-      likes: 29,
-      views: 920
-    }
+    ...Array.from(new Set(caseStudies.map(cs => cs.service))).map(service => ({
+      id: service.toLowerCase().replace(/\s+/g, '-').replace(/\//g, '-'),
+      name: service
+    }))
   ];
 
   const filteredCaseStudies = caseStudies.filter(study => {
     const matchesSearch = searchTerm === '' || 
       study.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      study.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+      study.summary.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      study.industry.toLowerCase().includes(searchTerm.toLowerCase());
     
-    const matchesIndustry = selectedIndustry === 'all' || study.industry === selectedIndustry;
-    const matchesService = selectedService === 'all' || study.service === selectedService;
+    const matchesIndustry = selectedIndustry === 'all' || study.industry.toLowerCase() === selectedIndustry;
+    const matchesService = selectedService === 'all' || 
+      study.service.toLowerCase().replace(/\s+/g, '-').replace(/\//g, '-') === selectedService;
     
     return matchesSearch && matchesIndustry && matchesService;
   });
@@ -149,7 +78,7 @@ export default function CaseStudiesPage() {
             Case Studies
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed max-w-3xl">
-            Discover how we've helped businesses transform their operations with innovative technology solutions. 
+            Discover how we&apos;ve helped businesses transform their operations with innovative technology solutions. 
             Each case study showcases real challenges, solutions, and measurable results.
           </p>
         </div>
@@ -214,21 +143,21 @@ export default function CaseStudiesPage() {
               <div className="mb-6">
                 <div className="flex items-center space-x-2 mb-4">
                   <span className="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full">
-                    {industries.find(ind => ind.id === study.industry)?.name}
+                    {study.industry}
                   </span>
                   <span className="px-2 py-1 bg-green-50 text-green-700 text-xs font-medium rounded-full">
-                    {services.find(svc => svc.id === study.service)?.name}
+                    {study.service}
                   </span>
                 </div>
                 
                 <h2 className="text-2xl font-bold text-gray-900 mb-4 leading-tight hover:text-blue-600 transition-colors">
-                  <Link href={`/case-studies/${study.id}`}>
+                  <Link href={`/case-studies/${study.slug}`}>
                     {study.title}
                   </Link>
                 </h2>
                 
                 <p className="text-gray-600 leading-relaxed text-lg mb-6">
-                  {study.excerpt}
+                  {study.summary}
                 </p>
               </div>
 
@@ -236,31 +165,16 @@ export default function CaseStudiesPage() {
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-6 text-sm text-gray-500">
                   <div className="flex items-center space-x-1">
-                    <Calendar className="h-4 w-4" />
-                    <span>{study.year}</span>
+                    <Users className="h-4 w-4" />
+                    <span>{study.client}</span>
                   </div>
                   <div className="flex items-center space-x-1">
                     <Clock className="h-4 w-4" />
-                    <span>{study.duration}</span>
+                    <span>{study.timeline}</span>
                   </div>
                   <div className="flex items-center space-x-1">
-                    <Users className="h-4 w-4" />
-                    <span>{study.team}</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <Eye className="h-4 w-4" />
-                    <span>{study.readTime}</span>
-                  </div>
-                </div>
-                
-                <div className="flex items-center space-x-4 text-sm text-gray-500">
-                  <div className="flex items-center space-x-1">
-                    <Heart className="h-4 w-4" />
-                    <span>{study.likes}</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <Eye className="h-4 w-4" />
-                    <span>{study.views}</span>
+                    <Award className="h-4 w-4" />
+                    <span>{study.teamSize}</span>
                   </div>
                 </div>
               </div>
@@ -275,7 +189,9 @@ export default function CaseStudiesPage() {
                   {study.results.slice(0, 4).map((result, index) => (
                     <div key={index} className="flex items-center space-x-2">
                       <div className="w-1.5 h-1.5 bg-green-500 rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-700 text-sm">{result}</span>
+                      <span className="text-gray-700 text-sm">
+                        <span className="font-bold text-green-600">{result.value}</span> - {result.description}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -295,10 +211,20 @@ export default function CaseStudiesPage() {
                 </div>
               </div>
 
+              {/* Testimonial Preview */}
+              {study.testimonial && (
+                <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                  <p className="text-gray-700 italic text-sm mb-2">&ldquo;{study.testimonial.quote}&rdquo;</p>
+                  <p className="text-xs text-gray-600">
+                    <span className="font-semibold">{study.testimonial.author}</span>, {study.testimonial.role}
+                  </p>
+                </div>
+              )}
+
               {/* Read More Link */}
               <div className="flex items-center justify-between">
                 <Link
-                  href={`/case-studies/${study.id}`}
+                  href={`/case-studies/${study.slug}`}
                   className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium transition-colors"
                 >
                   <span>Read full case study</span>
@@ -333,7 +259,7 @@ export default function CaseStudiesPage() {
         <div className="mt-16 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 text-center border border-blue-100">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Start Your Success Story?</h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Let's discuss how we can help you achieve similar results for your business. 
+            Let&apos;s discuss how we can help you achieve similar results for your business. 
             Our team is ready to transform your ideas into reality.
           </p>
           <a
@@ -348,3 +274,4 @@ export default function CaseStudiesPage() {
     </div>
   );
 }
+

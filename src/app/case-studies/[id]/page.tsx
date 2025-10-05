@@ -94,10 +94,12 @@ const services = [
   { id: 'web', name: 'Web Development' }
 ];
 
+type CaseStudy = typeof caseStudies[0];
+
 export default function CaseStudyDetailPage() {
   const params = useParams();
   const router = useRouter();
-  const [caseStudy, setCaseStudy] = useState(null);
+  const [caseStudy, setCaseStudy] = useState<CaseStudy | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -125,9 +127,13 @@ export default function CaseStudyDetailPage() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="text-6xl mb-4">❌</div>
+          <div className="mb-4 flex justify-center">
+            <div className="w-24 h-24 bg-red-100 rounded-full flex items-center justify-center">
+              <ArrowLeft className="h-12 w-12 text-red-600" />
+            </div>
+          </div>
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Case Study Not Found</h1>
-          <p className="text-gray-600 mb-8">The case study you're looking for doesn't exist.</p>
+          <p className="text-gray-600 mb-8">The case study you&apos;re looking for doesn&apos;t exist.</p>
           <Link
             href="/case-studies"
             className="inline-flex items-center space-x-2 bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors duration-300"

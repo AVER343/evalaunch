@@ -44,7 +44,7 @@ const Footer = () => {
           {/* Company Info - Takes 2 columns on large screens */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg shadow-md">
+              <div className="flex items-center justify-center w-12 h-12 bg-primary-500 rounded-lg shadow-md">
                 <div className="flex items-center space-x-1">
                   <Code className="h-6 w-6 text-white" />
                   <Brain className="h-4 w-4 text-white" />

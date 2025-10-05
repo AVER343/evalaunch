@@ -13,17 +13,18 @@ const config: Config = {
         display: ['Poppins', 'system-ui', 'sans-serif'],
       },
       colors: {
+        // Taazaa Green Theme - Flat, Modern, Enterprise
         primary: {
-          50: '#fefce8',
-          100: '#fef9c3',
-          200: '#fef08a',
-          300: '#fde047',
-          400: '#facc15',
-          500: '#eab308',
-          600: '#ca8a04',
-          700: '#a16207',
-          800: '#854d0e',
-          900: '#713f12',
+          50: '#e6f4ee',
+          100: '#ccead7',
+          200: '#99d5af',
+          300: '#66c087',
+          400: '#33ab5f',
+          500: '#00a86b', // Main Taazaa Green
+          600: '#008656',
+          700: '#007a50', // Dark Green for hover
+          800: '#005d3c',
+          900: '#004028',
         },
         secondary: {
           50: '#eff6ff',
@@ -43,38 +44,14 @@ const config: Config = {
           200: '#bae6fd',
           300: '#7dd3fc',
           400: '#38bdf8',
-          500: '#0ea5e9',
+          500: '#0ea5e9', // Sky blue accent
           600: '#0284c7',
           700: '#0369a1',
           800: '#075985',
           900: '#0c4a6e',
         },
-        yellow: {
-          50: '#fefce8',
-          100: '#fef9c3',
-          200: '#fef08a',
-          300: '#fde047',
-          400: '#facc15',
-          500: '#eab308',
-          600: '#ca8a04',
-          700: '#a16207',
-          800: '#854d0e',
-          900: '#713f12',
-        },
-        blue: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
-        },
         gray: {
-          50: '#f9fafb',
+          50: '#f9faf9', // Gray-green neutral
           100: '#f3f4f6',
           200: '#e5e7eb',
           300: '#d1d5db',
@@ -115,8 +92,8 @@ const config: Config = {
           '100%': { transform: 'translateX(0)', opacity: '1' },
         },
         glow: {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(251, 191, 36, 0.3)' },
-          '50%': { boxShadow: '0 0 30px rgba(251, 191, 36, 0.6)' },
+          '0%, 100%': { boxShadow: '0 0 20px rgba(0, 168, 107, 0.3)' },
+          '50%': { boxShadow: '0 0 30px rgba(0, 168, 107, 0.6)' },
         },
         shimmer: {
           '0%': { backgroundPosition: '-200% 0' },
@@ -131,9 +108,9 @@ const config: Config = {
         xs: '2px',
       },
       boxShadow: {
-        'glow': '0 0 20px rgba(251, 191, 36, 0.3)',
-        'glow-lg': '0 0 30px rgba(251, 191, 36, 0.4)',
-        'inner-glow': 'inset 0 0 20px rgba(251, 191, 36, 0.1)',
+        'glow': '0 0 20px rgba(0, 168, 107, 0.3)',
+        'glow-lg': '0 0 30px rgba(0, 168, 107, 0.4)',
+        'inner-glow': 'inset 0 0 20px rgba(0, 168, 107, 0.1)',
       },
     },
   },

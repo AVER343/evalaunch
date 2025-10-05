@@ -1,0 +1,117 @@
+{
+  "testimonials": [
+    {
+      "id": "testimonial-1",
+      "client": {
+        "name": "John Smith",
+        "company": "RetailCo",
+        "role": "CEO",
+        "avatar": "/images/testimonials/john-smith.jpg"
+      },
+      "content": "eVALaunche transformed our business with their exceptional e-commerce platform. The new system is fast, reliable, and our customers love it. We've seen tremendous growth since launch.",
+      "rating": 5,
+      "service": "Software Development",
+      "project": "E-commerce Platform",
+      "date": "2024-11-15"
+    },
+    {
+      "id": "testimonial-2",
+      "client": {
+        "name": "Sarah Johnson",
+        "company": "BankTech Solutions",
+        "role": "CTO",
+        "avatar": "/images/testimonials/sarah-johnson.jpg"
+      },
+      "content": "The AI chatbot has revolutionized our customer service. It's accurate, fast, and our customers are delighted with the instant responses. The team at eVALaunche exceeded all expectations.",
+      "rating": 5,
+      "service": "AI/ML Solutions",
+      "project": "AI Customer Service Chatbot",
+      "date": "2024-10-20"
+    },
+    {
+      "id": "testimonial-3",
+      "client": {
+        "name": "Michael Chen",
+        "company": "CloudFlow",
+        "role": "Founder & CEO",
+        "avatar": "/images/testimonials/michael-chen.jpg"
+      },
+      "content": "eVALaunche's marketing expertise helped us achieve a successful product launch. Their data-driven approach delivered exceptional results, and we continue to work with them.",
+      "rating": 5,
+      "service": "Digital Marketing",
+      "project": "SaaS Product Launch",
+      "date": "2024-09-10"
+    },
+    {
+      "id": "testimonial-4",
+      "client": {
+        "name": "Dr. Emily Roberts",
+        "company": "HealthConnect",
+        "role": "Chief Medical Officer",
+        "avatar": "/images/testimonials/emily-roberts.jpg"
+      },
+      "content": "eVALaunche delivered a world-class telemedicine solution. Their attention to security and HIPAA compliance gave us confidence, and the app performance is outstanding.",
+      "rating": 5,
+      "service": "Software Development",
+      "project": "Telemedicine Mobile App",
+      "date": "2024-08-05"
+    },
+    {
+      "id": "testimonial-5",
+      "client": {
+        "name": "David Martinez",
+        "company": "MegaMart",
+        "role": "Operations Director",
+        "avatar": "/images/testimonials/david-martinez.jpg"
+      },
+      "content": "The predictive analytics solution from eVALaunche has transformed our inventory management. We're now making data-driven decisions with confidence and seeing real cost savings.",
+      "rating": 4,
+      "service": "AI/ML Solutions",
+      "project": "Predictive Analytics",
+      "date": "2024-07-15"
+    },
+    {
+      "id": "testimonial-6",
+      "client": {
+        "name": "Lisa Anderson",
+        "company": "TechStartup Inc",
+        "role": "Co-Founder",
+        "avatar": "/images/testimonials/lisa-anderson.jpg"
+      },
+      "content": "From concept to launch, eVALaunche guided us through every step. Their technical expertise and project management skills are top-notch. Highly recommend!",
+      "rating": 5,
+      "service": "Software Development",
+      "project": "MVP Development",
+      "date": "2024-06-20"
+    },
+    {
+      "id": "testimonial-7",
+      "client": {
+        "name": "Robert Taylor",
+        "company": "FinanceHub",
+        "role": "Marketing Director",
+        "avatar": "/images/testimonials/robert-taylor.jpg"
+      },
+      "content": "Our SEO rankings improved dramatically after working with eVALaunche. Their strategic approach to digital marketing has driven significant organic traffic and leads.",
+      "rating": 5,
+      "service": "Digital Marketing",
+      "project": "SEO & Content Marketing",
+      "date": "2024-05-10"
+    },
+    {
+      "id": "testimonial-8",
+      "client": {
+        "name": "Amanda White",
+        "company": "EduTech Platform",
+        "role": "Product Manager",
+        "avatar": "/images/testimonials/amanda-white.jpg"
+      },
+      "content": "The team at eVALaunche is professional, responsive, and delivers quality work. They took our ideas and turned them into a beautiful, functional platform.",
+      "rating": 4,
+      "service": "Software Development",
+      "project": "Learning Management System",
+      "date": "2024-04-15"
+    }
+  ]
+}
+

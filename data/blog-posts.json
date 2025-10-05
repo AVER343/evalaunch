@@ -1,0 +1,120 @@
+{
+  "posts": [
+    {
+      "id": "future-of-ai-business",
+      "title": "The Future of AI in Business: Trends to Watch in 2025",
+      "slug": "future-of-ai-business-2025",
+      "excerpt": "Explore the upcoming AI trends that will reshape business operations, from generative AI to autonomous systems.",
+      "content": "Artificial Intelligence is evolving at an unprecedented pace...",
+      "author": {
+        "name": "eVALaunche Team",
+        "role": "AI/ML Specialists",
+        "avatar": "/images/authors/team.jpg"
+      },
+      "category": "AI/ML",
+      "tags": ["AI", "Machine Learning", "Business Strategy", "Technology Trends"],
+      "publishedAt": "2024-12-15T10:00:00Z",
+      "updatedAt": "2024-12-15T10:00:00Z",
+      "readingTime": "8 min read",
+      "featured": true,
+      "thumbnail": "/images/blog/ai-future.jpg",
+      "seo": {
+        "title": "Future of AI in Business 2025 - Latest Trends & Predictions",
+        "description": "Discover the AI trends shaping business in 2025. Expert insights on generative AI, automation, and emerging technologies."
+      }
+    },
+    {
+      "id": "next-js-performance",
+      "title": "Optimizing Next.js Performance: Best Practices for 2025",
+      "slug": "nextjs-performance-optimization",
+      "excerpt": "Learn advanced techniques to supercharge your Next.js applications for lightning-fast performance.",
+      "content": "Next.js has become the go-to framework for React applications...",
+      "author": {
+        "name": "eVALaunche Team",
+        "role": "Full-Stack Developers",
+        "avatar": "/images/authors/team.jpg"
+      },
+      "category": "Web Development",
+      "tags": ["Next.js", "React", "Performance", "Web Development"],
+      "publishedAt": "2024-12-10T14:30:00Z",
+      "updatedAt": "2024-12-10T14:30:00Z",
+      "readingTime": "10 min read",
+      "featured": true,
+      "thumbnail": "/images/blog/nextjs-performance.jpg",
+      "seo": {
+        "title": "Next.js Performance Optimization Guide 2025 - Best Practices",
+        "description": "Complete guide to optimizing Next.js performance. Learn image optimization, code splitting, caching strategies and more."
+      }
+    },
+    {
+      "id": "digital-marketing-roi",
+      "title": "Measuring Digital Marketing ROI: A Data-Driven Approach",
+      "slug": "measuring-digital-marketing-roi",
+      "excerpt": "Master the art of tracking and measuring your digital marketing ROI with proven analytics strategies.",
+      "content": "Return on Investment (ROI) is the ultimate measure of marketing success...",
+      "author": {
+        "name": "eVALaunche Team",
+        "role": "Digital Marketing Experts",
+        "avatar": "/images/authors/team.jpg"
+      },
+      "category": "Digital Marketing",
+      "tags": ["Digital Marketing", "ROI", "Analytics", "Business Growth"],
+      "publishedAt": "2024-12-05T09:00:00Z",
+      "updatedAt": "2024-12-05T09:00:00Z",
+      "readingTime": "12 min read",
+      "featured": false,
+      "thumbnail": "/images/blog/marketing-roi.jpg",
+      "seo": {
+        "title": "How to Measure Digital Marketing ROI - Complete Guide",
+        "description": "Learn proven strategies to measure and optimize your digital marketing ROI. Track campaigns, analyze data, and maximize returns."
+      }
+    },
+    {
+      "id": "choosing-tech-stack",
+      "title": "Choosing the Right Tech Stack for Your Startup in 2025",
+      "slug": "choosing-tech-stack-startup",
+      "excerpt": "A comprehensive guide to selecting the perfect technology stack for your startup's success.",
+      "content": "Choosing the right technology stack is one of the most critical decisions...",
+      "author": {
+        "name": "eVALaunche Team",
+        "role": "Software Architects",
+        "avatar": "/images/authors/team.jpg"
+      },
+      "category": "Software Development",
+      "tags": ["Tech Stack", "Startup", "Software Architecture", "Development"],
+      "publishedAt": "2024-11-28T11:00:00Z",
+      "updatedAt": "2024-11-28T11:00:00Z",
+      "readingTime": "15 min read",
+      "featured": false,
+      "thumbnail": "/images/blog/tech-stack.jpg",
+      "seo": {
+        "title": "Best Tech Stack for Startups 2025 - Expert Guide",
+        "description": "Learn how to choose the right technology stack for your startup. Compare frameworks, languages, and tools for optimal results."
+      }
+    },
+    {
+      "id": "machine-learning-basics",
+      "title": "Machine Learning Basics: A Beginner's Guide",
+      "slug": "machine-learning-basics-guide",
+      "excerpt": "Demystify machine learning with this comprehensive beginner-friendly guide to AI and ML concepts.",
+      "content": "Machine learning is transforming industries across the globe...",
+      "author": {
+        "name": "eVALaunche Team",
+        "role": "Data Scientists",
+        "avatar": "/images/authors/team.jpg"
+      },
+      "category": "AI/ML",
+      "tags": ["Machine Learning", "AI", "Data Science", "Beginners Guide"],
+      "publishedAt": "2024-11-20T13:00:00Z",
+      "updatedAt": "2024-11-20T13:00:00Z",
+      "readingTime": "20 min read",
+      "featured": false,
+      "thumbnail": "/images/blog/ml-basics.jpg",
+      "seo": {
+        "title": "Machine Learning for Beginners - Complete Guide 2025",
+        "description": "Learn machine learning basics from scratch. Understand algorithms, models, and real-world applications in this comprehensive guide."
+      }
+    }
+  ]
+}
+

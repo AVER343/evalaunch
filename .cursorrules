@@ -1,0 +1,131 @@
+# .cursorrules
+# Rules for Cursor AI when working on eVALaunche Consultancy Website
+# Ensures production-ready, consistent, static site setup.
+
+project:
+  name: "eVALaunche Consultancy Website"
+  type: "Next.js (App Router) Static Site"
+  template: "nextjs-digital-agency-template"
+
+rules:
+  # General
+  - Always explain steps briefly in code comments.
+  - Follow Next.js best practices (App Router, SSG, Metadata API).
+  - Keep code clean, modular, and production-ready.
+
+  # Theming
+  - Maintain consistent theming across all pages (colors, typography, spacing).
+  - Use a shared layout for header, footer, and navigation.
+  - Do not introduce page-specific theme variations.
+  css_variables: |
+    :root {
+      /* === Brand Colors === */
+      --color-primary: #00a86b; /* Main brand color (Taazaa Green) */
+      --color-primary-light: #33ab5f;
+      --color-primary-dark: #007a50;
+
+      --color-accent: #0ea5e9; /* Sky blue for links, highlights */
+      --color-accent-light: #38bdf8;
+      --color-accent-dark: #0284c7;
+
+      /* === Neutral / Text === */
+      --color-text-primary: #1f2937;  /* Dark gray for main text */
+      --color-text-secondary: #4b5563; /* Muted text */
+      --color-text-inverse: #ffffff;   /* For text on dark bg */
+
+      /* === Background Layers === */
+      --color-bg-base: #ffffff;        /* Page background */
+      --color-bg-surface: #f9fafb;     /* Card / section background */
+      --color-bg-elevated: #f3f4f6;    /* Slightly raised surfaces */
+      --color-bg-hover: #f1f5f9;       /* Hover background */
+
+      /* === Borders / Dividers === */
+      --color-border: #e5e7eb;         /* Standard border */
+      --color-border-strong: #d1d5db;  /* For panels or inputs */
+
+      /* === Shadows & Effects === */
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+      /* === States === */
+      --color-success: #16a34a;
+      --color-warning: #f59e0b;
+      --color-error: #dc2626;
+      --color-info: #0ea5e9;
+    }
+
+  # Pages
+  - Implement SSG (`getStaticProps` / `generateStaticParams`).
+  - Required pages: Home, About, Services, Portfolio, Careers, Contact, 404.
+  - Each page must export metadata (title, description, OG tags).
+  - All pages must follow the same theme for typography and design.
+
+  # Content & Data
+  - Replace placeholder text with company mock content.
+  - Simulate API responses with local JSON under `/data/`.
+  - Create reusable data-fetching utilities (`lib/data.ts`).
+
+  # SEO
+  - Each page requires: title, meta description, canonical URL.
+  - Add sitemap.xml + robots.txt.
+  - Add Open Graph + Twitter Card metadata.
+  - All images must have alt text.
+
+  # Performance
+  - Use `next/image` for all images.
+  - Use Next.js Font optimization.
+  - Lazy-load non-critical components.
+
+  # Accessibility
+  - Use semantic HTML (header, main, footer, nav, section).
+  - Ensure keyboard navigation works.
+  - Maintain WCAG contrast ratios.
+
+  # Analytics
+  - Integrate Google Analytics via `@next/third-parties/google`.
+
+  # Deployment
+  - Project must be deployable to Vercel.
+  - Environment variables must be listed in `.env.example`.
+  - No secrets committed to repo.
+
+  # Quality
+  - Run `next lint` and `next build` before code is considered done.
+  - Ensure Lighthouse score > 90 for Performance, SEO, Accessibility.
+
+notes:
+  - Mock API now for flexibility later (easier CMS/API swap).
+  - Document project decisions in `/docs/` for future maintainers.
+
+Documentation:
+- Documentation must be stored under `/docs/` only.
+- Do NOT create random new docs files.
+- Allowed doc files are predefined:
+    - ProjectOverview.md
+    - Theming.md
+    - Routing.md
+    - DataSchemas.md
+    - SEO_Analytics.md
+    - Performance_Accessibility.md
+    - Deployment.md
+    - Quality.md
+    - Decisions.md
+- Each doc file must only contain its designated scope:
+    - ProjectOverview.md → stack, template, project summary
+    - Theming.md → colors, typography, spacing, UI rules
+    - Routing.md → page structure, navigation, routing strategy
+    - DataSchemas.md → JSON schemas, data utilities, mock API usage
+    - SEO_Analytics.md → SEO rules, meta tags, analytics tracking
+    - Performance_Accessibility.md → perf optimizations, WCAG, keyboard nav
+    - Deployment.md → Vercel deployment, env vars, build pipeline
+    - Quality.md → linting, build, Lighthouse targets, test coverage
+    - Decisions.md → key architectural choices, tradeoffs, extensibility notes
+Emoji Usage:
+- Do NOT use emojis in main website sections (Hero, Services, Case Studies, CTA).
+- Replace emojis with **vector icons (SVG, Lucide, Feather, FontAwesome, etc.)** for a consistent professional look.
+- Emojis are allowed only in:
+  - Blog/insights content (sparingly, if aligned with brand tone).
+  - Internal drafts or social media copy (not on the site UI).
+- Contact section: prefer icons over emojis (📍 → location icon, ✉️ → mail icon).
+- Rule of thumb: **Credibility > Casual.** Icons scale; emojis don’t.

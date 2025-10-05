@@ -115,10 +115,10 @@ export default function ServicesPage() {
   ];
 
   const stats = [
-    { icon: Users, label: 'Happy Clients', value: '15+', color: 'text-blue-600' },
+    { icon: Users, label: 'Happy Clients', value: '15+', color: 'text-primary-600' },
     { icon: Code, label: 'Projects Delivered', value: '25+', color: 'text-green-600' },
-    { icon: Award, label: 'Success Rate', value: '95%', color: 'text-yellow-600' },
-    { icon: Clock, label: 'Years Experience', value: '3+', color: 'text-purple-600' }
+    { icon: Award, label: 'Success Rate', value: '95%', color: 'text-primary-600' },
+    { icon: Clock, label: 'Years Experience', value: '3+', color: 'text-primary-600' }
   ];
 
   const openEmailClient = () => {
@@ -134,7 +134,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our <span className="text-yellow-600">Services</span>
+              Our <span className="text-primary-600">Services</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Comprehensive technology solutions that transform businesses and drive sustainable growth.
@@ -181,15 +181,15 @@ export default function ServicesPage() {
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-4 mb-8">
                   <div className="text-center p-4 bg-gray-50 rounded-xl">
-                    <div className="text-2xl font-bold text-yellow-600">{services[activeService].projects}</div>
+                    <div className="text-2xl font-bold text-primary-600">{services[activeService].projects}</div>
                     <div className="text-sm text-gray-600">Projects</div>
                   </div>
                   <div className="text-center p-4 bg-gray-50 rounded-xl">
-                    <div className="text-2xl font-bold text-yellow-600">{services[activeService].clients}</div>
+                    <div className="text-2xl font-bold text-primary-600">{services[activeService].clients}</div>
                     <div className="text-sm text-gray-600">Clients</div>
                   </div>
                   <div className="text-center p-4 bg-gray-50 rounded-xl">
-                    <div className="text-2xl font-bold text-yellow-600">{services[activeService].satisfaction}</div>
+                    <div className="text-2xl font-bold text-primary-600">{services[activeService].satisfaction}</div>
                     <div className="text-sm text-gray-600">Satisfaction</div>
                   </div>
                 </div>
@@ -218,7 +218,7 @@ export default function ServicesPage() {
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">Technology Stack</h3>
                   <div className="flex flex-wrap gap-2">
                     {services[activeService].technologies.map((tech, index) => (
-                      <span key={index} className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">
+                      <span key={index} className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">
                         {tech}
                       </span>
                     ))}
@@ -279,7 +279,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our <span className="text-yellow-600">Impact</span> in Numbers
+              Our <span className="text-primary-600">Impact</span> in Numbers
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Delivering exceptional results across all our services with proven track record.
@@ -308,7 +308,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              What Our <span className="text-yellow-600">Clients</span> Say
+              What Our <span className="text-primary-600">Clients</span> Say
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Don&apos;t just take our word for it. Here&apos;s what our satisfied clients have to say about our services.
@@ -320,14 +320,14 @@ export default function ServicesPage() {
               <div key={index} className="bg-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="flex items-center mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="h-5 w-5 text-primary-400 fill-current" />
                   ))}
                 </div>
                 <p className="text-gray-700 mb-6 italic">&ldquo;{testimonial.content}&rdquo;</p>
                 <div className="border-t border-gray-200 pt-4">
                   <div className="font-semibold text-gray-900">{testimonial.name}</div>
                   <div className="text-sm text-gray-600">{testimonial.role}, {testimonial.company}</div>
-                  <div className="text-xs text-yellow-600 font-medium mt-1">{testimonial.service}</div>
+                  <div className="text-xs text-primary-600 font-medium mt-1">{testimonial.service}</div>
                 </div>
               </div>
             ))}
@@ -340,7 +340,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Technologies We <span className="text-yellow-400">Master</span>
+              Technologies We <span className="text-primary-400">Master</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               We work with cutting-edge technologies to deliver modern, scalable, and efficient solutions.
@@ -365,7 +365,7 @@ export default function ServicesPage() {
               const IconComponent = tech.icon;
               return (
                 <div key={index} className="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition-colors duration-300 group">
-                  <IconComponent className="h-8 w-8 text-yellow-400 mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
+                  <IconComponent className="h-8 w-8 text-primary-400 mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
                   <div className="text-sm font-medium text-gray-300">{tech.name}</div>
                 </div>
               );
@@ -386,12 +386,12 @@ export default function ServicesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
               onClick={openEmailClient}
-              className="bg-white text-yellow-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 font-bold shadow-lg hover:shadow-xl hover:scale-105 flex items-center space-x-2 mx-auto sm:mx-0"
+              className="bg-white text-primary-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 font-bold shadow-lg hover:shadow-xl hover:scale-105 flex items-center space-x-2 mx-auto sm:mx-0"
             >
               <span>Start Your Project</span>
               <ArrowRight className="h-5 w-5" />
             </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-yellow-600 transition-all duration-300 font-bold">
+            <button className="border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-primary-600 transition-all duration-300 font-bold">
               View Our Portfolio
             </button>
           </div>

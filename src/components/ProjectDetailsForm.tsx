@@ -284,7 +284,7 @@ const ProjectDetailsForm = ({ isOpen, onClose }: ProjectDetailsFormProps) => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-4 px-6 rounded-lg hover:from-primary-700 hover:to-primary-800 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-300 font-semibold text-lg flex items-center justify-center space-x-2 group shadow-lg hover:shadow-xl"
+              className="w-full bg-primary-600 text-white py-4 px-6 rounded-lg hover:bg-primary-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-300 font-semibold text-lg flex items-center justify-center space-x-2 group shadow-lg hover:shadow-xl"
             >
               {isSubmitting ? (
                 <>

@@ -70,21 +70,21 @@ export async function POST(request: NextRequest) {
           
           <div style="background: white; padding: 30px; border-radius: 0 0 10px 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
             <div style="margin-bottom: 25px;">
-              <h2 style="color: #2563eb; margin: 0 0 15px 0; font-size: 20px; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">Contact Information</h2>
+              <h2 style="color: #00a86b; margin: 0 0 15px 0; font-size: 20px; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">Contact Information</h2>
               <p style="margin: 8px 0; font-size: 16px;"><strong>Name:</strong> ${name}</p>
-              <p style="margin: 8px 0; font-size: 16px;"><strong>Email:</strong> <a href="mailto:${email}" style="color: #2563eb; text-decoration: none;">${email}</a></p>
+              <p style="margin: 8px 0; font-size: 16px;"><strong>Email:</strong> <a href="mailto:${email}" style="color: #00a86b; text-decoration: none;">${email}</a></p>
               ${company ? `<p style="margin: 8px 0; font-size: 16px;"><strong>Company:</strong> ${company}</p>` : ''}
             </div>
 
             <div style="margin-bottom: 25px;">
-              <h2 style="color: #2563eb; margin: 0 0 15px 0; font-size: 20px; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">Message Details</h2>
+              <h2 style="color: #00a86b; margin: 0 0 15px 0; font-size: 20px; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">Message Details</h2>
               ${subject ? `<p style="margin: 8px 0; font-size: 16px;"><strong>Subject:</strong> ${subject}</p>` : ''}
               ${service ? `<p style="margin: 8px 0; font-size: 16px;"><strong>Service Interest:</strong> ${service}</p>` : ''}
             </div>
 
             <div style="margin-bottom: 25px;">
-              <h2 style="color: #2563eb; margin: 0 0 15px 0; font-size: 20px; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">Message</h2>
-              <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #2563eb;">
+              <h2 style="color: #00a86b; margin: 0 0 15px 0; font-size: 20px; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">Message</h2>
+              <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #00a86b;">
                 <p style="margin: 0; font-size: 16px; white-space: pre-wrap;">${message}</p>
               </div>
             </div>

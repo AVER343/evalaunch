@@ -1,0 +1,176 @@
+{
+  "services": [
+    {
+      "id": "software-development",
+      "title": "Software Development",
+      "slug": "software-development",
+      "description": "Custom web and mobile applications built with cutting-edge technologies and best practices.",
+      "shortDescription": "Custom software solutions for modern businesses",
+      "icon": "Code",
+      "features": [
+        {
+          "name": "Web Applications",
+          "description": "React.js, Next.js, Vue.js, Angular"
+        },
+        {
+          "name": "Mobile Apps",
+          "description": "Flutter, React Native, Native iOS/Android"
+        },
+        {
+          "name": "Backend Development",
+          "description": "Node.js, Python, PHP, .NET"
+        },
+        {
+          "name": "API Development",
+          "description": "RESTful APIs, GraphQL, Microservices"
+        },
+        {
+          "name": "Cloud Integration",
+          "description": "AWS, Azure, Google Cloud Platform"
+        },
+        {
+          "name": "DevOps & Deployment",
+          "description": "Docker, Kubernetes, CI/CD Pipelines"
+        }
+      ],
+      "technologies": [
+        "React",
+        "Next.js",
+        "Node.js",
+        "Python",
+        "TypeScript",
+        "AWS",
+        "Docker",
+        "PostgreSQL",
+        "MongoDB",
+        "Kubernetes"
+      ],
+      "pricing": {
+        "startingAt": "$5,000",
+        "currency": "USD",
+        "model": "project-based"
+      },
+      "timeline": "4-12 weeks",
+      "stats": {
+        "projects": "25+",
+        "clients": "15+",
+        "satisfaction": "95%"
+      }
+    },
+    {
+      "id": "ai-ml-solutions",
+      "title": "AI/ML Solutions",
+      "slug": "ai-ml-solutions",
+      "description": "Intelligent automation and machine learning solutions that drive business growth and efficiency.",
+      "shortDescription": "AI-powered solutions for intelligent automation",
+      "icon": "Brain",
+      "features": [
+        {
+          "name": "Machine Learning Models",
+          "description": "TensorFlow, PyTorch, Scikit-learn"
+        },
+        {
+          "name": "Natural Language Processing",
+          "description": "OpenAI GPT, BERT, Transformers"
+        },
+        {
+          "name": "Computer Vision",
+          "description": "OpenCV, YOLO, Image Recognition"
+        },
+        {
+          "name": "Predictive Analytics",
+          "description": "Time Series, Forecasting Models"
+        },
+        {
+          "name": "Chatbots & Virtual Assistants",
+          "description": "Dialogflow, Rasa, Custom AI"
+        },
+        {
+          "name": "Data Science Consulting",
+          "description": "Data Analysis, Model Optimization"
+        }
+      ],
+      "technologies": [
+        "TensorFlow",
+        "PyTorch",
+        "OpenAI",
+        "Python",
+        "Scikit-learn",
+        "AWS SageMaker",
+        "Azure ML",
+        "Hugging Face",
+        "BERT",
+        "GPT"
+      ],
+      "pricing": {
+        "startingAt": "$8,000",
+        "currency": "USD",
+        "model": "project-based"
+      },
+      "timeline": "6-16 weeks",
+      "stats": {
+        "projects": "12+",
+        "clients": "8+",
+        "satisfaction": "92%"
+      }
+    },
+    {
+      "id": "digital-marketing",
+      "title": "Digital Marketing",
+      "slug": "digital-marketing",
+      "description": "Data-driven marketing strategies that drive growth, engagement, and measurable results.",
+      "shortDescription": "Strategic digital marketing for business growth",
+      "icon": "Megaphone",
+      "features": [
+        {
+          "name": "SEO Optimization",
+          "description": "Technical SEO, Content Strategy, Link Building"
+        },
+        {
+          "name": "Social Media Marketing",
+          "description": "Facebook, Instagram, LinkedIn, Twitter"
+        },
+        {
+          "name": "PPC Advertising",
+          "description": "Google Ads, Facebook Ads, LinkedIn Ads"
+        },
+        {
+          "name": "Content Marketing",
+          "description": "Blog Writing, Video Production, Infographics"
+        },
+        {
+          "name": "Email Marketing",
+          "description": "Mailchimp, SendGrid, Automated Campaigns"
+        },
+        {
+          "name": "Analytics & Reporting",
+          "description": "Google Analytics, Facebook Insights, Dashboards"
+        }
+      ],
+      "technologies": [
+        "Google Ads",
+        "Facebook Ads",
+        "Google Analytics",
+        "SEMrush",
+        "Ahrefs",
+        "Mailchimp",
+        "HubSpot",
+        "Hootsuite",
+        "Canva",
+        "Adobe Creative Suite"
+      ],
+      "pricing": {
+        "startingAt": "$2,000",
+        "currency": "USD",
+        "model": "monthly-retainer"
+      },
+      "timeline": "2-8 weeks",
+      "stats": {
+        "projects": "18+",
+        "clients": "12+",
+        "satisfaction": "90%"
+      }
+    }
+  ]
+}
+

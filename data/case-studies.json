@@ -1,0 +1,260 @@
+{
+  "caseStudies": [
+    {
+      "id": "ecommerce-platform",
+      "title": "E-commerce Platform Transformation",
+      "slug": "ecommerce-platform-transformation",
+      "client": "RetailCo",
+      "industry": "E-commerce",
+      "service": "Software Development",
+      "thumbnail": "/images/case-studies/ecommerce-thumbnail.jpg",
+      "hero": "/images/case-studies/ecommerce-hero.jpg",
+      "summary": "Transformed a traditional retail business into a thriving online marketplace with custom e-commerce platform.",
+      "challenge": "RetailCo needed to modernize their outdated e-commerce system to compete in the digital marketplace. Their existing platform was slow, hard to manage, and lacked modern features like real-time inventory management and mobile optimization.",
+      "solution": "We built a modern, scalable e-commerce platform using Next.js, Node.js, and AWS. The solution included a custom CMS, real-time inventory management, payment gateway integration, and a mobile-first design approach.",
+      "results": [
+        {
+          "metric": "Revenue Increase",
+          "value": "150%",
+          "description": "Year-over-year revenue growth after platform launch"
+        },
+        {
+          "metric": "Page Load Time",
+          "value": "0.8s",
+          "description": "Average page load time improved by 75%"
+        },
+        {
+          "metric": "Mobile Conversions",
+          "value": "+200%",
+          "description": "Mobile conversion rate improvement"
+        },
+        {
+          "metric": "Customer Satisfaction",
+          "value": "4.8/5",
+          "description": "Average customer satisfaction score"
+        }
+      ],
+      "technologies": [
+        "Next.js",
+        "Node.js",
+        "PostgreSQL",
+        "AWS",
+        "Stripe",
+        "Redis",
+        "Docker"
+      ],
+      "timeline": "12 weeks",
+      "teamSize": "5 developers",
+      "testimonial": {
+        "quote": "eVALaunche transformed our business. The new platform is fast, reliable, and our customers love it. We've seen tremendous growth since launch.",
+        "author": "John Smith",
+        "role": "CEO, RetailCo"
+      }
+    },
+    {
+      "id": "ai-chatbot-banking",
+      "title": "AI-Powered Customer Service Chatbot",
+      "slug": "ai-chatbot-banking",
+      "client": "BankTech Solutions",
+      "industry": "Financial Services",
+      "service": "AI/ML Solutions",
+      "thumbnail": "/images/case-studies/chatbot-thumbnail.jpg",
+      "hero": "/images/case-studies/chatbot-hero.jpg",
+      "summary": "Developed an intelligent chatbot that handles 70% of customer inquiries automatically, reducing support costs significantly.",
+      "challenge": "BankTech Solutions was overwhelmed with customer support requests, leading to long wait times and high operational costs. They needed an AI solution that could handle common inquiries while maintaining security and compliance.",
+      "solution": "We developed a custom AI chatbot using OpenAI GPT-4, integrated with their existing systems. The chatbot was trained on banking-specific data, included natural language understanding, and seamlessly escalated complex queries to human agents.",
+      "results": [
+        {
+          "metric": "Query Resolution",
+          "value": "70%",
+          "description": "Percentage of queries resolved automatically"
+        },
+        {
+          "metric": "Response Time",
+          "value": "< 2s",
+          "description": "Average response time for customer queries"
+        },
+        {
+          "metric": "Cost Reduction",
+          "value": "45%",
+          "description": "Reduction in customer support costs"
+        },
+        {
+          "metric": "Customer Satisfaction",
+          "value": "92%",
+          "description": "Customer satisfaction rate with chatbot"
+        }
+      ],
+      "technologies": [
+        "OpenAI GPT-4",
+        "Python",
+        "TensorFlow",
+        "FastAPI",
+        "Redis",
+        "PostgreSQL",
+        "Kubernetes"
+      ],
+      "timeline": "10 weeks",
+      "teamSize": "4 AI engineers",
+      "testimonial": {
+        "quote": "The AI chatbot has revolutionized our customer service. It's accurate, fast, and our customers are delighted with the instant responses.",
+        "author": "Sarah Johnson",
+        "role": "CTO, BankTech Solutions"
+      }
+    },
+    {
+      "id": "saas-marketing-campaign",
+      "title": "SaaS Product Launch Campaign",
+      "slug": "saas-marketing-campaign",
+      "client": "CloudFlow",
+      "industry": "SaaS",
+      "service": "Digital Marketing",
+      "thumbnail": "/images/case-studies/marketing-thumbnail.jpg",
+      "hero": "/images/case-studies/marketing-hero.jpg",
+      "summary": "Executed a comprehensive digital marketing campaign that achieved 500+ sign-ups in the first month of product launch.",
+      "challenge": "CloudFlow was launching a new project management SaaS product in a competitive market. They needed to build brand awareness, generate qualified leads, and achieve strong initial user adoption with a limited marketing budget.",
+      "solution": "We developed a multi-channel digital marketing strategy including SEO optimization, content marketing, PPC campaigns on Google and LinkedIn, influencer partnerships, and email marketing automation. The campaign focused on targeted audiences in tech and startup communities.",
+      "results": [
+        {
+          "metric": "New Sign-ups",
+          "value": "500+",
+          "description": "User sign-ups in the first month"
+        },
+        {
+          "metric": "Website Traffic",
+          "value": "+350%",
+          "description": "Increase in organic website traffic"
+        },
+        {
+          "metric": "Conversion Rate",
+          "value": "12%",
+          "description": "Visitor to trial sign-up conversion rate"
+        },
+        {
+          "metric": "ROI",
+          "value": "320%",
+          "description": "Return on marketing investment"
+        }
+      ],
+      "technologies": [
+        "Google Ads",
+        "LinkedIn Ads",
+        "HubSpot",
+        "Google Analytics",
+        "Mailchimp",
+        "SEMrush",
+        "Canva"
+      ],
+      "timeline": "8 weeks",
+      "teamSize": "3 marketing specialists",
+      "testimonial": {
+        "quote": "eVALaunche's marketing expertise helped us achieve a successful product launch. Their data-driven approach delivered exceptional results.",
+        "author": "Michael Chen",
+        "role": "Founder, CloudFlow"
+      }
+    },
+    {
+      "id": "healthcare-app",
+      "title": "Telemedicine Mobile Application",
+      "slug": "healthcare-app",
+      "client": "HealthConnect",
+      "industry": "Healthcare",
+      "service": "Software Development",
+      "thumbnail": "/images/case-studies/healthcare-thumbnail.jpg",
+      "hero": "/images/case-studies/healthcare-hero.jpg",
+      "summary": "Built a HIPAA-compliant telemedicine app connecting patients with healthcare providers for remote consultations.",
+      "challenge": "HealthConnect needed a secure, HIPAA-compliant mobile application for telemedicine consultations. The app had to support video calls, prescription management, medical records access, and payment processing while ensuring patient data privacy.",
+      "solution": "We developed a cross-platform mobile app using React Native with end-to-end encryption, secure video calling via WebRTC, integrated electronic health records (EHR), appointment scheduling, and secure payment processing. The backend was built with Node.js and deployed on AWS with HIPAA compliance.",
+      "results": [
+        {
+          "metric": "Active Users",
+          "value": "10,000+",
+          "description": "Active users within 6 months of launch"
+        },
+        {
+          "metric": "Consultations",
+          "value": "5,000+",
+          "description": "Monthly telemedicine consultations"
+        },
+        {
+          "metric": "App Rating",
+          "value": "4.7/5",
+          "description": "Average app store rating"
+        },
+        {
+          "metric": "Response Time",
+          "value": "< 5min",
+          "description": "Average doctor response time"
+        }
+      ],
+      "technologies": [
+        "React Native",
+        "Node.js",
+        "WebRTC",
+        "PostgreSQL",
+        "AWS",
+        "Redis",
+        "Twilio"
+      ],
+      "timeline": "16 weeks",
+      "teamSize": "6 developers",
+      "testimonial": {
+        "quote": "eVALaunche delivered a world-class telemedicine solution. Their attention to security and compliance gave us confidence, and the app performance is outstanding.",
+        "author": "Dr. Emily Roberts",
+        "role": "Chief Medical Officer, HealthConnect"
+      }
+    },
+    {
+      "id": "predictive-analytics",
+      "title": "Predictive Analytics for Retail",
+      "slug": "predictive-analytics-retail",
+      "client": "MegaMart",
+      "industry": "Retail",
+      "service": "AI/ML Solutions",
+      "thumbnail": "/images/case-studies/analytics-thumbnail.jpg",
+      "hero": "/images/case-studies/analytics-hero.jpg",
+      "summary": "Implemented machine learning models for demand forecasting, reducing inventory costs by 30% and improving product availability.",
+      "challenge": "MegaMart struggled with inventory management, leading to stockouts of popular items and excess inventory of slow-moving products. They needed predictive analytics to optimize inventory levels and improve demand forecasting.",
+      "solution": "We developed custom machine learning models using historical sales data, seasonal trends, market factors, and external data sources. The solution included time series forecasting, anomaly detection, and real-time dashboard for inventory managers.",
+      "results": [
+        {
+          "metric": "Inventory Costs",
+          "value": "-30%",
+          "description": "Reduction in inventory holding costs"
+        },
+        {
+          "metric": "Forecast Accuracy",
+          "value": "92%",
+          "description": "Demand forecast accuracy rate"
+        },
+        {
+          "metric": "Stockout Reduction",
+          "value": "65%",
+          "description": "Decrease in stockout incidents"
+        },
+        {
+          "metric": "Profit Margin",
+          "value": "+18%",
+          "description": "Improvement in profit margins"
+        }
+      ],
+      "technologies": [
+        "Python",
+        "TensorFlow",
+        "Scikit-learn",
+        "Pandas",
+        "AWS SageMaker",
+        "Tableau",
+        "PostgreSQL"
+      ],
+      "timeline": "14 weeks",
+      "teamSize": "4 data scientists",
+      "testimonial": {
+        "quote": "The predictive analytics solution from eVALaunche has transformed our inventory management. We're now making data-driven decisions with confidence.",
+        "author": "David Martinez",
+        "role": "Operations Director, MegaMart"
+      }
+    }
+  ]
+}
+

@@ -1,77 +1,68 @@
 'use client';
 
-import { useState } from 'react';
-import { Code, Brain, Megaphone, CheckCircle, ArrowRight, Users, Award, Target, Lightbulb, Shield, Zap, Globe, Star, Building2, Briefcase, Clock } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Code, Brain, Megaphone, CheckCircle, ArrowRight, Users, Award, Target, Lightbulb, Shield, Zap, Globe, Star, Clock, MessageSquare } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { getCompanyStats, getCompanyValues, getCompanyMission, getCompanyVision, getAllTeamMembers, getFeaturedTestimonials } from '@/lib/data';
 
 export default function AboutPage() {
+  const [stats, setStats] = useState<any>(null);
+  const [values, setValues] = useState<any[]>([]);
+  const [mission, setMission] = useState<any>(null);
+  const [vision, setVision] = useState<any>(null);
+  const [team, setTeam] = useState<any[]>([]);
+  const [testimonials, setTestimonials] = useState<any[]>([]);
+
+  useEffect(() => {
+    const loadData = async () => {
+      const [statsData, valuesData, missionData, visionData, teamData, testimonialsData] = await Promise.all([
+        getCompanyStats(),
+        getCompanyValues(),
+        getCompanyMission(),
+        getCompanyVision(),
+        getAllTeamMembers(),
+        getFeaturedTestimonials(3)
+      ]);
+      setStats(statsData);
+      setValues(valuesData);
+      setMission(missionData);
+      setVision(visionData);
+      setTeam(teamData);
+      setTestimonials(testimonialsData);
+    };
+    loadData();
+  }, []);
+
+  if (!stats || !mission || !vision) {
+    return null;
+  }
+
   const openEmailClient = () => {
-    window.location.href = 'mailto:support@evalaunche.com?subject=Project Inquiry&body=Hello, I would like to discuss a project with eVALaunche. Please provide more information about your services.';
+    window.location.href = 'mailto:hello@evalaunche.com?subject=Project Inquiry&body=Hello, I would like to discuss a project with eVALaunche. Please provide more information about your services.';
   };
 
-  const stats = [
-    { icon: Users, label: 'Happy Clients', value: '150+', color: 'text-blue-600' },
-    { icon: Code, label: 'Projects Delivered', value: '500+', color: 'text-green-600' },
-    { icon: Award, label: 'Success Rate', value: '98%', color: 'text-yellow-600' },
-    { icon: Clock, label: 'Years Experience', value: '8+', color: 'text-purple-600' }
+  const statsDisplay = [
+    { icon: Users, label: 'Happy Clients', value: stats.happyClients, color: 'text-blue-600' },
+    { icon: Code, label: 'Projects Delivered', value: stats.projectsCompleted, color: 'text-green-600' },
+    { icon: Award, label: 'Success Rate', value: stats.successRate, color: 'text-yellow-600' },
+    { icon: Clock, label: 'Years Experience', value: stats.yearsExperience, color: 'text-purple-600' }
   ];
 
-  const values = [
-    {
-      icon: Target,
-      title: 'Excellence',
-      description: 'We strive for perfection in every project, delivering solutions that exceed expectations and drive real business value.'
-    },
-    {
-      icon: Lightbulb,
-      title: 'Innovation',
-      description: 'We embrace cutting-edge technologies and creative approaches to solve complex business challenges.'
-    },
-    {
-      icon: Shield,
-      title: 'Reliability',
-      description: 'We build trust through consistent delivery, transparent communication, and unwavering commitment to quality.'
-    },
-    {
-      icon: Users,
-      title: 'Collaboration',
-      description: 'We work closely with our clients as partners, ensuring their vision becomes reality through close collaboration.'
-    }
-  ];
-
-  const team = [
-    {
-      name: 'Our Team',
-      role: 'Full-Stack Developers',
-      expertise: 'Software Development, AI/ML, Digital Marketing',
-      description: 'A dedicated team of experienced professionals passionate about delivering innovative technology solutions.'
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: 'Client A',
-      company: 'Technology Company',
-      role: 'CEO',
-      content: 'eVALaunche has been instrumental in our digital transformation. Their expertise and dedication are unmatched.',
-      rating: 5
-    },
-    {
-      name: 'Client B',
-      company: 'Innovation Lab',
-      role: 'CTO',
-      content: 'Working with eVALaunche was a game-changer. They delivered exactly what we needed, on time and within budget.',
-      rating: 5
-    },
-    {
-      name: 'Client C',
-      company: 'Startup Company',
-      role: 'Founder',
-      content: 'The solution they built for us increased our efficiency significantly. Highly recommend their services.',
-      rating: 4
-    }
-  ];
+  // Map icon names to components
+  const getIconComponent = (iconName: string) => {
+    const iconMap: { [key: string]: any } = {
+      'Lightbulb': Lightbulb,
+      'Award': Award,
+      'Users': Users,
+      'MessageSquare': MessageSquare,
+      'Target': Target,
+      'Shield': Shield,
+      'Zap': Zap,
+      'Globe': Globe
+    };
+    return iconMap[iconName] || Target;
+  };
 
   return (
     <main className="min-h-screen">
@@ -92,7 +83,7 @@ export default function AboutPage() {
 
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-            {stats.map((stat, index) => {
+            {statsDisplay.map((stat, index) => {
               const IconComponent = stat.icon;
               return (
                 <div key={index} className="text-center">
@@ -113,38 +104,33 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">{mission.title}</h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                To empower businesses with cutting-edge technology solutions that drive growth, efficiency, and innovation. 
-                We believe technology should be accessible, scalable, and transformative for organizations of all sizes.
+                {mission.content}
               </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Our mission is to be the trusted technology partner that helps businesses navigate the digital landscape 
-                and achieve their goals through innovative software development, AI/ML solutions, and strategic digital marketing.
-              </p>
+              <div className="space-y-4">
+                {mission.points.map((point: string, index: number) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0 mt-1" />
+                    <p className="text-gray-700">{point}</p>
+                  </div>
+                ))}
+              </div>
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">{vision.title}</h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                To be the leading technology partner for businesses worldwide, recognized for our innovation, quality, 
-                and commitment to client success. We envision a future where technology seamlessly integrates with 
-                business strategy.
+                {vision.content}
               </p>
               <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-2xl border border-yellow-200">
                 <h4 className="text-xl font-semibold text-gray-900 mb-4">Why Choose <span className="text-yellow-600">eVALaunche</span>?</h4>
                 <ul className="space-y-3">
-                  <li className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-gray-700">Free consultation and project assessment</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-gray-700">Transparent pricing with no hidden costs</span>
-                  </li>
-                  <li className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-gray-700">24/7 support and maintenance</span>
-                  </li>
+                  {vision.benefits.map((benefit: string, index: number) => (
+                    <li key={index} className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <span className="text-gray-700">{benefit}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -166,9 +152,9 @@ export default function AboutPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => {
-              const IconComponent = value.icon;
+              const IconComponent = getIconComponent(value.icon);
               return (
-                <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+                <div key={value.id} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl mb-6">
                     <IconComponent className="h-8 w-8 text-white" />
                   </div>
@@ -193,16 +179,18 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {team.map((member, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-2xl text-center hover:shadow-lg transition-shadow duration-300">
+              <div key={member.id} className="bg-gray-50 p-6 rounded-2xl text-center hover:shadow-lg transition-shadow duration-300">
                 <div className="w-20 h-20 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Users className="h-10 w-10 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
                 <p className="text-yellow-600 font-medium mb-2">{member.role}</p>
-                <p className="text-sm text-gray-600 mb-3">{member.expertise}</p>
-                <p className="text-gray-700 text-sm leading-relaxed">{member.description}</p>
+                <p className="text-sm text-gray-600 mb-3">
+                  {member.expertise.slice(0, 3).join(', ')}
+                </p>
+                <p className="text-gray-700 text-sm leading-relaxed">{member.bio}</p>
               </div>
             ))}
           </div>
@@ -210,35 +198,37 @@ export default function AboutPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              What Our <span className="text-yellow-600">Clients</span> Say
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Don&apos;t just take our word for it. Here&apos;s what our satisfied clients have to say about working with us.
-            </p>
-          </div>
+      {testimonials.length > 0 && (
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                What Our <span className="text-yellow-600">Clients</span> Say
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Don&apos;t just take our word for it. Here&apos;s what our satisfied clients have to say about working with us.
+              </p>
+            </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                  ))}
+            <div className="grid md:grid-cols-3 gap-8">
+              {testimonials.map((testimonial) => (
+                <div key={testimonial.id} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex items-center mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 mb-6 italic">&ldquo;{testimonial.content}&rdquo;</p>
+                  <div className="border-t border-gray-200 pt-4">
+                    <div className="font-semibold text-gray-900">{testimonial.client.name}</div>
+                    <div className="text-sm text-gray-600">{testimonial.client.role}, {testimonial.client.company}</div>
+                  </div>
                 </div>
-                <p className="text-gray-700 mb-6 italic">&ldquo;{testimonial.content}&rdquo;</p>
-                <div className="border-t border-gray-200 pt-4">
-                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                  <div className="text-sm text-gray-600">{testimonial.role}, {testimonial.company}</div>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-yellow-500 to-orange-500">

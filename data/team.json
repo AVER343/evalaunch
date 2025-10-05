@@ -1,0 +1,68 @@
+{
+  "team": [
+    {
+      "id": "team-1",
+      "name": "eVALaunche Development Team",
+      "role": "Full-Stack Developers",
+      "avatar": "/images/team/dev-team.jpg",
+      "bio": "Our development team consists of experienced full-stack developers passionate about building scalable, high-performance web and mobile applications.",
+      "expertise": [
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "Python",
+        "TypeScript",
+        "AWS",
+        "Docker"
+      ],
+      "social": {
+        "linkedin": "https://linkedin.com/company/evalaunche",
+        "github": "https://github.com/evalaunche",
+        "twitter": "https://twitter.com/evalaunche"
+      }
+    },
+    {
+      "id": "team-2",
+      "name": "eVALaunche AI/ML Team",
+      "role": "AI/ML Engineers & Data Scientists",
+      "avatar": "/images/team/ai-team.jpg",
+      "bio": "Our AI/ML team specializes in building intelligent solutions using cutting-edge machine learning technologies and data science techniques.",
+      "expertise": [
+        "TensorFlow",
+        "PyTorch",
+        "OpenAI",
+        "Python",
+        "Natural Language Processing",
+        "Computer Vision",
+        "Data Analytics"
+      ],
+      "social": {
+        "linkedin": "https://linkedin.com/company/evalaunche",
+        "github": "https://github.com/evalaunche",
+        "twitter": "https://twitter.com/evalaunche"
+      }
+    },
+    {
+      "id": "team-3",
+      "name": "eVALaunche Marketing Team",
+      "role": "Digital Marketing Specialists",
+      "avatar": "/images/team/marketing-team.jpg",
+      "bio": "Our marketing team creates data-driven strategies to help businesses grow their online presence and achieve measurable results.",
+      "expertise": [
+        "SEO",
+        "SEM",
+        "Social Media Marketing",
+        "Content Marketing",
+        "PPC Advertising",
+        "Email Marketing",
+        "Analytics"
+      ],
+      "social": {
+        "linkedin": "https://linkedin.com/company/evalaunche",
+        "twitter": "https://twitter.com/evalaunche",
+        "facebook": "https://facebook.com/evalaunche"
+      }
+    }
+  ]
+}
+

@@ -46,13 +46,13 @@ export async function POST(request: NextRequest) {
       subject: `New Project Quote Request - ${projectType}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9fafb;">
-          <div style="background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
+          <div style="background: #00a86b; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
             <h1 style="color: white; margin: 0; font-size: 28px; font-weight: bold;">New Project Quote Request</h1>
             <p style="color: white; margin: 10px 0 0 0; font-size: 16px; opacity: 0.9;">eVALaunche Tech Solutions</p>
           </div>
           
           <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-            <h2 style="color: #1f2937; margin: 0 0 20px 0; font-size: 24px; border-bottom: 2px solid #fbbf24; padding-bottom: 10px;">Project Information</h2>
+            <h2 style="color: #1f2937; margin: 0 0 20px 0; font-size: 24px; border-bottom: 2px solid #00a86b; padding-bottom: 10px;">Project Information</h2>
             
             <div style="margin-bottom: 25px;">
               <h3 style="color: #374151; margin: 0 0 10px 0; font-size: 18px;">Contact Details</h3>
@@ -79,7 +79,7 @@ export async function POST(request: NextRequest) {
               </div>
             </div>
             
-            <div style="background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); padding: 20px; border-radius: 8px; text-align: center; margin-top: 30px;">
+            <div style="background: #00a86b; padding: 20px; border-radius: 8px; text-align: center; margin-top: 30px;">
               <h3 style="color: white; margin: 0 0 10px 0; font-size: 20px;">Ready to Get Started?</h3>
               <p style="color: white; margin: 0; font-size: 16px; opacity: 0.9;">This client is interested in a ${projectType} project with a ${budget} budget. Contact them within 24 hours for the best conversion rate!</p>
             </div>

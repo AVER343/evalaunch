@@ -1,0 +1,101 @@
+{
+  "company": {
+    "name": "eVALaunche",
+    "tagline": "Transform Your Business with Technology",
+    "description": "Leading software development company specializing in AI/ML solutions, custom web applications, mobile apps, and digital marketing strategies.",
+    "foundingYear": "2021",
+    "email": {
+      "general": "hello@evalaunche.com",
+      "support": "support@evalaunche.com",
+      "careers": "careers@evalaunche.com"
+    },
+    "social": {
+      "linkedin": "https://linkedin.com/company/evalaunche",
+      "github": "https://github.com/evalaunche",
+      "twitter": "https://twitter.com/evalaunche",
+      "facebook": "https://facebook.com/evalaunche"
+    }
+  },
+  "stats": {
+    "projectsCompleted": "55+",
+    "happyClients": "35+",
+    "yearsExperience": "3+",
+    "clientSatisfaction": "92%",
+    "successRate": "95%",
+    "teamSize": "2-10",
+    "averageRating": "4.7"
+  },
+  "mission": {
+    "title": "Our Mission",
+    "content": "To empower businesses with innovative technology solutions that drive growth, efficiency, and success. We believe in the transformative power of technology and its ability to solve complex business challenges.",
+    "points": [
+      "Deliver exceptional value through technology",
+      "Foster long-term partnerships with our clients",
+      "Continuously innovate and stay ahead of trends"
+    ]
+  },
+  "vision": {
+    "title": "Our Vision",
+    "content": "To be the leading technology partner for businesses worldwide, recognized for our innovation, quality, and commitment to client success. We envision a future where technology seamlessly integrates with business strategy.",
+    "benefits": [
+      "Free consultation and project assessment",
+      "Transparent pricing with no hidden costs",
+      "24/7 support and maintenance"
+    ]
+  },
+  "values": [
+    {
+      "id": "innovation-first",
+      "title": "Innovation First",
+      "icon": "Lightbulb",
+      "description": "We stay ahead of technology trends to deliver cutting-edge solutions that give you a competitive advantage."
+    },
+    {
+      "id": "quality-focused",
+      "title": "Quality Focused",
+      "icon": "Award",
+      "description": "Every project undergoes rigorous testing and quality assurance to ensure exceptional performance and reliability."
+    },
+    {
+      "id": "client-centric",
+      "title": "Client-Centric",
+      "icon": "Users",
+      "description": "Your success is our success. We work closely with you to understand your needs and deliver beyond expectations."
+    },
+    {
+      "id": "transparent-process",
+      "title": "Transparent Process",
+      "icon": "MessageSquare",
+      "description": "We maintain open communication throughout the project lifecycle, keeping you informed at every step."
+    }
+  ],
+  "process": [
+    {
+      "step": "01",
+      "title": "Discovery",
+      "description": "Understanding your needs and goals"
+    },
+    {
+      "step": "02",
+      "title": "Planning",
+      "description": "Creating a detailed project roadmap"
+    },
+    {
+      "step": "03",
+      "title": "Development",
+      "description": "Building your solution with precision"
+    },
+    {
+      "step": "04",
+      "title": "Launch",
+      "description": "Deploying and optimizing your project"
+    }
+  ],
+  "features": [
+    "Custom Software Solutions",
+    "Machine Learning Integration",
+    "Digital Marketing Strategies",
+    "24/7 Support & Maintenance"
+  ]
+}
+
