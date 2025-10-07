@@ -1,4 +1,4 @@
-// Data fetching utilities for eVALaunche website
+// Data fetching utilities for eVaLaunche website
 // Simulates API responses with local JSON data for flexibility
 
 import servicesData from '../data/services.json';

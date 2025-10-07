@@ -2,6 +2,7 @@
 
 import { ArrowRight, Star, Users, TrendingUp, ChevronLeft, ChevronRight, Code, Database, Globe, Cpu, Shield, Zap, Smartphone, Brain, Cloud, BarChart3, Lock, Wifi, MessageSquare, FlaskConical, Layers, Server, Terminal, FileText, Activity, GitBranch, HardDrive, Network } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import caseStudiesData from '../../data/case-studies.json';
 
 interface PortfolioProps {
@@ -106,10 +107,10 @@ const Portfolio = ({ onStartProject }: PortfolioProps) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">
             Our <span className="text-primary-600">Portfolio</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base text-gray-600 max-w-3xl mx-auto">
             Explore our successful projects and see how we&apos;ve helped businesses 
             achieve their goals through innovative technology solutions.
           </p>
@@ -158,7 +159,7 @@ const Portfolio = ({ onStartProject }: PortfolioProps) => {
                       <div className="p-4 flex flex-col justify-center">
                         {/* Header Section */}
                         <div className="mb-3">
-                          <h3 className="text-xl font-bold text-gray-900 mb-1">{project.title}</h3>
+                          <h3 className="text-base font-semibold text-gray-900 mb-1">{project.title}</h3>
                           <p className="text-xs text-gray-600 leading-relaxed mb-2">{project.description}</p>
                           
                           {/* Project Status */}
@@ -306,8 +307,8 @@ const Portfolio = ({ onStartProject }: PortfolioProps) => {
         {/* Testimonials Section */}
         <div className="bg-white rounded-3xl p-12 shadow-xl">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">What Our Clients Say</h3>
-            <p className="text-lg text-gray-600">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">What Our Clients Say</h3>
+            <p className="text-base text-gray-600">
               Don&apos;t just take our word for it - hear from our satisfied clients
             </p>
           </div>
@@ -324,7 +325,7 @@ const Portfolio = ({ onStartProject }: PortfolioProps) => {
                     <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-700 mb-4 leading-relaxed">&quot;{testimonial.content}&quot;</p>
+                <p className="text-base text-gray-700 mb-4 leading-relaxed">&quot;{testimonial.content}&quot;</p>
                 <div className="border-t pt-4">
                   <div className="font-semibold text-gray-900">{testimonial.client.name}</div>
                   <div className="text-sm text-gray-600">{testimonial.client.role}, {testimonial.client.company}</div>
@@ -338,10 +339,10 @@ const Portfolio = ({ onStartProject }: PortfolioProps) => {
         {/* Stats Section */}
         <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-8">
           {[
-            { icon: Users, number: '15+', label: 'Happy Clients' },
-            { icon: TrendingUp, number: '25+', label: 'Projects Completed' },
-            { icon: Star, number: '4.7', label: 'Average Rating' },
-            { icon: ArrowRight, number: '95%', label: 'Success Rate' }
+            { icon: '/icons/conversation.png', number: '15+', label: 'Happy Clients' },
+            { icon: '/icons/mobile-app.png', number: '25+', label: 'Projects Completed' },
+            { icon: '/images/smile.png', number: '4.7', label: 'Average Rating' },
+            { icon: '/images/success.png', number: '95%', label: 'Success Rate' }
           ].map((stat, index) => (
             <div
               key={index}
@@ -349,10 +350,15 @@ const Portfolio = ({ onStartProject }: PortfolioProps) => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <stat.icon className="h-8 w-8 text-primary-600" />
+                <Image 
+                  src={stat.icon} 
+                  alt={`${stat.label} icon`}
+                  width={48}
+                  height={48}
+                />
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
-              <div className="text-gray-600 font-medium">{stat.label}</div>
+              <div className="text-2xl font-bold text-gray-900 mb-2">{stat.number}</div>
+              <div className="text-xs font-medium text-gray-600">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -360,13 +366,13 @@ const Portfolio = ({ onStartProject }: PortfolioProps) => {
         {/* CTA Section */}
         <div className="text-center mt-20">
           <div className="bg-primary-600 rounded-3xl p-12 text-white shadow-lg">
-            <h3 className="text-3xl font-bold mb-4">Ready to Start Your Project?</h3>
-            <p className="text-xl mb-8 opacity-90">
+            <h3 className="text-2xl font-bold mb-4">Ready to Start Your Project?</h3>
+            <p className="text-base mb-8 opacity-90">
               Join our portfolio of successful projects and transform your business today.
             </p>
             <button 
               onClick={onStartProject}
-              className="bg-white text-primary-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-300 font-semibold text-lg flex items-center space-x-2 mx-auto group"
+              className="bg-white text-primary-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-300 font-semibold text-base flex items-center space-x-2 mx-auto group"
             >
               <span>Start Your Project</span>
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />

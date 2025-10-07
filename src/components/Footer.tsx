@@ -4,7 +4,9 @@ import { Code, Brain, Megaphone, ArrowUp, Github, Twitter, Linkedin, Instagram }
 
 const Footer = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const footerLinks = {
@@ -50,23 +52,23 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex flex-col">
-                <span className="text-2xl font-bold text-white">
-                  eVALaunche
+                <span className="text-2xl lg:text-3xl font-bold text-white">
+                  eValaunche
                 </span>
-                <span className="text-xs text-gray-400 font-medium -mt-1">Tech Solutions</span>
+                <span className="text-xs font-medium text-gray-400 -mt-1">Tech Solutions</span>
               </div>
             </div>
             <div className="text-gray-400">
-              <p className="text-sm mb-2">
+              <p className="text-base mb-2">
                 <span className="font-medium">Email:</span>{' '}
                 <a 
                   href="mailto:support@evalaunche.com" 
-                  className="text-yellow-400 hover:text-yellow-300 transition-colors duration-200"
+                  className="text-blue-400 hover:text-blue-300 transition-colors duration-200"
                 >
                   support@evalaunche.com
                 </a>
               </p>
-              <p className="text-sm">
+              <p className="text-base">
                 <span className="font-medium">Available for new projects</span>
               </p>
             </div>
@@ -74,13 +76,13 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-white">Services</h3>
+            <h3 className="text-base font-semibold mb-6 text-white">Services</h3>
             <ul className="space-y-3">
               {footerLinks.services.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 text-sm"
+                    className="text-gray-400 hover:text-blue-400 transition-colors duration-200 text-base"
                   >
                     {link.name}
                   </a>
@@ -91,13 +93,13 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-white">Company</h3>
+            <h3 className="text-base font-semibold mb-6 text-white">Company</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 text-sm"
+                    className="text-gray-400 hover:text-blue-400 transition-colors duration-200 text-base"
                   >
                     {link.name}
                   </a>
@@ -108,13 +110,13 @@ const Footer = () => {
 
           {/* Resources & Legal */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-white">Resources</h3>
+            <h3 className="text-base font-semibold mb-6 text-white">Resources</h3>
             <ul className="space-y-3 mb-6">
               {footerLinks.resources.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 text-sm"
+                    className="text-gray-400 hover:text-blue-400 transition-colors duration-200 text-base"
                   >
                     {link.name}
                   </a>
@@ -122,13 +124,13 @@ const Footer = () => {
               ))}
             </ul>
             
-            <h3 className="text-lg font-semibold mb-6 text-white">Legal</h3>
+            <h3 className="text-base font-semibold mb-6 text-white">Legal</h3>
             <ul className="space-y-3">
               {footerLinks.legal.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 text-sm"
+                    className="text-gray-400 hover:text-blue-400 transition-colors duration-200 text-base"
                   >
                     {link.name}
                   </a>
@@ -144,8 +146,8 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
             {/* Copyright */}
-            <div className="text-gray-400 text-sm text-center lg:text-left">
-              © 2024 eVALaunche. All rights reserved.
+            <div className="text-gray-400 text-base text-center lg:text-left">
+              © 2024 eVaLaunche. All rights reserved.
             </div>
             
             {/* Social Links and Back to Top */}
@@ -156,7 +158,7 @@ const Footer = () => {
                   <a
                     key={index}
                     href={social.href}
-                    className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-800"
+                    className="text-gray-400 hover:text-blue-400 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-800"
                     aria-label={social.label}
                   >
                     <social.icon className="h-5 w-5" />
@@ -167,9 +169,9 @@ const Footer = () => {
               {/* Back to Top Button */}
               <button
                 onClick={scrollToTop}
-                className="flex items-center space-x-2 text-gray-400 hover:text-yellow-400 transition-colors duration-200 px-4 py-2 rounded-lg hover:bg-gray-800"
+                className="flex items-center space-x-2 text-gray-400 hover:text-blue-400 transition-colors duration-200 px-4 py-2 rounded-lg hover:bg-gray-800"
               >
-                <span className="text-sm">Back to top</span>
+                <span className="text-base">Back to top</span>
                 <ArrowUp className="h-4 w-4" />
               </button>
             </div>

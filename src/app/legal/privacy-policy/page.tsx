@@ -323,7 +323,7 @@ export default function PrivacyPolicy() {
                 year: 'numeric', 
                 month: 'long', 
                 day: 'numeric' 
-              })} and applies to all information collected by eVALaunche.
+              })} and applies to all information collected by eVaLaunche.
             </p>
           </div>
         </div>

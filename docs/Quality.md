@@ -3,7 +3,7 @@
 ## Linting, Build Process, Lighthouse Targets, and Test Coverage
 
 ### Overview
-Quality assurance is integral to the eVALaunche project, ensuring clean code, optimal performance, and maintainability.
+Quality assurance is integral to the eVaLaunche project, ensuring clean code, optimal performance, and maintainability.
 
 ### Code Quality Standards
 

@@ -3,7 +3,7 @@
 ## SEO Rules, Meta Tags, and Analytics Tracking
 
 ### Overview
-The eVALaunche website implements comprehensive SEO strategies and analytics tracking to maximize visibility and measure performance.
+The eVaLaunche website implements comprehensive SEO strategies and analytics tracking to maximize visibility and measure performance.
 
 ### SEO Implementation
 
@@ -14,10 +14,10 @@ All pages use Next.js 14 Metadata API for consistent SEO:
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Page Title | eVALaunche',
+  title: 'Page Title | eVaLaunche',
   description: 'Page description 150-160 characters',
   keywords: ['keyword1', 'keyword2', 'keyword3'],
-  authors: [{ name: 'eVALaunche Team' }],
+  authors: [{ name: 'eVaLaunche Team' }],
   openGraph: {
     title: 'OG Title',
     description: 'OG Description',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 **Location**: `src/app/layout.tsx`
 
 **Includes**:
-- Default title template: `%s | eVALaunche`
+- Default title template: `%s | eVaLaunche`
 - Site-wide description
 - Comprehensive keywords array
 - Organization information
@@ -53,37 +53,37 @@ export const metadata: Metadata = {
 ### Page-Specific SEO
 
 #### Homepage (/)
-- **Title**: "eVALaunche - Software Development, AI/ML Solutions & Digital Marketing"
+- **Title**: "eVaLaunche - Software Development, AI/ML Solutions & Digital Marketing"
 - **Focus Keywords**: software development, AI ML, digital marketing
 - **Structured Data**: Organization schema (JSON-LD)
 - **Priority**: 1.0 in sitemap
 
 #### Services (/services)
-- **Title**: "Our Services | eVALaunche"
+- **Title**: "Our Services | eVaLaunche"
 - **Focus**: Detailed service descriptions
 - **Schema**: Service schema for each offering
 - **Priority**: 0.9 in sitemap
 
 #### About (/about)
-- **Title**: "About Us | eVALaunche"
+- **Title**: "About Us | eVaLaunche"
 - **Focus**: Company information, team, values
 - **Schema**: Organization, Team member schemas
 - **Priority**: 0.8 in sitemap
 
 #### Case Studies (/case-studies)
-- **Title**: "Case Studies & Portfolio | eVALaunche"
+- **Title**: "Case Studies & Portfolio | eVaLaunche"
 - **Focus**: Project showcases, results
 - **Schema**: Case study as Article schema
 - **Priority**: 0.8 in sitemap
 
 #### Blog (/blog)
-- **Title**: "Blog & Insights | eVALaunche"
+- **Title**: "Blog & Insights | eVaLaunche"
 - **Focus**: Technical articles, industry insights
 - **Schema**: BlogPosting, Article schemas
 - **Priority**: 0.7 in sitemap
 
 #### Careers (/careers)
-- **Title**: "Careers - Join Our Team | eVALaunche"
+- **Title**: "Careers - Join Our Team | eVaLaunche"
 - **Focus**: Job listings, company culture
 - **Schema**: JobPosting schemas
 - **Priority**: 0.7 in sitemap
@@ -97,7 +97,7 @@ export const metadata: Metadata = {
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "eVALaunche",
+  "name": "eVaLaunche",
   "description": "Leading software development company...",
   "url": "https://evalaunche.com",
   "logo": {
@@ -373,7 +373,7 @@ If adding local business information:
 ```json
 {
   "@type": "LocalBusiness",
-  "name": "eVALaunche",
+  "name": "eVaLaunche",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "...",

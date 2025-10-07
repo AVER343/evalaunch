@@ -1,4 +1,4 @@
-// Data fetching utilities for eVALaunche website
+// Data fetching utilities for eVaLaunche website
 // Simulates API responses with local JSON data for flexibility
 
 import servicesData from '../../data/services.json';
@@ -9,6 +9,13 @@ import teamData from '../../data/team.json';
 import companyConfig from '../../data/company-config.json';
 
 // Type definitions
+export interface SubService {
+  id: string;
+  title: string;
+  description: string;
+  href: string;
+}
+
 export interface Service {
   id: string;
   title: string;
@@ -16,6 +23,8 @@ export interface Service {
   description: string;
   shortDescription: string;
   icon: string;
+  color?: string;
+  subServices?: SubService[];
   features: Array<{
     name: string;
     description: string;
@@ -170,6 +179,37 @@ export interface CompanyConfig {
 export async function getAllServices(): Promise<Service[]> {
   // Simulate API delay
   await new Promise(resolve => setTimeout(resolve, 100));
+  return servicesData.services;
+}
+
+export async function getMainServices(): Promise<Service[]> {
+  // Simulate API delay
+  await new Promise(resolve => setTimeout(resolve, 100));
+  // Transform mainServices to match Service interface
+  return servicesData.mainServices.map(service => ({
+    ...service,
+    features: service.subServices?.map(sub => ({
+      name: sub.title,
+      description: sub.description
+    })) || [],
+    technologies: [] // mainServices don't have technologies, will be empty
+  }));
+}
+
+export async function getAllServicesUnified(): Promise<Service[]> {
+  // Simulate API delay
+  await new Promise(resolve => setTimeout(resolve, 100));
+  // Return main services as they have subServices, or fallback to regular services
+  if (servicesData.mainServices.length > 0) {
+    return servicesData.mainServices.map(service => ({
+      ...service,
+      features: service.subServices?.map(sub => ({
+        name: sub.title,
+        description: sub.description
+      })) || [],
+      technologies: [] // mainServices don't have technologies, will be empty
+    }));
+  }
   return servicesData.services;
 }
 
@@ -367,6 +407,8 @@ export async function getStatistics() {
 export const dataAPI = {
   services: {
     getAll: getAllServices,
+    getMain: getMainServices,
+    getAllUnified: getAllServicesUnified,
     getBySlug: getServiceBySlug,
     getById: getServiceById
   },

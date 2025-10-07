@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowLeft, Home, Search } from 'lucide-react'
 
 export const metadata = {
-  title: 'Page Not Found | eVALaunche',
+  title: 'Page Not Found | eVaLaunche',
   description: 'The page you are looking for could not be found. Explore our software development services, AI/ML solutions, and digital marketing expertise.',
 }
 

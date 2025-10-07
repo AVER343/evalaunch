@@ -1,9 +1,9 @@
 # Project Overview
 
-## eVALaunche Consultancy Website
+## eVaLaunche Consultancy Website
 
 ### Project Summary
-eVALaunche is a modern, production-ready consultancy website built with Next.js 14 (App Router) showcasing software development, AI/ML solutions, and digital marketing services. The website is designed as a static site for optimal performance, SEO, and deployment on Vercel.
+eVaLaunche is a modern, production-ready consultancy website built with Next.js 14 (App Router) showcasing software development, AI/ML solutions, and digital marketing services. The website is designed as a static site for optimal performance, SEO, and deployment on Vercel.
 
 ### Tech Stack
 

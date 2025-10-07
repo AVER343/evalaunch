@@ -5,24 +5,6 @@ import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink, Calendar, Clock, Users, TrendingUp, Award, ArrowRight, CheckCircle } from 'lucide-react';
 
-interface CaseStudy {
-  id: number;
-  title: string;
-  industry: string;
-  service: string;
-  duration: string;
-  team: string;
-  year: string;
-  challenge: string;
-  solution: string;
-  results: string[];
-  technologies: string[];
-  testimonial: {
-    text: string;
-    author: string;
-  };
-}
-
 // Case studies data (same as in the main page)
 const caseStudies = [
   {
@@ -228,7 +210,7 @@ export default function CaseStudyDetailPage() {
 
         <div className="grid lg:grid-cols-2 gap-12 mb-12">
           {/* Challenge Section */}
-          <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-3xl shadow-xl p-10 border border-red-100">
+          <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl shadow-xl p-10 border border-blue-100">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
               <span className="w-3 h-3 bg-red-500 rounded-full mr-4"></span>
               The Challenge
@@ -302,7 +284,7 @@ export default function CaseStudyDetailPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <a
-              href="mailto:support@evalaunche.com?subject=Project Inquiry&body=Hello, I would like to discuss a project with eVALaunche. Please provide more information about your services."
+              href="/contact"
               className="inline-flex items-center space-x-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-10 py-5 rounded-xl hover:from-blue-600 hover:to-purple-600 transition-all duration-300 font-semibold text-xl shadow-lg hover:shadow-xl hover:scale-105"
             >
               <span>Get Started Today</span>

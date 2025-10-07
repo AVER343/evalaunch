@@ -1,28 +1,28 @@
 # Theming
 
-## Design System for eVALaunche Website (Taazaa Green Theme)
+## Design System for eVaLaunche Website (Blue Theme)
 
 ### Overview
-The eVALaunche website uses a consistent design system built with **Tailwind CSS**, maintaining clean, accessible, and professional visuals.  
-All gradients have been removed for a **flat, modern, enterprise feel**, inspired by **Taazaa.com’s green palette**.
+The eVaLaunche website uses a consistent design system built with **Tailwind CSS**, maintaining clean, accessible, and professional visuals.  
+The design uses a **modern blue color scheme** with **flat, enterprise-ready styling**.
 
 ---
 
 ### Color Palette
 
 #### Primary Colors
-- **Green (Taazaa Green)**: `#00A86B`  
+- **Blue**: `#3b82f6`  
   Used for: Primary CTAs, links, highlights, and brand accents  
-  Represents: Growth, innovation, and trust
+  Represents: Trust, professionalism, and innovation
 
 #### Secondary Colors
-- **Dark Green**: `#007A50` — hover states, section backgrounds, contrast elements  
-- **Light Green**: `#E6F4EE` — subtle backgrounds and hover overlays
+- **Dark Blue**: `#2563eb` — hover states, section backgrounds, contrast elements  
+- **Light Blue**: `#dbeafe` — subtle backgrounds and hover overlays
 
 #### Accent Colors
-- **Sky Blue**: `#0ea5e9` — secondary buttons, info indicators, links  
-- **Sky Blue Light**: `#38bdf8` — hover states for accent elements  
-- **Sky Blue Dark**: `#0284c7` — pressed/active states for accent
+- **Cyan**: `#06b6d4` — secondary buttons, info indicators, links  
+- **Cyan Light**: `#22d3ee` — hover states for accent elements  
+- **Cyan Dark**: `#0891b2` — pressed/active states for accent
 - **Warning Yellow**: `#f59e0b` — warnings, alerts (use sparingly)
 - **Error Red**: `#dc2626` — error states, alerts  
 - **Gray-Green Neutral**: `#F9FAF9` — light section backgrounds
@@ -167,7 +167,7 @@ Common values: `4, 6, 8, 12, 16, 20, 24`
     <div className="flex items-center justify-between h-16">
       {/* Logo */}
       <Link href="/" className="text-xl font-bold text-gray-900">
-        eVALaunche
+        eVaLaunche
       </Link>
       
       {/* Nav Links */}
@@ -232,9 +232,9 @@ Common values: `4, 6, 8, 12, 16, 20, 24`
 ---
 
 ### Theme Consistency Checklist
-- [ ] Uses Taazaa Green palette (`--color-primary` or `primary-*` classes)
-- [ ] No gradients (flat design)
-- [ ] No hardcoded blue/gold/yellow colors (use theme variables)
+- [ ] Uses Blue theme palette (`--color-primary` or `primary-*` classes)
+- [ ] Uses gradients sparingly (primarily for CTA sections and accents)
+- [ ] No hardcoded colors (use theme variables)
 - [ ] Typography hierarchy consistent  
 - [ ] Spacing matches scale  
 - [ ] Icons from Lucide React  
@@ -254,9 +254,9 @@ theme: {
   extend: {
     colors: {
       primary: {
-        50: '#e6f4ee',
-        500: '#00a86b', // Main Taazaa Green
-        700: '#007a50', // Dark Green for hover
+        50: '#eff6ff',
+        500: '#3b82f6', // Main Blue
+        700: '#1d4ed8', // Dark Blue for hover
       },
       // ... full scale defined in config
     },
@@ -269,8 +269,8 @@ theme: {
 
 **Color Usage Rules:**
 - **ALWAYS** use `primary-*` scale or CSS variables (`var(--color-primary)`)
-- **NEVER** hardcode colors like `#00A86B`, `#2563EB`, `#FACC15` in components
-- **NO** gradients (`bg-gradient-*`) - flat design only
+- **NEVER** hardcode colors like `#3b82f6`, `#2563EB`, `#FACC15` in components
+- **USE** gradients sparingly for emphasis (CTAs, hero sections, accents only)
 - Changing `--color-primary` in `globals.css` will update the entire theme
 
 ### CSS Variables in `globals.css`
@@ -279,10 +279,10 @@ All colors are defined as CSS variables for easy theming:
 
 ```css
 :root {
-  --color-primary: #00a86b;
-  --color-primary-light: #33ab5f;
-  --color-primary-dark: #007a50;
-  --color-accent: #0ea5e9;
+  --color-primary: #3b82f6;
+  --color-primary-light: #60a5fa;
+  --color-primary-dark: #2563eb;
+  --color-accent: #06b6d4;
   /* ... etc */
 }
 ```
@@ -298,9 +298,9 @@ To change the theme color globally across the entire website:
 1. **Update `globals.css`** - Change the primary color variables:
    ```css
    :root {
-     --color-primary: #00a86b;        /* Main brand color */
-     --color-primary-light: #33ab5f;  /* Light variant */
-     --color-primary-dark: #007a50;   /* Dark variant for hovers */
+     --color-primary: #3b82f6;        /* Main brand color */
+     --color-primary-light: #60a5fa;  /* Light variant */
+     --color-primary-dark: #2563eb;   /* Dark variant for hovers */
    }
    ```
 
@@ -308,8 +308,8 @@ To change the theme color globally across the entire website:
    ```js
    colors: {
      primary: {
-       500: '#00a86b',  // Main color
-       700: '#007a50',  // Hover state
+       500: '#3b82f6',  // Main color
+       700: '#1d4ed8',  // Hover state
        // ... update other shades as needed
      }
    }

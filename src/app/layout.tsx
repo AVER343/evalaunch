@@ -1,24 +1,28 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Header from '@/components/Header';
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const plusJakartaSans = Plus_Jakarta_Sans({ 
+  subsets: ["latin"],
+  variable: '--font-plus-jakarta-sans',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | eVALaunche - Leading Software Development & AI Solutions",
-    default: "eVALaunche - Software Development, AI/ML Solutions & Digital Marketing | Transform Your Business"
+    template: "%s | eVaLaunche - Leading Software Development & AI Solutions",
+    default: "eVaLaunche - Software Development, AI/ML Solutions & Digital Marketing | Transform Your Business"
   },
   description: "Transform your business with cutting-edge software development, AI/ML solutions, and digital marketing strategies. Expert developers delivering custom web applications, mobile apps, machine learning solutions, and data-driven marketing campaigns. 3+ years experience, 25+ projects completed.",
   icons: {
     icon: [
-      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
       { url: '/favicon.ico', sizes: 'any' }
     ],
-    apple: '/icon.svg',
+    apple: '/favicon.svg',
   },
   keywords: [
     "software development company",
@@ -42,9 +46,9 @@ export const metadata: Metadata = {
     "AWS cloud services",
     "SEO optimization"
   ],
-  authors: [{ name: "eVALaunche Team", url: "https://evalaunche.com" }],
-  creator: "eVALaunche",
-  publisher: "eVALaunche",
+  authors: [{ name: "eVaLaunche Team", url: "https://evalaunche.com" }],
+  creator: "eVaLaunche",
+  publisher: "eVaLaunche",
   formatDetection: {
     email: false,
     address: false,
@@ -55,24 +59,24 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "eVALaunche - Software Development, AI/ML Solutions & Digital Marketing",
+    title: "eVaLaunche - Software Development, AI/ML Solutions & Digital Marketing",
     description: "Transform your business with cutting-edge software development, AI/ML solutions, and digital marketing strategies. Expert developers delivering custom solutions.",
     type: "website",
     locale: "en_US",
     url: process.env.NEXT_PUBLIC_APP_URL || 'https://evalaunche.com',
-    siteName: "eVALaunche",
+    siteName: "eVaLaunche",
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'eVALaunche - Software Development & AI Solutions',
+        alt: 'eVaLaunche - Software Development & AI Solutions',
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "eVALaunche - Software Development, AI/ML Solutions & Digital Marketing",
+    title: "eVaLaunche - Software Development, AI/ML Solutions & Digital Marketing",
     description: "Transform your business with cutting-edge technology solutions. Expert developers, AI/ML specialists, and digital marketing professionals.",
     images: ['/og-image.jpg'],
     creator: '@evalaunche',
@@ -100,7 +104,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
+      </head>
+      <body className={plusJakartaSans.className}>
         <Header />
         {children}
         <Analytics />

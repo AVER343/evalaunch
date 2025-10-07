@@ -1,163 +1,190 @@
 {
-  "services": [
+  "mainServices": [
+    {
+      "id": "ai-automation",
+      "title": "AI & Automation",
+      "slug": "ai-automation",
+      "description": "Intelligent automation and AI solutions to amplify team leverage",
+      "shortDescription": "Intelligent automation and AI solutions",
+      "icon": "Brain",
+      "color": "bg-purple-500",
+      "subServices": [
+        {
+          "id": "ai-automation-workflows",
+          "title": "AI Automation",
+          "description": "Agent workflows and autonomous task execution",
+          "href": "/services?service=ai-automation&sub=workflows"
+        },
+        {
+          "id": "ai-chatbots",
+          "title": "AI Chatbots",
+          "description": "Intelligent conversational AI and customer support",
+          "href": "/services?service=ai-automation&sub=chatbots"
+        },
+        {
+          "id": "llm-integration",
+          "title": "LLM Integration",
+          "description": "OpenAI, Claude, and custom model deployment",
+          "href": "/services?service=ai-automation&sub=llm"
+        },
+        {
+          "id": "process-automation",
+          "title": "Process Automation",
+          "description": "RPA and intelligent workflow automation",
+          "href": "/services?service=ai-automation&sub=process"
+        },
+        {
+          "id": "machine-learning",
+          "title": "Machine Learning",
+          "description": "Custom ML models and predictive analytics",
+          "href": "/services?service=ai-automation&sub=ml"
+        }
+      ],
+      "pricing": {
+        "startingAt": "$12,000",
+        "currency": "USD",
+        "model": "project-based"
+      },
+      "timeline": "6-18 weeks",
+      "stats": {
+        "projects": "20+",
+        "clients": "14+",
+        "satisfaction": "96%"
+      }
+    },
     {
       "id": "software-development",
       "title": "Software Development",
       "slug": "software-development",
-      "description": "Custom web and mobile applications built with cutting-edge technologies and best practices.",
-      "shortDescription": "Custom software solutions for modern businesses",
+      "description": "Full-stack development and digital solutions",
+      "shortDescription": "Custom software development",
       "icon": "Code",
-      "features": [
+      "color": "bg-blue-500",
+      "subServices": [
         {
-          "name": "Web Applications",
-          "description": "React.js, Next.js, Vue.js, Angular"
+          "id": "web-development",
+          "title": "Web Development",
+          "description": "React.js, Next.js, Vue.js, Angular applications",
+          "href": "/services?service=software-development&sub=web"
         },
         {
-          "name": "Mobile Apps",
-          "description": "Flutter, React Native, Native iOS/Android"
+          "id": "frontend-development",
+          "title": "Frontend Development",
+          "description": "User interface design and development with modern frameworks",
+          "href": "/services?service=software-development&sub=frontend"
         },
         {
-          "name": "Backend Development",
-          "description": "Node.js, Python, PHP, .NET"
+          "id": "ecommerce-development",
+          "title": "E-commerce Development",
+          "description": "Online stores, payment integration, and shopping cart solutions",
+          "href": "/services?service=software-development&sub=ecommerce"
         },
         {
-          "name": "API Development",
-          "description": "RESTful APIs, GraphQL, Microservices"
+          "id": "cms-development",
+          "title": "CMS Development",
+          "description": "WordPress, Drupal, custom content management systems",
+          "href": "/services?service=software-development&sub=cms"
         },
         {
-          "name": "Cloud Integration",
-          "description": "AWS, Azure, Google Cloud Platform"
+          "id": "app-development",
+          "title": "App Development",
+          "description": "React Native, Flutter, Native iOS/Android apps",
+          "href": "/services?service=software-development&sub=mobile"
         },
         {
-          "name": "DevOps & Deployment",
-          "description": "Docker, Kubernetes, CI/CD Pipelines"
+          "id": "api-development",
+          "title": "API Development",
+          "description": "RESTful APIs, GraphQL, Microservices",
+          "href": "/services?service=software-development&sub=api"
+        },
+        {
+          "id": "cloud-devops",
+          "title": "Cloud & DevOps",
+          "description": "AWS, Azure, GCP infrastructure and automation",
+          "href": "/services?service=software-development&sub=cloud"
+        },
+        {
+          "id": "data-analytics",
+          "title": "Data & Analytics",
+          "description": "Data warehousing, BI, and analytics platforms",
+          "href": "/services?service=software-development&sub=data"
+        },
+        {
+          "id": "backend-development",
+          "title": "Backend Development",
+          "description": "Node.js, Python, Java, .NET server-side development",
+          "href": "/services?service=software-development&sub=backend"
+        },
+        {
+          "id": "database-design",
+          "title": "Database Design",
+          "description": "SQL, NoSQL database architecture and optimization",
+          "href": "/services?service=software-development&sub=database"
         }
-      ],
-      "technologies": [
-        "React",
-        "Next.js",
-        "Node.js",
-        "Python",
-        "TypeScript",
-        "AWS",
-        "Docker",
-        "PostgreSQL",
-        "MongoDB",
-        "Kubernetes"
-      ],
-      "pricing": {
-        "startingAt": "$5,000",
-        "currency": "USD",
-        "model": "project-based"
-      },
-      "timeline": "4-12 weeks",
-      "stats": {
-        "projects": "25+",
-        "clients": "15+",
-        "satisfaction": "95%"
-      }
-    },
-    {
-      "id": "ai-ml-solutions",
-      "title": "AI/ML Solutions",
-      "slug": "ai-ml-solutions",
-      "description": "Intelligent automation and machine learning solutions that drive business growth and efficiency.",
-      "shortDescription": "AI-powered solutions for intelligent automation",
-      "icon": "Brain",
-      "features": [
-        {
-          "name": "Machine Learning Models",
-          "description": "TensorFlow, PyTorch, Scikit-learn"
-        },
-        {
-          "name": "Natural Language Processing",
-          "description": "OpenAI GPT, BERT, Transformers"
-        },
-        {
-          "name": "Computer Vision",
-          "description": "OpenCV, YOLO, Image Recognition"
-        },
-        {
-          "name": "Predictive Analytics",
-          "description": "Time Series, Forecasting Models"
-        },
-        {
-          "name": "Chatbots & Virtual Assistants",
-          "description": "Dialogflow, Rasa, Custom AI"
-        },
-        {
-          "name": "Data Science Consulting",
-          "description": "Data Analysis, Model Optimization"
-        }
-      ],
-      "technologies": [
-        "TensorFlow",
-        "PyTorch",
-        "OpenAI",
-        "Python",
-        "Scikit-learn",
-        "AWS SageMaker",
-        "Azure ML",
-        "Hugging Face",
-        "BERT",
-        "GPT"
       ],
       "pricing": {
         "startingAt": "$8,000",
         "currency": "USD",
         "model": "project-based"
       },
-      "timeline": "6-16 weeks",
+      "timeline": "6-20 weeks",
       "stats": {
-        "projects": "12+",
-        "clients": "8+",
-        "satisfaction": "92%"
+        "projects": "75+",
+        "clients": "47+",
+        "satisfaction": "96%"
       }
     },
     {
       "id": "digital-marketing",
       "title": "Digital Marketing",
       "slug": "digital-marketing",
-      "description": "Data-driven marketing strategies that drive growth, engagement, and measurable results.",
-      "shortDescription": "Strategic digital marketing for business growth",
+      "description": "Data-driven marketing strategies for business growth",
+      "shortDescription": "Strategic digital marketing",
       "icon": "Megaphone",
-      "features": [
+      "color": "bg-green-500",
+      "subServices": [
         {
-          "name": "SEO Optimization",
-          "description": "Technical SEO, Content Strategy, Link Building"
+          "id": "ppc-advertising",
+          "title": "PPC Advertising",
+          "description": "Google Ads, Facebook Ads, LinkedIn Ads",
+          "href": "/services?service=digital-marketing&sub=ppc"
         },
         {
-          "name": "Social Media Marketing",
-          "description": "Facebook, Instagram, LinkedIn, Twitter"
+          "id": "seo-optimization",
+          "title": "SEO Optimization",
+          "description": "Technical SEO, Content Strategy, Link Building",
+          "href": "/services?service=digital-marketing&sub=seo"
         },
         {
-          "name": "PPC Advertising",
-          "description": "Google Ads, Facebook Ads, LinkedIn Ads"
+          "id": "social-media-marketing",
+          "title": "Social Media Marketing",
+          "description": "Facebook, Instagram, LinkedIn, Twitter campaigns",
+          "href": "/services?service=digital-marketing&sub=social"
         },
         {
-          "name": "Content Marketing",
-          "description": "Blog Writing, Video Production, Infographics"
+          "id": "content-marketing",
+          "title": "Content Marketing",
+          "description": "Blog writing, video production, infographics",
+          "href": "/services?service=digital-marketing&sub=content"
         },
         {
-          "name": "Email Marketing",
-          "description": "Mailchimp, SendGrid, Automated Campaigns"
+          "id": "email-marketing",
+          "title": "Email Marketing",
+          "description": "Automated campaigns and lead nurturing",
+          "href": "/services?service=digital-marketing&sub=email"
         },
         {
-          "name": "Analytics & Reporting",
-          "description": "Google Analytics, Facebook Insights, Dashboards"
+          "id": "influencer-marketing",
+          "title": "Influencer Marketing",
+          "description": "Brand partnerships and influencer collaborations",
+          "href": "/services?service=digital-marketing&sub=influencer"
+        },
+        {
+          "id": "marketing-automation",
+          "title": "Marketing Automation",
+          "description": "Lead scoring, nurturing workflows, and CRM integration",
+          "href": "/services?service=digital-marketing&sub=automation"
         }
-      ],
-      "technologies": [
-        "Google Ads",
-        "Facebook Ads",
-        "Google Analytics",
-        "SEMrush",
-        "Ahrefs",
-        "Mailchimp",
-        "HubSpot",
-        "Hootsuite",
-        "Canva",
-        "Adobe Creative Suite"
       ],
       "pricing": {
         "startingAt": "$2,000",
@@ -171,6 +198,671 @@
         "satisfaction": "90%"
       }
     }
+  ],
+  "services": [
+    {
+      "id": "strategy-advisory",
+      "title": "Strategy & Advisory",
+      "slug": "strategy-advisory",
+      "description": "Operating model design, roadmapping, and value realization with executive alignment.",
+      "shortDescription": "Strategic guidance for sustainable growth",
+      "icon": "Target",
+      "color": "bg-purple-500",
+      "subServices": [
+        {
+          "id": "operating-model-design",
+          "title": "Operating Model Design",
+          "description": "Organizational structure and workflow optimization",
+          "href": "/services?service=strategy-advisory&sub=operating-model"
+        },
+        {
+          "id": "strategic-roadmapping",
+          "title": "Strategic Roadmapping",
+          "description": "Long-term planning and milestone definition",
+          "href": "/services?service=strategy-advisory&sub=roadmapping"
+        },
+        {
+          "id": "value-realization",
+          "title": "Value Realization",
+          "description": "ROI tracking and outcome measurement",
+          "href": "/services?service=strategy-advisory&sub=value-realization"
+        },
+        {
+          "id": "executive-alignment",
+          "title": "Executive Alignment",
+          "description": "Stakeholder engagement and buy-in",
+          "href": "/services?service=strategy-advisory&sub=executive-alignment"
+        },
+        {
+          "id": "digital-strategy",
+          "title": "Digital Strategy",
+          "description": "Technology adoption and transformation planning",
+          "href": "/services?service=strategy-advisory&sub=digital-strategy"
+        },
+        {
+          "id": "change-management",
+          "title": "Change Management",
+          "description": "Organizational readiness and adoption strategies",
+          "href": "/services?service=strategy-advisory&sub=change-management"
+        },
+        {
+          "id": "business-process-optimization",
+          "title": "Business Process Optimization",
+          "description": "Workflow analysis and efficiency improvements",
+          "href": "/services?service=strategy-advisory&sub=process-optimization"
+        }
+      ],
+      "features": [
+        {
+          "name": "Operating Model Design",
+          "description": "Organizational structure and workflow optimization"
+        },
+        {
+          "name": "Strategic Roadmapping",
+          "description": "Long-term planning and milestone definition"
+        },
+        {
+          "name": "Value Realization",
+          "description": "ROI tracking and outcome measurement"
+        },
+        {
+          "name": "Executive Alignment",
+          "description": "Stakeholder engagement and buy-in"
+        },
+        {
+          "name": "Digital Strategy",
+          "description": "Technology adoption and transformation planning"
+        },
+        {
+          "name": "Change Management",
+          "description": "Organizational readiness and adoption strategies"
+        },
+        {
+          "name": "Business Process Optimization",
+          "description": "Workflow analysis and efficiency improvements"
+        }
+      ],
+      "technologies": [
+        "Strategic Planning",
+        "Business Analysis",
+        "OKRs",
+        "Value Stream Mapping",
+        "Stakeholder Management",
+        "Change Management"
+      ],
+      "pricing": {
+        "startingAt": "$10,000",
+        "currency": "USD",
+        "model": "engagement-based"
+      },
+      "timeline": "4-12 weeks",
+      "stats": {
+        "projects": "30+",
+        "clients": "20+",
+        "satisfaction": "98%"
+      }
+    },
+    {
+      "id": "digital-transformation",
+      "title": "Digital Transformation",
+      "slug": "digital-transformation",
+      "description": "Modernize processes and platforms to unlock speed, resilience, and scale.",
+      "shortDescription": "End-to-end digital modernization",
+      "icon": "Zap",
+      "color": "bg-orange-500",
+      "subServices": [
+        {
+          "id": "process-modernization",
+          "title": "Process Modernization",
+          "description": "Streamline workflows and eliminate bottlenecks",
+          "href": "/services?service=digital-transformation&sub=process-modernization"
+        },
+        {
+          "id": "platform-migration",
+          "title": "Platform Migration",
+          "description": "Legacy system modernization and cloud adoption",
+          "href": "/services?service=digital-transformation&sub=platform-migration"
+        },
+        {
+          "id": "digital-operations",
+          "title": "Digital Operations",
+          "description": "Automation and operational excellence",
+          "href": "/services?service=digital-transformation&sub=digital-operations"
+        },
+        {
+          "id": "technology-assessment",
+          "title": "Technology Assessment",
+          "description": "Current state analysis and gap identification",
+          "href": "/services?service=digital-transformation&sub=technology-assessment"
+        },
+        {
+          "id": "integration-strategy",
+          "title": "Integration Strategy",
+          "description": "System connectivity and data flow optimization",
+          "href": "/services?service=digital-transformation&sub=integration-strategy"
+        },
+        {
+          "id": "scalability-planning",
+          "title": "Scalability Planning",
+          "description": "Growth-ready architecture and infrastructure",
+          "href": "/services?service=digital-transformation&sub=scalability-planning"
+        },
+        {
+          "id": "user-experience-transformation",
+          "title": "User Experience Transformation",
+          "description": "Customer journey optimization and digital touchpoints",
+          "href": "/services?service=digital-transformation&sub=ux-transformation"
+        }
+      ],
+      "features": [
+        {
+          "name": "Process Modernization",
+          "description": "Streamline workflows and eliminate bottlenecks"
+        },
+        {
+          "name": "Platform Migration",
+          "description": "Legacy system modernization and cloud adoption"
+        },
+        {
+          "name": "Digital Operations",
+          "description": "Automation and operational excellence"
+        },
+        {
+          "name": "Technology Assessment",
+          "description": "Current state analysis and gap identification"
+        },
+        {
+          "name": "Integration Strategy",
+          "description": "System connectivity and data flow optimization"
+        },
+        {
+          "name": "Scalability Planning",
+          "description": "Growth-ready architecture and infrastructure"
+        },
+        {
+          "name": "User Experience Transformation",
+          "description": "Customer journey optimization and digital touchpoints"
+        }
+      ],
+      "technologies": [
+        "Cloud Platforms",
+        "APIs",
+        "Microservices",
+        "Automation Tools",
+        "Integration Platforms",
+        "Modern Tech Stack"
+      ],
+      "pricing": {
+        "startingAt": "$15,000",
+        "currency": "USD",
+        "model": "project-based"
+      },
+      "timeline": "8-24 weeks",
+      "stats": {
+        "projects": "25+",
+        "clients": "18+",
+        "satisfaction": "96%"
+      }
+    },
+    {
+      "id": "product-engineering",
+      "title": "Product Engineering",
+      "slug": "product-engineering",
+      "description": "Design, build, and scale web/mobile apps with high-quality delivery practices.",
+      "shortDescription": "Full-stack product development",
+      "icon": "Code",
+      "color": "bg-blue-500",
+      "subServices": [
+        {
+          "id": "web-applications",
+          "title": "Web Applications",
+          "description": "React.js, Next.js, Vue.js, Angular",
+          "href": "/services?service=product-engineering&sub=web-applications"
+        },
+        {
+          "id": "mobile-development",
+          "title": "Mobile Development",
+          "description": "React Native, Flutter, Native iOS/Android",
+          "href": "/services?service=product-engineering&sub=mobile-development"
+        },
+        {
+          "id": "api-development",
+          "title": "API Development",
+          "description": "RESTful APIs, GraphQL, Microservices",
+          "href": "/services?service=product-engineering&sub=api-development"
+        },
+        {
+          "id": "quality-engineering",
+          "title": "Quality Engineering",
+          "description": "Test automation and quality assurance",
+          "href": "/services?service=product-engineering&sub=quality-engineering"
+        },
+        {
+          "id": "ui-ux-design",
+          "title": "UI/UX Design",
+          "description": "User research, prototyping, design systems",
+          "href": "/services?service=product-engineering&sub=ui-ux-design"
+        },
+        {
+          "id": "product-management",
+          "title": "Product Management",
+          "description": "Feature prioritization and roadmap planning",
+          "href": "/services?service=product-engineering&sub=product-management"
+        },
+        {
+          "id": "performance-optimization",
+          "title": "Performance Optimization",
+          "description": "Speed, scalability, and efficiency improvements",
+          "href": "/services?service=product-engineering&sub=performance"
+        }
+      ],
+      "features": [
+        {
+          "name": "Web Applications",
+          "description": "React.js, Next.js, Vue.js, Angular"
+        },
+        {
+          "name": "Mobile Development",
+          "description": "React Native, Flutter, Native iOS/Android"
+        },
+        {
+          "name": "API Development",
+          "description": "RESTful APIs, GraphQL, Microservices"
+        },
+        {
+          "name": "Quality Engineering",
+          "description": "Test automation and quality assurance"
+        },
+        {
+          "name": "UI/UX Design",
+          "description": "User research, prototyping, design systems"
+        },
+        {
+          "name": "Product Management",
+          "description": "Feature prioritization and roadmap planning"
+        },
+        {
+          "name": "Performance Optimization",
+          "description": "Speed, scalability, and efficiency improvements"
+        }
+      ],
+      "technologies": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "Python",
+        "PostgreSQL",
+        "MongoDB",
+        "Flutter",
+        "React Native"
+      ],
+      "pricing": {
+        "startingAt": "$8,000",
+        "currency": "USD",
+        "model": "project-based"
+      },
+      "timeline": "6-16 weeks",
+      "stats": {
+        "projects": "40+",
+        "clients": "25+",
+        "satisfaction": "97%"
+      }
+    },
+    {
+      "id": "cloud-devops",
+      "title": "Cloud & DevOps",
+      "slug": "cloud-devops",
+      "description": "Platform engineering, CI/CD, observability, and cost-optimized cloud architectures.",
+      "shortDescription": "Cloud infrastructure and automation",
+      "icon": "Cloud",
+      "color": "bg-cyan-500",
+      "subServices": [
+        {
+          "id": "platform-engineering",
+          "title": "Platform Engineering",
+          "description": "Infrastructure as Code and platform automation",
+          "href": "/services?service=cloud-devops&sub=platform-engineering"
+        },
+        {
+          "id": "cicd-pipelines",
+          "title": "CI/CD Pipelines",
+          "description": "Automated build, test, and deployment workflows",
+          "href": "/services?service=cloud-devops&sub=cicd-pipelines"
+        },
+        {
+          "id": "cloud-architecture",
+          "title": "Cloud Architecture",
+          "description": "AWS, Azure, GCP design and implementation",
+          "href": "/services?service=cloud-devops&sub=cloud-architecture"
+        },
+        {
+          "id": "observability",
+          "title": "Observability",
+          "description": "Monitoring, logging, and alerting systems",
+          "href": "/services?service=cloud-devops&sub=observability"
+        },
+        {
+          "id": "cost-optimization",
+          "title": "Cost Optimization",
+          "description": "Resource management and expense reduction",
+          "href": "/services?service=cloud-devops&sub=cost-optimization"
+        },
+        {
+          "id": "security-compliance",
+          "title": "Security & Compliance",
+          "description": "Infrastructure security and compliance automation",
+          "href": "/services?service=cloud-devops&sub=security-compliance"
+        },
+        {
+          "id": "disaster-recovery",
+          "title": "Disaster Recovery",
+          "description": "Backup strategies and business continuity planning",
+          "href": "/services?service=cloud-devops&sub=disaster-recovery"
+        }
+      ],
+      "features": [
+        {
+          "name": "Platform Engineering",
+          "description": "Infrastructure as Code and platform automation"
+        },
+        {
+          "name": "CI/CD Pipelines",
+          "description": "Automated build, test, and deployment workflows"
+        },
+        {
+          "name": "Cloud Architecture",
+          "description": "AWS, Azure, GCP design and implementation"
+        },
+        {
+          "name": "Observability",
+          "description": "Monitoring, logging, and alerting systems"
+        },
+        {
+          "name": "Cost Optimization",
+          "description": "Resource management and expense reduction"
+        },
+        {
+          "name": "Security & Compliance",
+          "description": "Infrastructure security and compliance automation"
+        },
+        {
+          "name": "Disaster Recovery",
+          "description": "Backup strategies and business continuity planning"
+        }
+      ],
+      "technologies": [
+        "AWS",
+        "Azure",
+        "GCP",
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "Jenkins",
+        "GitHub Actions",
+        "Prometheus",
+        "Grafana"
+      ],
+      "pricing": {
+        "startingAt": "$12,000",
+        "currency": "USD",
+        "model": "project-based"
+      },
+      "timeline": "6-20 weeks",
+      "stats": {
+        "projects": "35+",
+        "clients": "22+",
+        "satisfaction": "95%"
+      }
+    },
+    {
+      "id": "data-analytics",
+      "title": "Data & Analytics",
+      "slug": "data-analytics",
+      "description": "Warehouses, analytics, and decisioning to measure, learn, and iterate faster.",
+      "shortDescription": "Data-driven insights and intelligence",
+      "icon": "BarChart3",
+      "color": "bg-indigo-500",
+      "subServices": [
+        {
+          "id": "data-warehousing",
+          "title": "Data Warehousing",
+          "description": "Snowflake, Redshift, BigQuery implementation",
+          "href": "/services?service=data-analytics&sub=data-warehousing"
+        },
+        {
+          "id": "analytics-platforms",
+          "title": "Analytics Platforms",
+          "description": "Business intelligence and reporting solutions",
+          "href": "/services?service=data-analytics&sub=analytics-platforms"
+        },
+        {
+          "id": "data-pipeline",
+          "title": "Data Pipeline",
+          "description": "ETL/ELT processes and data orchestration",
+          "href": "/services?service=data-analytics&sub=data-pipeline"
+        },
+        {
+          "id": "decision-support",
+          "title": "Decision Support",
+          "description": "Dashboards, KPIs, and executive reporting",
+          "href": "/services?service=data-analytics&sub=decision-support"
+        },
+        {
+          "id": "data-governance",
+          "title": "Data Governance",
+          "description": "Quality assurance and compliance frameworks",
+          "href": "/services?service=data-analytics&sub=data-governance"
+        },
+        {
+          "id": "predictive-analytics",
+          "title": "Predictive Analytics",
+          "description": "Statistical modeling and forecasting",
+          "href": "/services?service=data-analytics&sub=predictive-analytics"
+        },
+        {
+          "id": "real-time-analytics",
+          "title": "Real-time Analytics",
+          "description": "Live data processing and instant insights",
+          "href": "/services?service=data-analytics&sub=real-time"
+        }
+      ],
+      "features": [
+        {
+          "name": "Data Warehousing",
+          "description": "Snowflake, Redshift, BigQuery implementation"
+        },
+        {
+          "name": "Analytics Platforms",
+          "description": "Business intelligence and reporting solutions"
+        },
+        {
+          "name": "Data Pipeline",
+          "description": "ETL/ELT processes and data orchestration"
+        },
+        {
+          "name": "Decision Support",
+          "description": "Dashboards, KPIs, and executive reporting"
+        },
+        {
+          "name": "Data Governance",
+          "description": "Quality assurance and compliance frameworks"
+        },
+        {
+          "name": "Predictive Analytics",
+          "description": "Statistical modeling and forecasting"
+        },
+        {
+          "name": "Real-time Analytics",
+          "description": "Live data processing and instant insights"
+        }
+      ],
+      "technologies": [
+        "Snowflake",
+        "BigQuery",
+        "Redshift",
+        "Tableau",
+        "Power BI",
+        "Looker",
+        "dbt",
+        "Airflow",
+        "Python",
+        "SQL"
+      ],
+      "pricing": {
+        "startingAt": "$10,000",
+        "currency": "USD",
+        "model": "project-based"
+      },
+      "timeline": "8-18 weeks",
+      "stats": {
+        "projects": "28+",
+        "clients": "16+",
+        "satisfaction": "94%"
+      }
+    },
+    {
+      "id": "ai-automation",
+      "title": "AI & Automation",
+      "slug": "ai-automation",
+      "description": "Agent workflows, LLM integration, and automation to amplify team leverage.",
+      "shortDescription": "Intelligent automation and AI solutions",
+      "icon": "Brain",
+      "color": "bg-purple-500",
+      "subServices": [
+        {
+          "id": "agent-workflows",
+          "title": "Agent Workflows",
+          "description": "AI agents and autonomous task execution",
+          "href": "/services?service=ai-automation&sub=agent-workflows"
+        },
+        {
+          "id": "llm-integration",
+          "title": "LLM Integration",
+          "description": "OpenAI, Claude, custom model deployment",
+          "href": "/services?service=ai-automation&sub=llm-integration"
+        },
+        {
+          "id": "process-automation",
+          "title": "Process Automation",
+          "description": "RPA and intelligent workflow automation",
+          "href": "/services?service=ai-automation&sub=process-automation"
+        },
+        {
+          "id": "natural-language-processing",
+          "title": "Natural Language Processing",
+          "description": "Text analysis, chatbots, and content generation",
+          "href": "/services?service=ai-automation&sub=nlp"
+        },
+        {
+          "id": "machine-learning",
+          "title": "Machine Learning",
+          "description": "Custom ML models and model training",
+          "href": "/services?service=ai-automation&sub=machine-learning"
+        },
+        {
+          "id": "ai-strategy",
+          "title": "AI Strategy",
+          "description": "Use case identification and ROI planning",
+          "href": "/services?service=ai-automation&sub=ai-strategy"
+        },
+        {
+          "id": "computer-vision",
+          "title": "Computer Vision",
+          "description": "Image recognition, object detection, and visual AI solutions",
+          "href": "/services?service=ai-automation&sub=computer-vision"
+        },
+        {
+          "id": "ai-consulting",
+          "title": "AI Consulting",
+          "description": "Strategic AI implementation and technology advisory",
+          "href": "/services?service=ai-automation&sub=ai-consulting"
+        }
+      ],
+      "features": [
+        { "name": "Agent Workflows", "description": "AI agents and autonomous task execution" },
+        { "name": "LLM Integration", "description": "OpenAI, Claude, custom model deployment" },
+        { "name": "Process Automation", "description": "RPA and intelligent workflow automation" },
+        { "name": "Natural Language Processing", "description": "Text analysis, chatbots, and content generation" },
+        { "name": "Machine Learning", "description": "Custom ML models and model training" },
+        { "name": "AI Strategy", "description": "Use case identification and ROI planning" },
+        { "name": "Computer Vision", "description": "Image recognition, object detection, and visual AI solutions" },
+        { "name": "AI Consulting", "description": "Strategic AI implementation and technology advisory" }
+      ],
+      "technologies": [
+        "OpenAI", "Claude", "LangChain", "TensorFlow", "PyTorch", "Hugging Face", "Python", "AutoGen", "CrewAI", "Vector Databases"
+      ],
+      "pricing": { "startingAt": "$12,000", "currency": "USD", "model": "project-based" },
+      "timeline": "6-18 weeks",
+      "stats": { "projects": "20+", "clients": "14+", "satisfaction": "96%" }
+    },
+    {
+      "id": "digital-marketing",
+      "title": "Digital Marketing",
+      "slug": "digital-marketing",
+      "description": "Data-driven marketing strategies that drive growth, engagement, and measurable results.",
+      "shortDescription": "Strategic digital marketing for business growth",
+      "icon": "Megaphone",
+      "color": "bg-green-500",
+      "subServices": [
+        {
+          "id": "seo-optimization",
+          "title": "SEO Optimization",
+          "description": "Technical SEO, Content Strategy, Link Building",
+          "href": "/services?service=digital-marketing&sub=seo"
+        },
+        {
+          "id": "social-media-marketing",
+          "title": "Social Media Marketing",
+          "description": "Facebook, Instagram, LinkedIn, Twitter",
+          "href": "/services?service=digital-marketing&sub=social"
+        },
+        {
+          "id": "ppc-advertising",
+          "title": "PPC Advertising",
+          "description": "Google Ads, Facebook Ads, LinkedIn Ads",
+          "href": "/services?service=digital-marketing&sub=ppc"
+        },
+        {
+          "id": "content-marketing",
+          "title": "Content Marketing",
+          "description": "Blog Writing, Video Production, Infographics",
+          "href": "/services?service=digital-marketing&sub=content"
+        },
+        {
+          "id": "email-marketing",
+          "title": "Email Marketing",
+          "description": "Mailchimp, SendGrid, Automated Campaigns",
+          "href": "/services?service=digital-marketing&sub=email"
+        },
+        {
+          "id": "analytics-reporting",
+          "title": "Analytics & Reporting",
+          "description": "Google Analytics, Dashboards",
+          "href": "/services?service=digital-marketing&sub=analytics"
+        },
+        {
+          "id": "conversion-optimization",
+          "title": "Conversion Optimization",
+          "description": "A/B testing, landing page optimization, and CRO",
+          "href": "/services?service=digital-marketing&sub=conversion"
+        }
+      ],
+      "features": [
+        { "name": "SEO Optimization", "description": "Technical SEO, Content Strategy, Link Building" },
+        { "name": "Social Media Marketing", "description": "Facebook, Instagram, LinkedIn, Twitter" },
+        { "name": "PPC Advertising", "description": "Google Ads, Facebook Ads, LinkedIn Ads" },
+        { "name": "Content Marketing", "description": "Blog Writing, Video Production, Infographics" },
+        { "name": "Email Marketing", "description": "Mailchimp, SendGrid, Automated Campaigns" },
+        { "name": "Analytics & Reporting", "description": "Google Analytics, Dashboards" },
+        { "name": "Conversion Optimization", "description": "A/B testing, landing page optimization, and CRO" }
+      ],
+      "technologies": [
+        "Google Ads", "Facebook Ads", "Google Analytics", "SEMrush", "Ahrefs", "Mailchimp", "HubSpot"
+      ],
+      "pricing": { "startingAt": "$2,000", "currency": "USD", "model": "monthly-retainer" },
+      "timeline": "2-8 weeks",
+      "stats": { "projects": "18+", "clients": "12+", "satisfaction": "90%" }
+    }
   ]
 }
-

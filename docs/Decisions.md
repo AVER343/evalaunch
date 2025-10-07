@@ -3,7 +3,7 @@
 ## Key Architectural Choices, Tradeoffs, and Extensibility Notes
 
 ### Overview
-This document records important architectural decisions made during the development of the eVALaunche website, including the rationale, alternatives considered, and implications.
+This document records important architectural decisions made during the development of the eVaLaunche website, including the rationale, alternatives considered, and implications.
 
 ---
 

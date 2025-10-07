@@ -1,9 +1,9 @@
 # .cursorrules
-# Rules for Cursor AI when working on eVALaunche Consultancy Website
+# Rules for Cursor AI when working on eVaLaunche Consultancy Website
 # Ensures production-ready, consistent, static site setup.
 
 project:
-  name: "eVALaunche Consultancy Website"
+  name: "eVaLaunche Consultancy Website"
   type: "Next.js (App Router) Static Site"
   template: "nextjs-digital-agency-template"
 
@@ -17,6 +17,7 @@ rules:
   - Maintain consistent theming across all pages (colors, typography, spacing).
   - Use a shared layout for header, footer, and navigation.
   - Do not introduce page-specific theme variations.
+  - All text sizes and fonts must match the Hero page standards for consistency.
   css_variables: |
     :root {
       /* === Brand Colors === */
@@ -53,6 +54,37 @@ rules:
       --color-warning: #f59e0b;
       --color-error: #dc2626;
       --color-info: #0ea5e9;
+
+      /* === Typography Standards (Hero Page Reference) === */
+      /* Main headings: text-2xl lg:text-3xl font-bold */
+      --heading-main-size: 1.875rem; /* text-3xl */
+      --heading-main-size-lg: 2.25rem; /* text-4xl */
+      --heading-main-weight: 700; /* font-bold */
+      
+      /* Subheadings: text-base */
+      --subheading-size: 1rem; /* text-base */
+      --subheading-weight: 400; /* font-normal */
+      
+      /* Button text: text-base font-semibold */
+      --button-text-size: 1rem; /* text-base */
+      --button-text-weight: 600; /* font-semibold */
+      
+      /* Stats numbers: text-2xl font-bold */
+      --stats-number-size: 1.5rem; /* text-2xl */
+      --stats-number-weight: 700; /* font-bold */
+      
+      /* Stats labels: text-xs font-medium */
+      --stats-label-size: 0.75rem; /* text-xs */
+      --stats-label-weight: 500; /* font-medium */
+      
+      /* Small labels: text-xs tracking-wide */
+      --label-size: 0.75rem; /* text-xs */
+      --label-weight: 500; /* font-medium */
+      --label-tracking: 0.025em; /* tracking-wide */
+      
+      /* Body text: text-base */
+      --body-text-size: 1rem; /* text-base */
+      --body-text-weight: 400; /* font-normal */
     }
 
   # Pages
@@ -60,6 +92,18 @@ rules:
   - Required pages: Home, About, Services, Portfolio, Careers, Contact, 404.
   - Each page must export metadata (title, description, OG tags).
   - All pages must follow the same theme for typography and design.
+
+  # Typography Standards (Hero Page Reference)
+  - Main page headings: Use `text-2xl lg:text-3xl font-bold` (matches Hero h1)
+  - Section headings: Use `text-2xl font-bold` or `text-xl font-semibold`
+  - Subheadings: Use `text-base font-medium` or `text-lg font-medium`
+  - Body text: Use `text-base` (matches Hero description)
+  - Button text: Use `text-base font-semibold` (matches Hero buttons)
+  - Stats/numbers: Use `text-2xl font-bold` (matches Hero stats)
+  - Stats labels: Use `text-xs font-medium` (matches Hero stats labels)
+  - Small labels: Use `text-xs font-medium tracking-wide` (matches Hero label)
+  - All text must use the same font family as Hero: Plus Jakarta Sans
+  - Maintain consistent line heights: `leading-tight` for headings, `leading-relaxed` for body text
 
   # Content & Data
   - Replace placeholder text with company mock content.
@@ -93,6 +137,17 @@ rules:
   # Quality
   - Run `next lint` and `next build` before code is considered done.
   - Ensure Lighthouse score > 90 for Performance, SEO, Accessibility.
+
+  # Typography Enforcement
+  - When editing any component, ensure text sizes match Hero page standards
+  - Use Tailwind classes that correspond to Hero typography:
+    * `text-2xl lg:text-3xl font-bold` for main headings
+    * `text-base` for body text and descriptions
+    * `text-base font-semibold` for button text
+    * `text-2xl font-bold` for statistics/numbers
+    * `text-xs font-medium` for small labels
+  - Never use arbitrary text sizes that don't match Hero standards
+  - Always verify typography consistency when making changes to any page
 
 notes:
   - Mock API now for flexibility later (easier CMS/API swap).

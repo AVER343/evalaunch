@@ -364,7 +364,7 @@ export default function CookiePolicy() {
                 year: 'numeric', 
                 month: 'long', 
                 day: 'numeric' 
-              })} and applies to all visitors of eVALaunche.
+              })} and applies to all visitors of eVaLaunche.
             </p>
           </div>
         </div>

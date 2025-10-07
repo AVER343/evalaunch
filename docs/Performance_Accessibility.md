@@ -3,7 +3,7 @@
 ## Performance Optimizations, WCAG Compliance, and Keyboard Navigation
 
 ### Overview
-The eVALaunche website is built with performance and accessibility as core priorities, ensuring fast loading times and usability for all users.
+The eVaLaunche website is built with performance and accessibility as core priorities, ensuring fast loading times and usability for all users.
 
 ### Performance Optimization
 
@@ -237,7 +237,7 @@ const trackPerformance = () => {
 </main>
 
 <footer>
-  <p>© 2024 eVALaunche</p>
+  <p>© 2024 eVaLaunche</p>
 </footer>
 
 // Bad - Divitis

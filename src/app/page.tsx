@@ -78,8 +78,8 @@ export default function Home() {
     loadStructuredData();
   }, []);
 
-  const openEmailClient = () => {
-    window.location.href = 'mailto:hello@evalaunche.com?subject=Project Inquiry&body=Hello, I would like to discuss a project with eVALaunche. Please provide more information about your services.';
+  const goToContact = () => {
+    window.location.href = '/contact';
   };
 
   return (
@@ -91,11 +91,11 @@ export default function Home() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       )}
-      <main className="min-h-screen">
-        <Hero onStartProject={openEmailClient} />
+      <main className="min-h-screen pt-24 pb-16 bg-gradient-to-br from-gray-50 to-white">
+        <Hero onStartProject={goToContact} />
         <Services />
-        <About onStartProject={openEmailClient} />
-        <Contact onStartProject={openEmailClient} />
+        <About onStartProject={goToContact} />
+        <Contact onStartProject={goToContact} />
         <Footer />
       </main>
     </>

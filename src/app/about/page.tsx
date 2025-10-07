@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Code, Brain, Megaphone, CheckCircle, ArrowRight, Users, Award, Target, Lightbulb, Shield, Zap, Globe, Star, Clock, MessageSquare } from 'lucide-react';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { getCompanyStats, getCompanyValues, getCompanyMission, getCompanyVision, getAllTeamMembers, getFeaturedTestimonials } from '@/lib/data';
@@ -38,14 +39,14 @@ export default function AboutPage() {
     return null;
   }
 
-  const openEmailClient = () => {
-    window.location.href = 'mailto:hello@evalaunche.com?subject=Project Inquiry&body=Hello, I would like to discuss a project with eVALaunche. Please provide more information about your services.';
+  const goToContact = () => {
+    window.location.href = '/contact';
   };
 
   const statsDisplay = [
     { icon: Users, label: 'Happy Clients', value: stats.happyClients, color: 'text-blue-600' },
-    { icon: Code, label: 'Projects Delivered', value: stats.projectsCompleted, color: 'text-green-600' },
-    { icon: Award, label: 'Success Rate', value: stats.successRate, color: 'text-yellow-600' },
+    { icon: Code, label: 'Projects Completed', value: stats.projectsCompleted, color: 'text-blue-600' },
+    { icon: Award, label: 'Success Rate', value: stats.successRate, color: 'text-blue-600' },
     { icon: Clock, label: 'Years Experience', value: stats.yearsExperience, color: 'text-purple-600' }
   ];
 
@@ -69,16 +70,40 @@ export default function AboutPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-gray-50 to-white">
+      <section className="relative pt-24 pb-16 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+        {/* Decorative Background Elements */}
+        <div className="absolute top-10 right-10 opacity-10">
+          <Image src="/images/circle-a.svg" alt="" width={200} height={200} />
+        </div>
+        <div className="absolute bottom-10 left-10 opacity-10">
+          <Image src="/images/circle-b.svg" alt="" width={150} height={150} />
+        </div>
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              About <span className="text-yellow-600">eVALaunche</span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              We are a leading technology company dedicated to transforming businesses through innovative software solutions, 
-              AI/ML technologies, and data-driven digital marketing strategies.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                About <span className="text-blue-600">eVaLaunche</span>
+              </h1>
+              <p className="text-xl text-gray-600 leading-relaxed mb-6">
+                We are a leading technology company dedicated to transforming businesses through innovative software solutions, 
+                AI/ML technologies, and data-driven digital marketing strategies.
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Our mission is to empower teams with cutting-edge technology and strategic guidance to achieve measurable business impact.
+              </p>
+            </div>
+            <div className="relative">
+              <Image
+                src="/images/about-1.jpg"
+                alt="Team collaboration"
+                width={600}
+                height={400}
+                className="rounded-2xl shadow-2xl"
+              />
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary-100 rounded-full opacity-50 blur-2xl"></div>
+              <div className="absolute -top-6 -right-6 w-40 h-40 bg-cyan-100 rounded-full opacity-50 blur-2xl"></div>
+            </div>
           </div>
 
           {/* Stats */}
@@ -122,12 +147,12 @@ export default function AboutPage() {
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 {vision.content}
               </p>
-              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-2xl border border-yellow-200">
-                <h4 className="text-xl font-semibold text-gray-900 mb-4">Why Choose <span className="text-yellow-600">eVALaunche</span>?</h4>
+              <div className="bg-gradient-to-r from-blue-50 to-cyan-50 p-6 rounded-2xl border border-blue-200">
+                <h4 className="text-xl font-semibold text-gray-900 mb-4">Why Choose <span className="text-blue-600">eVaLaunche</span>?</h4>
                 <ul className="space-y-3">
                   {vision.benefits.map((benefit: string, index: number) => (
                     <li key={index} className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-gray-700">{benefit}</span>
                     </li>
                   ))}
@@ -143,7 +168,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our <span className="text-yellow-600">Values</span>
+              Our <span className="text-blue-600">Values</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               The principles that guide everything we do and shape our company culture.
@@ -155,7 +180,7 @@ export default function AboutPage() {
               const IconComponent = getIconComponent(value.icon);
               return (
                 <div key={value.id} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl mb-6">
                     <IconComponent className="h-8 w-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">{value.title}</h3>
@@ -172,7 +197,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Meet Our <span className="text-yellow-600">Team</span>
+              Meet Our <span className="text-blue-600">Team</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               The talented individuals behind our success, dedicated to delivering exceptional results.
@@ -182,11 +207,11 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {team.map((member, index) => (
               <div key={member.id} className="bg-gray-50 p-6 rounded-2xl text-center hover:shadow-lg transition-shadow duration-300">
-                <div className="w-20 h-20 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Users className="h-10 w-10 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
-                <p className="text-yellow-600 font-medium mb-2">{member.role}</p>
+                <p className="text-blue-600 font-medium mb-2">{member.role}</p>
                 <p className="text-sm text-gray-600 mb-3">
                   {member.expertise.slice(0, 3).join(', ')}
                 </p>
@@ -203,7 +228,7 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                What Our <span className="text-yellow-600">Clients</span> Say
+                What Our <span className="text-blue-600">Clients</span> Say
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Don&apos;t just take our word for it. Here&apos;s what our satisfied clients have to say about working with us.
@@ -231,7 +256,7 @@ export default function AboutPage() {
       )}
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-yellow-500 to-orange-500">
+      <section className="py-16 bg-gradient-to-r from-blue-500 to-blue-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to Work With Us?
@@ -240,8 +265,8 @@ export default function AboutPage() {
             Let&apos;s discuss your project and see how we can help you achieve your business goals with our expert team.
           </p>
           <button 
-            onClick={openEmailClient}
-            className="bg-white text-yellow-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 font-bold shadow-lg hover:shadow-xl hover:scale-105 flex items-center space-x-2 mx-auto"
+            onClick={goToContact}
+            className="bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 font-bold shadow-lg hover:shadow-xl hover:scale-105 flex items-center space-x-2 mx-auto"
           >
             <span>Start Your Project</span>
             <ArrowRight className="h-5 w-5" />

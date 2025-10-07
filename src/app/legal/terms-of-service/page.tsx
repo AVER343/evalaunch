@@ -81,7 +81,7 @@ export default function TermsOfService() {
               <div className="p-6 bg-gray-50 rounded-xl">
                 <h4 className="text-lg font-semibold text-gray-900 mb-3">What We Provide</h4>
                 <p className="text-gray-600 mb-4">
-                  eVALaunche offers software development, AI/ML solutions, and digital marketing services. 
+                  eVaLaunche offers software development, AI/ML solutions, and digital marketing services. 
                   We work with clients to create custom solutions that meet their specific needs.
                 </p>
                 <ul className="space-y-2 text-gray-600">
@@ -330,7 +330,7 @@ export default function TermsOfService() {
                 year: 'numeric', 
                 month: 'long', 
                 day: 'numeric' 
-              })} and apply to all users of eVALaunche services.
+              })} and apply to all users of eVaLaunche services.
             </p>
           </div>
         </div>

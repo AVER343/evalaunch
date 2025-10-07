@@ -2,7 +2,7 @@
   "team": [
     {
       "id": "team-1",
-      "name": "eVALaunche Development Team",
+      "name": "eVaLaunche Development Team",
       "role": "Full-Stack Developers",
       "avatar": "/images/team/dev-team.jpg",
       "bio": "Our development team consists of experienced full-stack developers passionate about building scalable, high-performance web and mobile applications.",
@@ -23,7 +23,7 @@
     },
     {
       "id": "team-2",
-      "name": "eVALaunche AI/ML Team",
+      "name": "eVaLaunche AI/ML Team",
       "role": "AI/ML Engineers & Data Scientists",
       "avatar": "/images/team/ai-team.jpg",
       "bio": "Our AI/ML team specializes in building intelligent solutions using cutting-edge machine learning technologies and data science techniques.",
@@ -44,7 +44,7 @@
     },
     {
       "id": "team-3",
-      "name": "eVALaunche Marketing Team",
+      "name": "eVaLaunche Marketing Team",
       "role": "Digital Marketing Specialists",
       "avatar": "/images/team/marketing-team.jpg",
       "bio": "Our marketing team creates data-driven strategies to help businesses grow their online presence and achieve measurable results.",

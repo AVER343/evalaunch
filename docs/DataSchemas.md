@@ -3,7 +3,7 @@
 ## JSON Schemas, Data Utilities, and Mock API Usage
 
 ### Overview
-The eVALaunche website uses local JSON files for data storage, simulating an API for easy future migration to a CMS or database backend.
+The eVaLaunche website uses local JSON files for data storage, simulating an API for easy future migration to a CMS or database backend.
 
 ### Data Architecture
 

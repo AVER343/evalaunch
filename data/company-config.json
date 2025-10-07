@@ -1,6 +1,6 @@
 {
   "company": {
-    "name": "eVALaunche",
+    "name": "eVaLaunche",
     "tagline": "Transform Your Business with Technology",
     "description": "Leading software development company specializing in AI/ML solutions, custom web applications, mobile apps, and digital marketing strategies.",
     "foundingYear": "2021",
@@ -19,20 +19,52 @@
   "stats": {
     "projectsCompleted": "55+",
     "happyClients": "35+",
-    "yearsExperience": "3+",
+    "yearsExperience": "5+",
     "clientSatisfaction": "92%",
     "successRate": "95%",
     "teamSize": "2-10",
-    "averageRating": "4.7"
+    "averageRating": "4.7",
+    "responseTime": "24h",
+    "clientSatisfactionRate": "92%",
+    "yearsExperienceLong": "5+"
   },
   "mission": {
     "title": "Our Mission",
-    "content": "To empower businesses with innovative technology solutions that drive growth, efficiency, and success. We believe in the transformative power of technology and its ability to solve complex business challenges.",
+    "content": "To empower businesses with innovative technology solutions that drive growth, efficiency, and success. We believe in the transformative power of technology and its ability to solve complex business challenges while building lasting partnerships that fuel sustainable growth.",
     "points": [
-      "Deliver exceptional value through technology",
-      "Foster long-term partnerships with our clients",
-      "Continuously innovate and stay ahead of trends"
-    ]
+      "Deliver exceptional value through cutting-edge technology solutions",
+      "Foster long-term partnerships that drive mutual success and growth",
+      "Continuously innovate and stay ahead of emerging technology trends",
+      "Provide transparent, reliable, and scalable solutions for every client",
+      "Maintain the highest standards of quality and performance in every project",
+      "Empower businesses to achieve their digital transformation goals"
+    ],
+    "impact": {
+      "title": "Our Impact",
+      "description": "Through our mission-driven approach, we've delivered measurable results across diverse industries and business sizes.",
+      "metrics": [
+        {
+          "value": "55+",
+          "label": "Successful Projects",
+          "description": "Delivered across web, mobile, AI, and digital marketing"
+        },
+        {
+          "value": "35+",
+          "label": "Happy Clients",
+          "description": "From startups to enterprise organizations"
+        },
+        {
+          "value": "92%",
+          "label": "Client Satisfaction",
+          "description": "Consistent high-quality delivery and support"
+        },
+        {
+          "value": "3+",
+          "label": "Years of Excellence",
+          "description": "Proven track record of innovation and growth"
+        }
+      ]
+    }
   },
   "vision": {
     "title": "Our Vision",

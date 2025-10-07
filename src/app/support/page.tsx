@@ -408,7 +408,7 @@ export default function SupportPage() {
             </p>
             <Link
               href="/#contact"
-              className="inline-flex items-center space-x-2 bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors duration-300 font-semibold"
+              className="inline-flex items-center space-x-2 bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-800 transition-colors duration-300 font-semibold"
             >
               <MessageCircle className="h-5 w-5" />
               <span>Go to Contact Form</span>

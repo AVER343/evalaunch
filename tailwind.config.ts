@@ -9,22 +9,24 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-body)', 'Plus Jakarta Sans', 'Inter', 'Roboto', 'Open Sans', 'Arial', 'sans-serif'],
+        heading: ['var(--font-heading)', 'Plus Jakarta Sans', 'Inter', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        display: ['var(--font-heading)', 'Plus Jakarta Sans', 'Inter', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        code: ['var(--font-code)', 'Fira Code', 'Roboto Mono', 'monospace'],
       },
       colors: {
-        // Taazaa Green Theme - Flat, Modern, Enterprise
+        // Blue Theme - Flat, Modern, Enterprise
         primary: {
-          50: '#e6f4ee',
-          100: '#ccead7',
-          200: '#99d5af',
-          300: '#66c087',
-          400: '#33ab5f',
-          500: '#00a86b', // Main Taazaa Green
-          600: '#008656',
-          700: '#007a50', // Dark Green for hover
-          800: '#005d3c',
-          900: '#004028',
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6', // Main Blue
+          600: '#2563eb',
+          700: '#1d4ed8', // Dark Blue for hover
+          800: '#1e40af',
+          900: '#1e3a8a',
         },
         secondary: {
           50: '#eff6ff',
@@ -39,16 +41,16 @@ const config: Config = {
           900: '#1e3a8a',
         },
         accent: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9', // Sky blue accent
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
+          50: '#ecfeff',
+          100: '#cffafe',
+          200: '#a5f3fc',
+          300: '#67e8f9',
+          400: '#22d3ee',
+          500: '#06b6d4', // Cyan accent
+          600: '#0891b2',
+          700: '#0e7490',
+          800: '#155e75',
+          900: '#164e63',
         },
         gray: {
           50: '#f9faf9', // Gray-green neutral
@@ -96,8 +98,8 @@ const config: Config = {
           '100%': { transform: 'translateX(0)', opacity: '1' },
         },
         glow: {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(0, 168, 107, 0.3)' },
-          '50%': { boxShadow: '0 0 30px rgba(0, 168, 107, 0.6)' },
+          '0%, 100%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.3)' },
+          '50%': { boxShadow: '0 0 30px rgba(59, 130, 246, 0.6)' },
         },
         shimmer: {
           '0%': { backgroundPosition: '-200% 0' },
@@ -116,9 +118,9 @@ const config: Config = {
         xs: '2px',
       },
       boxShadow: {
-        'glow': '0 0 20px rgba(0, 168, 107, 0.3)',
-        'glow-lg': '0 0 30px rgba(0, 168, 107, 0.4)',
-        'inner-glow': 'inset 0 0 20px rgba(0, 168, 107, 0.1)',
+        'glow': '0 0 20px rgba(59, 130, 246, 0.3)',
+        'glow-lg': '0 0 30px rgba(59, 130, 246, 0.4)',
+        'inner-glow': 'inset 0 0 20px rgba(59, 130, 246, 0.1)',
       },
     },
   },

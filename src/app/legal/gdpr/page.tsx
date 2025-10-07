@@ -365,7 +365,7 @@ export default function GDPR() {
                 year: 'numeric', 
                 month: 'long', 
                 day: 'numeric' 
-              })} and applies to all personal data processing by eVALaunche.
+              })} and applies to all personal data processing by eVaLaunche.
             </p>
           </div>
         </div>

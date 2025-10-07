@@ -161,11 +161,11 @@ export default function BlogPage() {
                   <span className="text-gray-500 text-sm">{post.readingTime}</span>
                 </div>
                 
-                <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+                <h3 className="text-base font-semibold text-gray-900 mb-3 line-clamp-2">
                   {post.title}
                 </h3>
                 
-                <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3">
+                <p className="text-base text-gray-600 mb-4 leading-relaxed line-clamp-3">
                   {post.excerpt}
                 </p>
                 
@@ -233,7 +233,7 @@ export default function BlogPage() {
               Subscribe to our newsletter to get the latest insights, tips, and updates delivered straight to your inbox.
             </p>
             <a
-              href="mailto:hello@evalaunche.com?subject=Newsletter Subscription"
+              href="/contact"
               className="inline-flex items-center space-x-2 bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors duration-200 font-medium"
             >
               <span>Subscribe Now</span>

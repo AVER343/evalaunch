@@ -150,13 +150,13 @@ export default function CaseStudiesPage() {
                   </span>
                 </div>
                 
-                <h2 className="text-2xl font-bold text-gray-900 mb-4 leading-tight hover:text-blue-600 transition-colors">
+                <h2 className="text-base font-semibold text-gray-900 mb-4 leading-tight hover:text-blue-600 transition-colors">
                   <Link href={`/case-studies/${study.slug}`}>
                     {study.title}
                   </Link>
                 </h2>
                 
-                <p className="text-gray-600 leading-relaxed text-lg mb-6">
+                <p className="text-base text-gray-600 leading-relaxed mb-6">
                   {study.summary}
                 </p>
               </div>
@@ -263,7 +263,7 @@ export default function CaseStudiesPage() {
             Our team is ready to transform your ideas into reality.
           </p>
           <a
-            href="mailto:hello@evalaunche.com?subject=Project Inquiry&body=Hello, I would like to discuss a project with eVALaunche. Please provide more information about your services."
+            href="/contact"
             className="inline-flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium"
           >
             <span>Get Started Today</span>

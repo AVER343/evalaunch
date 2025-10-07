@@ -144,10 +144,8 @@ export default function CareersPage() {
     'Growth: We invest in continuous learning and development'
   ];
 
-  const openEmailClient = (jobTitle: string) => {
-    const subject = encodeURIComponent(`Application for ${jobTitle} Position`);
-    const body = encodeURIComponent(`Hello,\n\nI am interested in applying for the ${jobTitle} position at eVALaunche.\n\nPlease find my resume and portfolio attached.\n\nBest regards`);
-    window.location.href = `mailto:careers@evalaunche.com?subject=${subject}&body=${body}`;
+  const goToContact = () => {
+    window.location.href = '/contact';
   };
 
   return (
@@ -155,14 +153,14 @@ export default function CareersPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-yellow-50 via-white to-blue-50">
+      <section className="pt-24 pb-16 bg-gradient-to-br from-blue-50 via-white to-cyan-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Join Our <span className="text-yellow-600">Amazing Team</span>
+              Join Our <span className="text-blue-600">Amazing Team</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Build your career with eVALaunche. Work on innovative projects, collaborate with talented professionals, 
+              Build your career with eVaLaunche. Work on innovative projects, collaborate with talented professionals, 
               and make a real impact on businesses worldwide.
             </p>
           </div>
@@ -194,7 +192,7 @@ export default function CareersPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Work <span className="text-yellow-600">With Us</span>?
+              Why Work <span className="text-blue-600">With Us</span>?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We offer more than just a job. Join a team that values your growth and well-being.
@@ -206,7 +204,7 @@ export default function CareersPage() {
               const IconComponent = benefit.icon;
               return (
                 <div key={index} className="bg-gray-50 p-8 rounded-2xl hover:shadow-lg transition-shadow duration-300">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl mb-6">
                     <IconComponent className="h-8 w-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">{benefit.title}</h3>
@@ -223,7 +221,7 @@ export default function CareersPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our <span className="text-yellow-600">Core Values</span>
+              Our <span className="text-blue-600">Core Values</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               These principles guide our work and define our culture.
@@ -245,10 +243,10 @@ export default function CareersPage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Open <span className="text-yellow-600">Positions</span>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              Open <span className="text-blue-600">Positions</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base text-gray-600 max-w-3xl mx-auto">
               Find your next career opportunity with us. We&apos;re always looking for talented individuals.
             </p>
           </div>
@@ -267,7 +265,7 @@ export default function CareersPage() {
                     <div className="flex items-start justify-between">
                       <div className="flex items-start space-x-6 flex-1">
                         <div className="flex-shrink-0">
-                          <div className="w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center">
+                          <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center">
                             <IconComponent className="h-8 w-8 text-white" />
                           </div>
                         </div>
@@ -293,7 +291,7 @@ export default function CareersPage() {
                         </div>
                       </div>
                       
-                      <button className="ml-4 text-yellow-600 hover:text-yellow-700 font-medium">
+                      <button className="ml-4 text-blue-600 hover:text-blue-700 font-medium">
                         {isExpanded ? 'Less' : 'More'} Details
                       </button>
                     </div>
@@ -328,8 +326,8 @@ export default function CareersPage() {
                       </div>
 
                       <button 
-                        onClick={() => openEmailClient(job.title)}
-                        className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-8 py-4 rounded-xl hover:from-yellow-600 hover:to-orange-600 transition-all duration-300 font-bold shadow-lg hover:shadow-xl hover:scale-105 flex items-center space-x-2"
+                        onClick={goToContact}
+                        className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all duration-300 font-bold shadow-lg hover:shadow-xl hover:scale-105 flex items-center space-x-2"
                       >
                         <span>Apply Now</span>
                         <ArrowRight className="h-5 w-5" />
@@ -344,7 +342,7 @@ export default function CareersPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-yellow-500 to-orange-500">
+      <section className="py-16 bg-gradient-to-r from-blue-500 to-blue-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Don&apos;t See a Position That Fits?
@@ -353,8 +351,8 @@ export default function CareersPage() {
             We&apos;re always interested in hearing from talented individuals. Send us your resume and let&apos;s talk about opportunities.
           </p>
           <button 
-            onClick={() => openEmailClient('General Application')}
-            className="bg-white text-yellow-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 font-bold shadow-lg hover:shadow-xl hover:scale-105 flex items-center space-x-2 mx-auto"
+            onClick={goToContact}
+            className="bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 font-bold shadow-lg hover:shadow-xl hover:scale-105 flex items-center space-x-2 mx-auto"
           >
             <span>Send Your Resume</span>
             <ArrowRight className="h-5 w-5" />

@@ -3,7 +3,7 @@
 ## Page Structure and Navigation Strategy
 
 ### Overview
-eVALaunche uses Next.js 14 App Router for file-system based routing with support for layouts, server components, and dynamic routes.
+eVaLaunche uses Next.js 14 App Router for file-system based routing with support for layouts, server components, and dynamic routes.
 
 ### Route Structure
 
@@ -179,7 +179,7 @@ Each page exports metadata for SEO:
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Page Title | eVALaunche',
+  title: 'Page Title | eVaLaunche',
   description: 'Page description...',
   openGraph: { ... },
   alternates: {
@@ -193,7 +193,7 @@ export const metadata: Metadata = {
 export async function generateMetadata({ params }): Promise<Metadata> {
   const data = await fetchData(params.id);
   return {
-    title: `${data.title} | eVALaunche`,
+    title: `${data.title} | eVaLaunche`,
     description: data.description,
   };
 }

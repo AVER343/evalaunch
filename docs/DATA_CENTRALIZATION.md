@@ -1,7 +1,7 @@
 # Data Centralization Implementation
 
 ## Overview
-This document outlines the implementation of a centralized data management system for the eVALaunche website, ensuring consistent data across all pages and components.
+This document outlines the implementation of a centralized data management system for the eVaLaunche website, ensuring consistent data across all pages and components.
 
 ## Problem Addressed
 Previously, the website had **inconsistent data** across different pages:

@@ -41,14 +41,14 @@ export async function POST(request: NextRequest) {
 
     // Send email with project details
     const { data, error } = await resend.emails.send({
-      from: 'eVALaunche <noreply@eVALaunche.com>',
+      from: 'eVaLaunche <noreply@eVaLaunche.com>',
       to: [process.env.CONTACT_EMAIL],
       subject: `New Project Quote Request - ${projectType}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9fafb;">
           <div style="background: #00a86b; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 30px;">
             <h1 style="color: white; margin: 0; font-size: 28px; font-weight: bold;">New Project Quote Request</h1>
-            <p style="color: white; margin: 10px 0 0 0; font-size: 16px; opacity: 0.9;">eVALaunche Tech Solutions</p>
+            <p style="color: white; margin: 10px 0 0 0; font-size: 16px; opacity: 0.9;">evalaunche Tech Solutions</p>
           </div>
           
           <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
@@ -86,7 +86,7 @@ export async function POST(request: NextRequest) {
             
             <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
               <p style="color: #6b7280; margin: 0; font-size: 14px;">
-                This quote request was submitted through the eVALaunche website contact form.
+                This quote request was submitted through the eVaLaunche website contact form.
               </p>
             </div>
           </div>

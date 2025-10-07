@@ -1,90 +1,168 @@
 'use client';
 
-import { Mail} from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Mail, ArrowRight, CheckCircle } from 'lucide-react';
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
+import Button from './atoms/Button';
+import { getCompanyStats } from '@/lib/data';
 
 interface ContactProps {
   onStartProject: () => void;
 }
 
 const Contact = ({ onStartProject }: ContactProps) => {
+  const [stats, setStats] = useState<any>(null);
 
+  useEffect(() => {
+    const loadStats = async () => {
+      const statsData = await getCompanyStats();
+      setStats(statsData);
+    };
+    loadStats();
+  }, []);
+
+  // Show loading state while data loads
+  if (!stats) {
+    return (
+      <section id="contact" className="py-20 bg-gradient-to-br from-primary-600 to-primary-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="h-8 bg-white/20 rounded-full animate-pulse max-w-32 mx-auto mb-6"></div>
+            <div className="h-12 bg-white/20 rounded-lg animate-pulse max-w-2xl mx-auto mb-4"></div>
+            <div className="h-6 bg-white/20 rounded-lg animate-pulse max-w-3xl mx-auto"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {[1, 2].map((i) => (
+              <div key={i} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                <div className="h-32 bg-white/20 rounded-lg animate-pulse"></div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-16 text-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="h-20 bg-white/20 rounded-lg animate-pulse"></div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
   return (
-    <section id="contact" className="py-12 bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 bg-gradient-to-br from-primary-600 to-primary-700">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12 animate-fade-in">
-          <span className="inline-block px-6 py-2 bg-primary-100 text-primary-600 rounded-full font-semibold text-sm tracking-wide mb-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <span className="inline-block px-6 py-2 bg-white/20 text-white rounded-full font-semibold text-sm tracking-wide mb-6">
             Let&apos;s talk
           </span>
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Let&apos;s make something great together.
+          <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
+            Ready to start your project?
           </h2>
-          <p className="text-base text-gray-600 max-w-2xl mx-auto">
-            Ready to transform your business? Reach out and let&apos;s discuss your project.
+          <p className="text-lg text-white/90 max-w-2xl mx-auto">
+            Get in touch with our team and let&apos;s discuss how we can help bring your vision to life.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Contact Information */}
-        <div className="text-center space-y-6 animate-fade-in">
-          {/* Contact Details */}
-          <div className="bg-primary-50 rounded-2xl p-8 border border-primary-200">
-            <div className="flex flex-col items-center space-y-4">
-              <div className="bg-primary-600 w-12 h-12 rounded-full flex items-center justify-center">
-                <Mail className="h-6 w-6 text-white" />
+        {/* Contact Options */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
+        >
+          {/* Quick Contact */}
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Mail className="h-8 w-8 text-white" />
               </div>
               
-              <div className="text-center">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Get in Touch</h3>
-                <a 
-                  href="mailto:support@evalaunche.com" 
-                  className="text-primary-600 text-base font-semibold hover:text-primary-700 transition-colors duration-300"
+              <h3 className="text-xl font-bold text-white mb-4">Quick Contact</h3>
+              <p className="text-white/80 mb-6">
+                Send us an email and we&apos;ll get back to you within 24 hours.
+              </p>
+              
+              <Link href="/contact">
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  className="w-full mb-4"
                 >
-                  support@evalaunche.com
-                </a>
-                <p className="text-sm text-gray-600 mt-2">We&apos;ll get back to you within 24 hours</p>
-              </div>
+                  <span>Send Email</span>
+                  <ArrowRight className="h-5 w-5 ml-2" />
+                </Button>
+              </Link>
+              
+              <p className="text-sm text-white/60">
+                Average response time: {stats.responseTime}
+              </p>
             </div>
           </div>
 
-          {/* Quick Stats */}
-          <div className="grid grid-cols-3 gap-4 mt-6">
-            <div className="bg-primary-50 p-4 rounded-lg border border-primary-100">
-              <div className="text-xl font-bold text-primary-600 mb-1">24h</div>
-              <div className="text-sm text-gray-600">Response</div>
-            </div>
-            <div className="bg-primary-50 p-4 rounded-lg border border-primary-100">
-              <div className="text-xl font-bold text-primary-600 mb-1">100%</div>
-              <div className="text-sm text-gray-600">Satisfaction</div>
-            </div>
-            <div className="bg-primary-50 p-4 rounded-lg border border-primary-100">
-              <div className="text-xl font-bold text-primary-600 mb-1">10+</div>
-              <div className="text-sm text-gray-600">Years</div>
+          {/* Detailed Form */}
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <CheckCircle className="h-8 w-8 text-white" />
+              </div>
+              
+              <h3 className="text-xl font-bold text-white mb-4">Detailed Project</h3>
+              <p className="text-white/80 mb-6">
+                Have a complex project? Use our detailed contact form for a comprehensive proposal.
+              </p>
+              
+              <Link href="/contact">
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  className="w-full"
+                >
+                  <span>Fill Out Form</span>
+                  <ArrowRight className="h-5 w-5 ml-2" />
+                </Button>
+              </Link>
+              
+              <p className="text-sm text-white/60 mt-4">
+                Get detailed project estimates and timelines
+              </p>
             </div>
           </div>
+        </motion.div>
 
-          {/* Call to Action */}
-          <div className="bg-primary-50 p-6 rounded-xl border border-primary-200 mt-6">
-            <h4 className="text-lg font-semibold text-gray-900 mb-4">Why Choose <span className="text-primary-600">eVALaunche</span>?</h4>
-            <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-700">
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-primary-500 rounded-full flex-shrink-0"></div>
-                <span>Free consultation</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-primary-500 rounded-full flex-shrink-0"></div>
-                <span>Transparent pricing</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-primary-500 rounded-full flex-shrink-0"></div>
-                <span>24/7 support</span>
-              </div>
+        {/* Trust Indicators */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-16 text-center"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-white mb-2">{stats.responseTime}</div>
+              <div className="text-sm text-white/80">Response Time</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-white mb-2">{stats.clientSatisfactionRate}</div>
+              <div className="text-sm text-white/80">Client Satisfaction</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-white mb-2">{stats.yearsExperienceLong}</div>
+              <div className="text-sm text-white/80">Years Experience</div>
             </div>
           </div>
-        </div>
-
+        </motion.div>
       </div>
     </section>
   );
 };
 
 export default Contact;
+

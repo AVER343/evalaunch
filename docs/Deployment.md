@@ -3,7 +3,7 @@
 ## Vercel Deployment, Environment Variables, and Build Pipeline
 
 ### Overview
-The eVALaunche website is optimized for deployment on Vercel, leveraging Next.js features for optimal performance and automatic deployments.
+The eVaLaunche website is optimized for deployment on Vercel, leveraging Next.js features for optimal performance and automatic deployments.
 
 ### Vercel Deployment
 
