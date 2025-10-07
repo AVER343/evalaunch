@@ -91,7 +91,7 @@ export default function Home() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       )}
-      <main className="min-h-screen pt-24 pb-16 bg-gradient-to-br from-gray-50 to-white">
+      <main className="min-h-screen pb-16 bg-gradient-to-br from-gray-50 to-white">
         <Hero onStartProject={goToContact} />
         <Services />
         <About onStartProject={goToContact} />
