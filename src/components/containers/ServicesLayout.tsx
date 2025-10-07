@@ -42,7 +42,7 @@ const ServicesLayout = ({
       <Header />
       
       {/* Hero Section */}
-      {/* <section className="pt-24 pb-16 bg-gradient-to-br from-gray-50 to-white">
+      <section className="pt-24 pb-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -60,7 +60,7 @@ const ServicesLayout = ({
             )}
           </motion.div>
         </div>
-      </section> */}
+      </section>
 
       {/* Main Content */}
       <main>

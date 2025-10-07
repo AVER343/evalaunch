@@ -236,10 +236,6 @@ export default function ServicesPage() {
   };
 
   return (
-    // <ServicesLayout 
-    //   title="Our Services"
-    //   description="Comprehensive technology solutions that transform businesses and drive sustainable growth."
-    // >
       <>
       <div className="bg-white border-b border-gray-200 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -287,7 +283,7 @@ export default function ServicesPage() {
 
           {/* Service Category Cards */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-            {transformedServices.map((service, index) => {
+            {filteredServices.map((service, index) => {
               const IconComponent = service.icon;
               return (
                 <motion.div
@@ -371,7 +367,7 @@ export default function ServicesPage() {
 
           {/* Service Details */}
           <div className="space-y-12">
-            {transformedServices.map((service, serviceIndex) => {
+            {filteredServices.map((service, serviceIndex) => {
               const IconComponent = service.icon;
               return (
                 <motion.div
