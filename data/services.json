@@ -68,24 +68,6 @@
           "href": "/services?service=software-development&sub=web"
         },
         {
-          "id": "frontend-development",
-          "title": "Frontend Development",
-          "description": "User interface design and development with modern frameworks",
-          "href": "/services?service=software-development&sub=frontend"
-        },
-        {
-          "id": "ecommerce-development",
-          "title": "E-commerce Development",
-          "description": "Online stores, payment integration, and shopping cart solutions",
-          "href": "/services?service=software-development&sub=ecommerce"
-        },
-        {
-          "id": "cms-development",
-          "title": "CMS Development",
-          "description": "WordPress, Drupal, custom content management systems",
-          "href": "/services?service=software-development&sub=cms"
-        },
-        {
           "id": "app-development",
           "title": "App Development",
           "description": "React Native, Flutter, Native iOS/Android apps",

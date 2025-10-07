@@ -343,6 +343,9 @@ export default function ServiceCategoryPage({ params }: { params: { category: st
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">
                   {selectedService ? `${filteredServices[0]?.title} Services` : `${categoryData.title} Services`}
                 </h2>
+                <p className="text-base text-gray-600">
+                  {selectedService ? filteredServices[0]?.shortDescription : categoryData.description}
+                </p>
               </div>
 
               {/* Services Grid */}

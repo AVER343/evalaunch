@@ -80,6 +80,7 @@ const Services = () => {
         {/* Services Grid */}
         <div className="grid lg:grid-cols-3 gap-8 mb-20">
           {services.length > 0 ? services
+            .filter(s => ['software-development','ai-automation','digital-marketing'].includes(s.id))
             .map((service, index) => {
             const serviceIcon = getServiceIcon(service.id);
             const color = getServiceColor(index);
@@ -88,51 +89,81 @@ const Services = () => {
               <div
                 key={service.id}
                 id={service.id}
-                className="bg-white rounded-xl p-4 shadow-md hover:shadow-lg border border-gray-100 animate-slide-up scroll-mt-20 group"
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl border border-gray-100 animate-slide-up scroll-mt-20 group transition-all duration-300 hover:-translate-y-1"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                {/* Icon and Title on same line */}
-                <div className="flex items-center space-x-3 mb-3">
-                  <div className="inline-flex p-2 rounded-lg transition-all duration-300 group-hover:scale-110 bg-gray-100">
+                {/* Icon and Title */}
+                <div className="text-center mb-6">
+                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4 transition-all duration-300 group-hover:scale-110 ${
+                    color === 'primary' ? 'bg-gradient-to-br from-primary-500 to-primary-600' :
+                    color === 'secondary' ? 'bg-gradient-to-br from-cyan-500 to-cyan-600' :
+                    'bg-gradient-to-br from-blue-500 to-blue-600'
+                  }`}>
                     <Image 
                       src={serviceIcon} 
                       alt={`${service.title} icon`}
                       width={32}
                       height={32}
+                      className="h-8 w-8"
                     />
                   </div>
                   
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">
                     {service.id === 'software-development' ? 'Software Development' : 
                      service.id === 'ai-automation' ? 'AI & Automation' : 
                      service.title}
                   </h3>
+                  
+                  <p className="text-base text-gray-600 leading-relaxed">
+                    {service.shortDescription}
+                  </p>
                 </div>
-                
-                <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-                  {service.shortDescription}
-                </p>
 
-                <ul className="space-y-2 mb-4">
-                  {(service.features || []).slice(0, 8).map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center space-x-3">
-                      <div className={`w-1.5 h-1.5 rounded-full ${
-                        color === 'primary' ? 'bg-primary-500' :
-                        color === 'secondary' ? 'bg-secondary-500' :
-                        'bg-accent-500'
-                      }`}></div>
-                      <span className="text-base text-gray-700">{feature.name}</span>
-                    </li>
-                  ))}
-                </ul>
+                {/* Features List */}
+                <div className="mb-6">
+                  <h4 className="text-sm font-semibold text-gray-900 mb-3">What We Offer:</h4>
+                  <ul className="space-y-2">
+                    {(service.features || []).slice(0, 4).map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center space-x-3">
+                        <div className={`w-2 h-2 rounded-full ${
+                          color === 'primary' ? 'bg-primary-500' :
+                          color === 'secondary' ? 'bg-cyan-500' :
+                          'bg-blue-500'
+                        }`}></div>
+                        <span className="text-sm text-gray-700">{feature.name}</span>
+                      </li>
+                    ))}
+                    {(service.features || []).length > 4 && (
+                      <li className="text-sm text-primary-600 font-medium ml-5">
+                        +{(service.features || []).length - 4} more services
+                      </li>
+                    )}
+                  </ul>
+                </div>
+
+                {/* Stats */}
+                <div className="grid grid-cols-3 gap-4 mb-6">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-primary-600">{service.stats?.projects || '0+'}</div>
+                    <div className="text-xs text-gray-500">Projects</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-primary-600">{service.stats?.clients || '0+'}</div>
+                    <div className="text-xs text-gray-500">Clients</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-primary-600">{service.stats?.satisfaction || '0%'}</div>
+                    <div className="text-xs text-gray-500">Satisfaction</div>
+                  </div>
+                </div>
 
                 <Link 
                   href={`/services?service=${service.id}`}
                   aria-label={`Learn more about ${service.title}`}
-                  className={`group w-full text-white py-3 px-6 rounded-lg transition-all duration-300 font-semibold text-lg block text-center shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 ${
-                    color === 'primary' ? 'bg-primary-600 hover:bg-primary-800 focus:ring-primary-500' :
-                    color === 'secondary' ? 'bg-primary-600 hover:bg-primary-800 focus:ring-primary-500' :
-                    'bg-accent-600 hover:bg-accent-800 focus:ring-accent-500'
+                  className={`group w-full text-white py-3 px-6 rounded-xl transition-all duration-300 font-semibold text-base block text-center shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+                    color === 'primary' ? 'bg-primary-600 hover:bg-primary-700 focus:ring-primary-500' :
+                    color === 'secondary' ? 'bg-cyan-600 hover:bg-cyan-700 focus:ring-cyan-500' :
+                    'bg-blue-600 hover:bg-blue-700 focus:ring-blue-500'
                   }`}
                 >
                   <span className="inline-flex items-center justify-center">
