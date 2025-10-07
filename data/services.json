@@ -10,34 +10,52 @@
       "color": "bg-purple-500",
       "subServices": [
         {
-          "id": "ai-automation-workflows",
-          "title": "AI Automation",
-          "description": "Agent workflows and autonomous task execution",
-          "href": "/services?service=ai-automation&sub=workflows"
-        },
-        {
           "id": "ai-chatbots",
-          "title": "AI Chatbots",
-          "description": "Intelligent conversational AI and customer support",
+          "title": "AI Chatbots & Virtual Assistants",
+          "description": "Intelligent conversational AI for customer support and engagement",
           "href": "/services?service=ai-automation&sub=chatbots"
         },
         {
+          "id": "ai-automation-workflows",
+          "title": "Smart Workflow Automation",
+          "description": "Automated business processes and intelligent task execution",
+          "href": "/services?service=ai-automation&sub=workflows"
+        },
+        {
           "id": "llm-integration",
-          "title": "LLM Integration",
-          "description": "OpenAI, Claude, and custom model deployment",
+          "title": "AI Model Integration",
+          "description": "OpenAI, Claude, and custom AI model deployment",
           "href": "/services?service=ai-automation&sub=llm"
         },
         {
           "id": "process-automation",
-          "title": "Process Automation",
-          "description": "RPA and intelligent workflow automation",
+          "title": "Business Process Automation",
+          "description": "RPA and intelligent workflow optimization",
           "href": "/services?service=ai-automation&sub=process"
         },
         {
           "id": "machine-learning",
-          "title": "Machine Learning",
+          "title": "Machine Learning Solutions",
           "description": "Custom ML models and predictive analytics",
           "href": "/services?service=ai-automation&sub=ml"
+        },
+        {
+          "id": "computer-vision",
+          "title": "Computer Vision & Image AI",
+          "description": "Image recognition, object detection, and visual AI solutions",
+          "href": "/services?service=ai-automation&sub=computer-vision"
+        },
+        {
+          "id": "ai-strategy",
+          "title": "AI Strategy & Consulting",
+          "description": "AI implementation planning and technology advisory",
+          "href": "/services?service=ai-automation&sub=ai-strategy"
+        },
+        {
+          "id": "natural-language-processing",
+          "title": "Natural Language Processing",
+          "description": "Text analysis, sentiment analysis, and content generation",
+          "href": "/services?service=ai-automation&sub=nlp"
         }
       ],
       "pricing": {
@@ -54,7 +72,7 @@
     },
     {
       "id": "software-development",
-      "title": "Software Development",
+      "title": "Custom Software Development",
       "slug": "software-development",
       "description": "Full-stack development and digital solutions",
       "shortDescription": "Custom software development",
@@ -63,32 +81,32 @@
       "subServices": [
         {
           "id": "web-development",
-          "title": "Web Development",
+          "title": "Web Application Development",
           "description": "React.js, Next.js, Vue.js, Angular applications",
           "href": "/services?service=software-development&sub=web"
         },
         {
           "id": "app-development",
-          "title": "App Development",
+          "title": "Mobile App Development",
           "description": "React Native, Flutter, Native iOS/Android apps",
           "href": "/services?service=software-development&sub=mobile"
         },
         {
           "id": "api-development",
-          "title": "API Development",
+          "title": "API & Integration Development",
           "description": "RESTful APIs, GraphQL, Microservices",
           "href": "/services?service=software-development&sub=api"
         },
         {
           "id": "cloud-devops",
-          "title": "Cloud & DevOps",
+          "title": "Cloud & DevOps Solutions",
           "description": "AWS, Azure, GCP infrastructure and automation",
           "href": "/services?service=software-development&sub=cloud"
         },
         {
           "id": "data-analytics",
-          "title": "Data & Analytics",
-          "description": "Data warehousing, BI, and analytics platforms",
+          "title": "Data & Analytics Platforms",
+          "description": "Data warehousing, BI, and analytics solutions",
           "href": "/services?service=software-development&sub=data"
         },
         {
@@ -99,9 +117,15 @@
         },
         {
           "id": "database-design",
-          "title": "Database Design",
+          "title": "Database Design & Management",
           "description": "SQL, NoSQL database architecture and optimization",
           "href": "/services?service=software-development&sub=database"
+        },
+        {
+          "id": "ui-ux-development",
+          "title": "UI/UX Development",
+          "description": "User interface design and user experience optimization",
+          "href": "/services?service=software-development&sub=ui-ux"
         }
       ],
       "pricing": {
@@ -118,7 +142,7 @@
     },
     {
       "id": "digital-marketing",
-      "title": "Digital Marketing",
+      "title": "Digital Marketing & Growth",
       "slug": "digital-marketing",
       "description": "Data-driven marketing strategies for business growth",
       "shortDescription": "Strategic digital marketing",
@@ -126,16 +150,16 @@
       "color": "bg-green-500",
       "subServices": [
         {
-          "id": "ppc-advertising",
-          "title": "PPC Advertising",
-          "description": "Google Ads, Facebook Ads, LinkedIn Ads",
-          "href": "/services?service=digital-marketing&sub=ppc"
-        },
-        {
           "id": "seo-optimization",
-          "title": "SEO Optimization",
+          "title": "SEO & Search Optimization",
           "description": "Technical SEO, Content Strategy, Link Building",
           "href": "/services?service=digital-marketing&sub=seo"
+        },
+        {
+          "id": "ppc-advertising",
+          "title": "Pay-Per-Click Advertising",
+          "description": "Google Ads, Facebook Ads, LinkedIn Ads",
+          "href": "/services?service=digital-marketing&sub=ppc"
         },
         {
           "id": "social-media-marketing",
@@ -145,27 +169,33 @@
         },
         {
           "id": "content-marketing",
-          "title": "Content Marketing",
+          "title": "Content Marketing & Creation",
           "description": "Blog writing, video production, infographics",
           "href": "/services?service=digital-marketing&sub=content"
         },
         {
           "id": "email-marketing",
-          "title": "Email Marketing",
+          "title": "Email Marketing & Automation",
           "description": "Automated campaigns and lead nurturing",
           "href": "/services?service=digital-marketing&sub=email"
         },
         {
           "id": "influencer-marketing",
-          "title": "Influencer Marketing",
+          "title": "Influencer & Partnership Marketing",
           "description": "Brand partnerships and influencer collaborations",
           "href": "/services?service=digital-marketing&sub=influencer"
         },
         {
           "id": "marketing-automation",
-          "title": "Marketing Automation",
+          "title": "Marketing Automation & CRM",
           "description": "Lead scoring, nurturing workflows, and CRM integration",
           "href": "/services?service=digital-marketing&sub=automation"
+        },
+        {
+          "id": "analytics-reporting",
+          "title": "Analytics & Performance Tracking",
+          "description": "Google Analytics, conversion tracking, and ROI reporting",
+          "href": "/services?service=digital-marketing&sub=analytics"
         }
       ],
       "pricing": {
@@ -184,7 +214,7 @@
   "services": [
     {
       "id": "strategy-advisory",
-      "title": "Strategy & Advisory",
+      "title": "Business Strategy & Advisory",
       "slug": "strategy-advisory",
       "description": "Operating model design, roadmapping, and value realization with executive alignment.",
       "shortDescription": "Strategic guidance for sustainable growth",
@@ -232,6 +262,12 @@
           "title": "Business Process Optimization",
           "description": "Workflow analysis and efficiency improvements",
           "href": "/services?service=strategy-advisory&sub=process-optimization"
+        },
+        {
+          "id": "market-analysis",
+          "title": "Market Analysis & Research",
+          "description": "Competitive analysis, market trends, and opportunity assessment",
+          "href": "/services?service=strategy-advisory&sub=market-analysis"
         }
       ],
       "features": [
@@ -286,7 +322,7 @@
     },
     {
       "id": "digital-transformation",
-      "title": "Digital Transformation",
+      "title": "Digital Transformation & Modernization",
       "slug": "digital-transformation",
       "description": "Modernize processes and platforms to unlock speed, resilience, and scale.",
       "shortDescription": "End-to-end digital modernization",
@@ -334,6 +370,12 @@
           "title": "User Experience Transformation",
           "description": "Customer journey optimization and digital touchpoints",
           "href": "/services?service=digital-transformation&sub=ux-transformation"
+        },
+        {
+          "id": "digital-culture-transformation",
+          "title": "Digital Culture & Training",
+          "description": "Employee training and digital adoption strategies",
+          "href": "/services?service=digital-transformation&sub=digital-culture"
         }
       ],
       "features": [
@@ -388,7 +430,7 @@
     },
     {
       "id": "product-engineering",
-      "title": "Product Engineering",
+      "title": "Product Engineering & Development",
       "slug": "product-engineering",
       "description": "Design, build, and scale web/mobile apps with high-quality delivery practices.",
       "shortDescription": "Full-stack product development",
@@ -436,6 +478,12 @@
           "title": "Performance Optimization",
           "description": "Speed, scalability, and efficiency improvements",
           "href": "/services?service=product-engineering&sub=performance"
+        },
+        {
+          "id": "devops-integration",
+          "title": "DevOps & Deployment",
+          "description": "CI/CD pipelines, deployment automation, and monitoring",
+          "href": "/services?service=product-engineering&sub=devops"
         }
       ],
       "features": [
@@ -493,7 +541,7 @@
     },
     {
       "id": "cloud-devops",
-      "title": "Cloud & DevOps",
+      "title": "Cloud Infrastructure & DevOps",
       "slug": "cloud-devops",
       "description": "Platform engineering, CI/CD, observability, and cost-optimized cloud architectures.",
       "shortDescription": "Cloud infrastructure and automation",
@@ -541,6 +589,12 @@
           "title": "Disaster Recovery",
           "description": "Backup strategies and business continuity planning",
           "href": "/services?service=cloud-devops&sub=disaster-recovery"
+        },
+        {
+          "id": "container-orchestration",
+          "title": "Container Orchestration",
+          "description": "Kubernetes, Docker, and container management solutions",
+          "href": "/services?service=cloud-devops&sub=containers"
         }
       ],
       "features": [
@@ -599,7 +653,7 @@
     },
     {
       "id": "data-analytics",
-      "title": "Data & Analytics",
+      "title": "Data Analytics & Business Intelligence",
       "slug": "data-analytics",
       "description": "Warehouses, analytics, and decisioning to measure, learn, and iterate faster.",
       "shortDescription": "Data-driven insights and intelligence",
@@ -647,6 +701,12 @@
           "title": "Real-time Analytics",
           "description": "Live data processing and instant insights",
           "href": "/services?service=data-analytics&sub=real-time"
+        },
+        {
+          "id": "data-visualization",
+          "title": "Data Visualization & Dashboards",
+          "description": "Interactive dashboards and data storytelling",
+          "href": "/services?service=data-analytics&sub=visualization"
         }
       ],
       "features": [
@@ -828,6 +888,12 @@
           "title": "Conversion Optimization",
           "description": "A/B testing, landing page optimization, and CRO",
           "href": "/services?service=digital-marketing&sub=conversion"
+        },
+        {
+          "id": "influencer-marketing",
+          "title": "Influencer & Partnership Marketing",
+          "description": "Brand partnerships and influencer collaborations",
+          "href": "/services?service=digital-marketing&sub=influencer"
         }
       ],
       "features": [
