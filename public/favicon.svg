@@ -1,0 +1,16 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with primary color and rounded corners (matching navbar) -->
+  <rect width="32" height="32" rx="6" fill="#00a86b"/>
+  
+  <!-- Inner container with white/20 background (matching navbar inner container) -->
+  <rect x="2" y="2" width="28" height="28" rx="4" fill="rgba(255,255,255,0.2)"/>
+  
+  <!-- Main Zap icon (centered, matching navbar proportions) -->
+  <path d="M16 6L8 18h6l-1 8 8-12h-6l1-8z" fill="white" stroke="white" stroke-width="0.3" stroke-linejoin="round"/>
+  
+  <!-- Small Brain icon overlay (top-right, matching navbar positioning) -->
+  <circle cx="26" cy="6" r="2" fill="rgba(255,255,255,0.3)"/>
+  <!-- Simplified Brain icon representation -->
+  <path d="M24.5 5.5c0-0.3 0.2-0.5 0.5-0.5s0.5 0.2 0.5 0.5c0 0.1-0.1 0.3-0.2 0.4" fill="white"/>
+  <path d="M24.8 5.2c0.1 0.1 0.2 0.1 0.4 0.1" fill="white"/>
+</svg>

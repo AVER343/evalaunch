@@ -1,0 +1,19 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with gradient -->
+  <rect width="32" height="32" rx="8" fill="url(#gradient)"/>
+  
+  <!-- Main lightning bolt (Zap icon) -->
+  <path d="M12 6l8 10h-6l4 10-8-10h6l-4-10z" fill="white" stroke="white" stroke-width="0.5"/>
+  
+  <!-- Small brain icon in corner -->
+  <circle cx="24" cy="8" r="2" fill="white" opacity="0.8"/>
+  <path d="M23 7.5c0.5 0 1 0.2 1 0.5s-0.5 0.5-1 0.5-1-0.2-1-0.5 0.5-0.5 1-0.5z" fill="#3b82f6"/>
+  
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>
